@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication
 {
-    partial class FrontOffice
+    partial class Frmplanta
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrontOffice));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frmplanta));
             this.pblogo = new System.Windows.Forms.PictureBox();
             this.btncomport = new System.Windows.Forms.Button();
             this.pbplanta = new System.Windows.Forms.PictureBox();
@@ -59,6 +59,10 @@
             this.pbroom3off = new System.Windows.Forms.PictureBox();
             this.pblivingon = new System.Windows.Forms.PictureBox();
             this.pblivingoff = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlcamera = new System.Windows.Forms.Panel();
+            this.lbacamera = new System.Windows.Forms.Label();
+            this.pbcamera = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pblogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbplanta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcamvig)).BeginInit();
@@ -74,6 +78,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbroom3off)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pblivingon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pblivingoff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlcamera.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbcamera)).BeginInit();
             this.SuspendLayout();
             // 
             // pblogo
@@ -100,9 +107,9 @@
             // pbplanta
             // 
             this.pbplanta.Image = ((System.Drawing.Image)(resources.GetObject("pbplanta.Image")));
-            this.pbplanta.Location = new System.Drawing.Point(258, 12);
+            this.pbplanta.Location = new System.Drawing.Point(239, 12);
             this.pbplanta.Name = "pbplanta";
-            this.pbplanta.Size = new System.Drawing.Size(344, 273);
+            this.pbplanta.Size = new System.Drawing.Size(363, 295);
             this.pbplanta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbplanta.TabIndex = 2;
             this.pbplanta.TabStop = false;
@@ -123,7 +130,7 @@
             this.tbmensagem.Location = new System.Drawing.Point(12, 313);
             this.tbmensagem.Multiline = true;
             this.tbmensagem.Name = "tbmensagem";
-            this.tbmensagem.Size = new System.Drawing.Size(249, 66);
+            this.tbmensagem.Size = new System.Drawing.Size(249, 81);
             this.tbmensagem.TabIndex = 4;
             // 
             // btnselect
@@ -379,11 +386,51 @@
             this.pblivingoff.TabIndex = 28;
             this.pblivingoff.TabStop = false;
             // 
-            // FrontOffice
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(560, 54);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pnlcamera
+            // 
+            this.pnlcamera.Controls.Add(this.pbcamera);
+            this.pnlcamera.Controls.Add(this.lbacamera);
+            this.pnlcamera.Location = new System.Drawing.Point(281, 82);
+            this.pnlcamera.Name = "pnlcamera";
+            this.pnlcamera.Size = new System.Drawing.Size(262, 205);
+            this.pnlcamera.TabIndex = 31;
+            this.pnlcamera.Visible = false;
+            // 
+            // lbacamera
+            // 
+            this.lbacamera.AutoSize = true;
+            this.lbacamera.Location = new System.Drawing.Point(111, 8);
+            this.lbacamera.Name = "lbacamera";
+            this.lbacamera.Size = new System.Drawing.Size(42, 13);
+            this.lbacamera.TabIndex = 0;
+            this.lbacamera.Text = "camera";
+            // 
+            // pbcamera
+            // 
+            this.pbcamera.Location = new System.Drawing.Point(12, 39);
+            this.pbcamera.Name = "pbcamera";
+            this.pbcamera.Size = new System.Drawing.Size(237, 145);
+            this.pbcamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbcamera.TabIndex = 1;
+            this.pbcamera.TabStop = false;
+            // 
+            // Frmplanta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 391);
+            this.ClientSize = new System.Drawing.Size(614, 401);
+            this.Controls.Add(this.pnlcamera);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pblivingon);
             this.Controls.Add(this.pblivingoff);
             this.Controls.Add(this.pbroom3on);
@@ -414,8 +461,8 @@
             this.Controls.Add(this.pbplanta);
             this.Controls.Add(this.btncomport);
             this.Controls.Add(this.pblogo);
-            this.Name = "FrontOffice";
-            this.Text = "FrontOffice";
+            this.Name = "Frmplanta";
+            this.Text = "Planta";
             ((System.ComponentModel.ISupportInitialize)(this.pblogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbplanta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcamvig)).EndInit();
@@ -431,6 +478,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbroom3off)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pblivingon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pblivingoff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlcamera.ResumeLayout(false);
+            this.pnlcamera.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbcamera)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,6 +519,10 @@
         private System.Windows.Forms.PictureBox pbroom3off;
         private System.Windows.Forms.PictureBox pblivingon;
         private System.Windows.Forms.PictureBox pblivingoff;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel pnlcamera;
+        private System.Windows.Forms.PictureBox pbcamera;
+        private System.Windows.Forms.Label lbacamera;
     }
 }
 

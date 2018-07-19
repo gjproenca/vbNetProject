@@ -35,7 +35,7 @@
                                     <%-- Username --%>
                                     <div class="form-group">
                                         <label>Username</label>
-                                        <asp:TextBox ID="textBoxUsername" runat="server" class="form-control"></asp:TextBox>
+                                        <asp:TextBox ID="textBoxUsername" runat="server" class="form-control" MaxLength="50"></asp:TextBox>
                                         <small class="form-text text-muted">Minimum 8 characters
                                         </small>
                                         <asp:RequiredFieldValidator ID="requiredFieldValidatorTextBoxUsername" runat="server" ErrorMessage="Required field"
@@ -47,7 +47,7 @@
                                     <%-- Password --%>
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <asp:TextBox ID="textBoxPassword" runat="server" class="form-control" TextMode="Password"></asp:TextBox>
+                                        <asp:TextBox ID="textBoxPassword" runat="server" class="form-control" TextMode="Password" MaxLength="50"></asp:TextBox>
                                         <small class="form-text text-muted">Minimum 8 characters
                                         </small>
                                         <asp:RequiredFieldValidator ID="requiredFieldValidatorTexboxPassword" runat="server" ErrorMessage="Required field"

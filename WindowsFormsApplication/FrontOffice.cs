@@ -8,11 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WindowsFormsApplication
 {
-    public partial class FrontOffice : Form
+    public partial class Frmplanta : Form
     {
-        public FrontOffice()
+        public Frmplanta()
         {
             InitializeComponent();
         }
