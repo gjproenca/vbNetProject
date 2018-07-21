@@ -100,7 +100,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="default.aspx" />
     <Content Include="FrontEnd\default.aspx" />
-    <Content Include="FrontEnd\register.aspx" />
+    <Content Include="FrontEnd\manage-users.aspx" />
+    <Content Include="FrontEnd\sign-up.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -159,11 +160,18 @@
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="FrontEnd\register.aspx.designer.vb">
-      <DependentUpon>register.aspx</DependentUpon>
+    <Compile Include="FrontEnd\manage-users.aspx.designer.vb">
+      <DependentUpon>manage-users.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FrontEnd\register.aspx.vb">
-      <DependentUpon>register.aspx</DependentUpon>
+    <Compile Include="FrontEnd\manage-users.aspx.vb">
+      <DependentUpon>manage-users.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="FrontEnd\sign-up.aspx.designer.vb">
+      <DependentUpon>sign-up.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontEnd\sign-up.aspx.vb">
+      <DependentUpon>sign-up.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -257,7 +265,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50746</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50747/</IISUrl>
+          <IISUrl>http://localhost:50750/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

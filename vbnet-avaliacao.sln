@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1WindowsFormsApplication", "WindowsFormsApplication\1WindowsFormsApplication.csproj", "{70CB3F6A-4C09-47E2-A962-53F3E0DA54AB}"
-EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DAL", "DAL\DAL.vbproj", "{68B8A71F-9067-4631-A3FF-D54836E01E99}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WebApplication", "WebApplication\WebApplication.vbproj", "{00D6AA7B-24FC-4418-9C10-13B09DD4607A}"
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{70CB3F6A-4C09-47E2-A962-53F3E0DA54AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70CB3F6A-4C09-47E2-A962-53F3E0DA54AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70CB3F6A-4C09-47E2-A962-53F3E0DA54AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70CB3F6A-4C09-47E2-A962-53F3E0DA54AB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{68B8A71F-9067-4631-A3FF-D54836E01E99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{68B8A71F-9067-4631-A3FF-D54836E01E99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68B8A71F-9067-4631-A3FF-D54836E01E99}.Release|Any CPU.ActiveCfg = Release|Any CPU

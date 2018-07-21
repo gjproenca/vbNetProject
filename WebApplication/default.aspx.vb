@@ -17,12 +17,17 @@ Public Class _default
         Dim wrapper As New Simple3Des(userTypes.Password)
         Dim cipherText As String = wrapper.EncryptData(userTypes.UserName)
 
-        userTypes.UserName = textBoxUsername.Text
         userTypes.Password = cipherText
 
-        If (userMethods.UserLogin1(userTypes).Rows.Count > 0) Then
-            System.Console.WriteLine("Looged in")
-            Response.Write("Logged IN")
+        If (userMethods.UserLogin(userTypes).Rows.Count > 0) Then
+            Response.Write("Logged in user")
+            Session("user") = True
+            Response.Redirect("~/FrontEnd/default.aspx")
+        ElseIf (userMethods.AdminLogin(userTypes).Rows.Count > 0) Then
+            Session("admin") = True
+            Response.Redirect("~/FrontEnd/default.aspx")
+        Else
+            Response.Write("Wrong username or password")
         End If
     End Sub
 End Class
