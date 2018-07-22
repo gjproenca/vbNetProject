@@ -8,17 +8,21 @@ Public Class register
     End Sub
 
     Protected Sub buttonSubmit_Click(sender As Object, e As EventArgs) Handles buttonSubmit.Click
-        Dim userMethods As New DAL.Methods
-        Dim userTypes As New DAL.Types.User
+        Dim methods As New DAL.Methods
+        Dim user As New DAL.Types.User
+        Dim permission As New DAL.Types.Permission
 
-        userTypes.UserName = textBoxUsername.Text
-        userTypes.Password = textBoxPassword.Text
+        user.UserName = textBoxUsername.Text
+        user.Password = textBoxPassword.Text
 
-        Dim wrapper As New Simple3Des(userTypes.Password)
-        Dim cipherText As String = wrapper.EncryptData(userTypes.UserName)
+        Dim wrapper As New Simple3Des(user.Password)
+        Dim cipherText As String = wrapper.EncryptData(user.UserName)
 
-        userTypes.Password = cipherText
+        user.Password = cipherText
 
-        userMethods.InsertUser(userTypes)
+        methods.InsertUser(user)
+        methods.InsertPermissions(permission)
+
+        Response.Redirect("~/FrontEnd/default.aspx")
     End Sub
 End Class

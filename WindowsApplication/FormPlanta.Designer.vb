@@ -22,6 +22,7 @@ Partial Class frmplanta
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmplanta))
         Me.pnlcamera = New System.Windows.Forms.Panel()
         Me.pbcamera = New System.Windows.Forms.PictureBox()
@@ -57,6 +58,7 @@ Partial Class frmplanta
         Me.pbplanta = New System.Windows.Forms.PictureBox()
         Me.btncomport = New System.Windows.Forms.Button()
         Me.pblogo = New System.Windows.Forms.PictureBox()
+        Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.pnlcamera.SuspendLayout()
         CType(Me.pbcamera, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,9 +91,9 @@ Partial Class frmplanta
         '
         'pbcamera
         '
-        Me.pbcamera.Location = New System.Drawing.Point(12, 39)
+        Me.pbcamera.Location = New System.Drawing.Point(0, 24)
         Me.pbcamera.Name = "pbcamera"
-        Me.pbcamera.Size = New System.Drawing.Size(237, 145)
+        Me.pbcamera.Size = New System.Drawing.Size(262, 181)
         Me.pbcamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbcamera.TabIndex = 1
         Me.pbcamera.TabStop = False
@@ -99,7 +101,7 @@ Partial Class frmplanta
         'lbcamera
         '
         Me.lbcamera.AutoSize = True
-        Me.lbcamera.Location = New System.Drawing.Point(111, 8)
+        Me.lbcamera.Location = New System.Drawing.Point(111, 6)
         Me.lbcamera.Name = "lbcamera"
         Me.lbcamera.Size = New System.Drawing.Size(42, 13)
         Me.lbcamera.TabIndex = 0
@@ -419,6 +421,10 @@ Partial Class frmplanta
         Me.pblogo.TabIndex = 32
         Me.pblogo.TabStop = False
         '
+        'SerialPort1
+        '
+        Me.SerialPort1.PortName = "COM3"
+        '
         'frmplanta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -516,4 +522,5 @@ Partial Class frmplanta
     Private WithEvents pbplanta As PictureBox
     Private WithEvents btncomport As Button
     Private WithEvents pblogo As PictureBox
+    Friend WithEvents SerialPort1 As IO.Ports.SerialPort
 End Class

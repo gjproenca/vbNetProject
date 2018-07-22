@@ -4,7 +4,7 @@ Imports Microsoft.VisualBasic
 
 Public Class Methods
 
-    Private conn As SqlConnection = New SqlConnection("Data Source=.\sqlexpress;Initial Catalog=DomoSys;Integrated Security=True")
+    Private conn As SqlConnection = New SqlConnection("Data Source=.;Initial Catalog=DomoSys;Integrated Security=True")
 
     Public Function UserLogin(ByVal U As User) As DataTable
         Dim comando As SqlDataAdapter = New SqlDataAdapter("SELECT UserName, Password FROM Users WHERE UserName LIKE '" + U.UserName + "' AND Password LIKE '" + U.Password + "' AND Administrator = 0", conn)
@@ -125,6 +125,27 @@ Public Class Methods
         comm_delete.Parameters.AddWithValue("@IdStatus", S.IdStatus)
         conn.Open()
         comm_delete.ExecuteNonQuery()
+        conn.Close()
+    End Sub
+
+    '---Permissions---
+    Public Sub InsertPermissions(ByVal P As Permission)
+        Dim comm_insert As SqlCommand = New SqlCommand()
+        comm_insert.Connection = conn
+        comm_insert.CommandType = CommandType.Text
+        comm_insert.CommandText = "INSERT INTO Permissions(IdUser, SoftwareStatus, Alarm, Fire, Message, LightBedR1, LightBedR2, LightBedR3, LightLiving, LightDining, LightGarage) VALUES((SELECT IDENT_CURRENT('Users')), @SoftwareStatus, @Alarm, @Fire, @Message, @LightBedR1, @LightBedR2, @LightBedR3, @LightLiving, @LightDining, @LightGarage)"
+        comm_insert.Parameters.AddWithValue("@SoftwareStatus", P.SoftwareStatus)
+        comm_insert.Parameters.AddWithValue("@Alarm", P.Alarm)
+        comm_insert.Parameters.AddWithValue("@Fire", P.Fire)
+        comm_insert.Parameters.AddWithValue("@Message", P.Message)
+        comm_insert.Parameters.AddWithValue("@LightBedR1", P.LightBedR1)
+        comm_insert.Parameters.AddWithValue("@LightBedR2", P.LightBedR2)
+        comm_insert.Parameters.AddWithValue("@LightBedR3", P.LightBedR3)
+        comm_insert.Parameters.AddWithValue("@LightLiving", P.LightLiving)
+        comm_insert.Parameters.AddWithValue("@LightDining", P.LightDining)
+        comm_insert.Parameters.AddWithValue("@LightGarage", P.LightGarage)
+        conn.Open()
+        comm_insert.ExecuteNonQuery()
         conn.Close()
     End Sub
 

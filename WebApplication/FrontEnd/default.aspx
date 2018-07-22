@@ -30,7 +30,7 @@
                         <div class="col-md-6">
                             <div class="p-5 card text-white bg-primary border-secondary">
                                 <div class="card-body">
-                                    <h1 class="mb-4 text-center text-white">Painel de Controlo</h1>
+                                    <h1 class="mb-4 text-center text-white">Control Panel</h1>
 
                                 </div>
                             </div>

@@ -59,7 +59,7 @@
                                     <asp:Button ID="buttonSubmit" runat="server" Text="Submit" class="btn btn-dark text-white col-12" />
                                     <br />
                                     <br />
-                                    <button class="btn btn-dark text-white col-md-12" name="reset" id="reset" type="reset">Limpar</button>
+                                    <button class="btn btn-dark text-white col-md-12" name="reset" id="reset" type="reset">Reset</button>
                                 </div>
                             </div>
                         </div>

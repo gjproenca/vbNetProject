@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="manage-users.aspx.vb" Inherits="WebApplication.manage_users" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="manage-permissions.aspx.vb" Inherits="WebApplication.manage_users" %>
 
 <!DOCTYPE html>
 
@@ -11,8 +11,7 @@
     <!-- Bootstrap CSS -->
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
 
-    <%--My CSS--%>
-    <%--<link href="content/font-awesome.min.css" rel="stylesheet" />--%>
+    <%--My CSS--%>    <%--<link href="content/font-awesome.min.css" rel="stylesheet" />--%>
 
     <title>VBNet Avaliação</title>
 </head>
@@ -23,21 +22,22 @@
             <div class="py-5">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-1">
                         </div>
 
                         <!-- Form -->
-                        <div class="col-md-6">
-                            <div class="p-5 card text-white bg-primary border-secondary">
+                        <div class="col-md-10">
+                            <div class="p-5 card bg-primary border-secondary">
                                 <div class="card-body">
-                                    <h1 class="mb-4 text-center text-white">MANAGE USERS</h1>
+                                    <h1 class="mb-4 text-center text-white">Manage Permissions</h1>
 
                                     <%-- Username --%>
-                                    <div class="form-group">
-                                        <label>Username</label>
-                                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" EmptyDataText="There are no data records to display." AllowPaging="True" CssClass="table table-hover table-responsive">
+                                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="IdPermission" DataSourceID="SqlDataSource1" EmptyDataText="There are no data records to display." AllowSorting="True" CssClass="table table-hover table-responsive table-light" GridLines="None">
                                             <Columns>
-                                                <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="UserName" />
+                                                <asp:CommandField ShowEditButton="True" />
+                                                <asp:BoundField DataField="IdPermission" HeaderText="IdPermission" ReadOnly="True" SortExpression="IdPermission" InsertVisible="False" Visible="False" />
+                                                <asp:BoundField DataField="IdUser" HeaderText="IdUser" SortExpression="IdUser" Visible="False" />
+                                                <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="UserName" ReadOnly="True" />
                                                 <asp:CheckBoxField DataField="SoftwareStatus" HeaderText="SoftwareStatus" SortExpression="SoftwareStatus" />
                                                 <asp:CheckBoxField DataField="Alarm" HeaderText="Alarm" SortExpression="Alarm" />
                                                 <asp:CheckBoxField DataField="Fire" HeaderText="Fire" SortExpression="Fire" />
@@ -48,10 +48,10 @@
                                                 <asp:CheckBoxField DataField="LightLiving" HeaderText="LightLiving" SortExpression="LightLiving" />
                                                 <asp:CheckBoxField DataField="LightDining" HeaderText="LightDining" SortExpression="LightDining" />
                                                 <asp:CheckBoxField DataField="LightGarage" HeaderText="LightGarage" SortExpression="LightGarage" />
-                                                <asp:BoundField DataField="TimeStamp" HeaderText="TimeStamp" SortExpression="TimeStamp" />
+                                                <asp:BoundField DataField="TimeStamp" HeaderText="TimeStamp" SortExpression="TimeStamp" ReadOnly="True" />
                                             </Columns>
                                         </asp:GridView>
-                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DomoSysConnectionString1 %>" DeleteCommand="DELETE FROM [Permissions] WHERE [IdPermission] = @IdPermission" InsertCommand="INSERT INTO [Permissions] ([IdUser], [SoftwareStatus], [Alarm], [Fire], [Message], [LightBedR1], [LightBedR2], [LightBedR3], [LightLiving], [LightDining], [LightGarage], [TimeStamp]) VALUES (@IdUser, @SoftwareStatus, @Alarm, @Fire, @Message, @LightBedR1, @LightBedR2, @LightBedR3, @LightLiving, @LightDining, @LightGarage, @TimeStamp)" SelectCommand="SELECT U.UserName, P.SoftwareStatus, P.Alarm, P.Fire, P.Message, P.LightBedR1, P.LightBedR2, P.LightBedR3, P.LightLiving, P.LightDining, P.LightGarage, P.TimeStamp FROM Permissions AS P INNER JOIN Users AS U ON P.IdUser = U.IdUser" UpdateCommand="UPDATE [Permissions] SET [IdUser] = @IdUser, [SoftwareStatus] = @SoftwareStatus, [Alarm] = @Alarm, [Fire] = @Fire, [Message] = @Message, [LightBedR1] = @LightBedR1, [LightBedR2] = @LightBedR2, [LightBedR3] = @LightBedR3, [LightLiving] = @LightLiving, [LightDining] = @LightDining, [LightGarage] = @LightGarage, [TimeStamp] = @TimeStamp WHERE [IdPermission] = @IdPermission">
+                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DomoSysConnectionString %>" DeleteCommand="DELETE FROM [Permissions] WHERE [IdPermission] = @IdPermission" InsertCommand="INSERT INTO [Permissions] ([IdUser], [SoftwareStatus], [Alarm], [Fire], [Message], [LightBedR1], [LightBedR2], [LightBedR3], [LightLiving], [LightDining], [LightGarage], [TimeStamp]) VALUES (@IdUser, @SoftwareStatus, @Alarm, @Fire, @Message, @LightBedR1, @LightBedR2, @LightBedR3, @LightLiving, @LightDining, @LightGarage, @TimeStamp)" SelectCommand="SELECT Permissions.IdPermission, Permissions.IdUser, Users.UserName, Permissions.SoftwareStatus, Permissions.Alarm, Permissions.Fire, Permissions.Message, Permissions.LightBedR1, Permissions.LightBedR2, Permissions.LightBedR3, Permissions.LightLiving, Permissions.LightDining, Permissions.LightGarage, Permissions.TimeStamp FROM Permissions INNER JOIN Users ON Permissions.IdUser = Users.IdUser" UpdateCommand="UPDATE [Permissions] SET [SoftwareStatus] = @SoftwareStatus, [Alarm] = @Alarm, [Fire] = @Fire, [Message] = @Message, [LightBedR1] = @LightBedR1, [LightBedR2] = @LightBedR2, [LightBedR3] = @LightBedR3, [LightLiving] = @LightLiving, [LightDining] = @LightDining, [LightGarage] = @LightGarage, [TimeStamp] = GETDATE() WHERE [IdPermission] = @IdPermission">
                                             <DeleteParameters>
                                                 <asp:Parameter Name="IdPermission" Type="Int32" />
                                             </DeleteParameters>
@@ -70,7 +70,6 @@
                                                 <asp:Parameter Name="TimeStamp" Type="DateTime" />
                                             </InsertParameters>
                                             <UpdateParameters>
-                                                <asp:Parameter Name="IdUser" Type="Int32" />
                                                 <asp:Parameter Name="SoftwareStatus" Type="Boolean" />
                                                 <asp:Parameter Name="Alarm" Type="Boolean" />
                                                 <asp:Parameter Name="Fire" Type="Boolean" />
@@ -94,8 +93,7 @@
                                             ControlToValidate="textBoxUsername" ValidationExpression="^\w{8,}$"></asp:RegularExpressionValidator>--%>
                                     </div>
 
-                                    <%-- Password --%>
-<%--                                    <div class="form-group">
+                                    <%-- Password --%><%--                                    <div class="form-group">
                                         <label>Password</label>
                                         <asp:TextBox ID="textBoxPassword" runat="server" class="form-control" TextMode="Password" MaxLength="50"></asp:TextBox>
                                         <small class="form-text text-muted">Minimum 8 characters
@@ -105,9 +103,7 @@
                                         <asp:RegularExpressionValidator ID="regularExpressionValidatorTexboxPassword" runat="server" ErrorMessage="Requirements not met"
                                             ControlToValidate="textBoxPassword" ValidationExpression="^[^\s].{6,}[^\s]$"></asp:RegularExpressionValidator>
                                     </div>--%>
-
-                                    <%-- Confirm Password --%>
-<%--                                    <div class="form-group">
+                                    <%-- Confirm Password --%><%--                                    <div class="form-group">
                                         <label>Confirm Password</label>
                                         <asp:TextBox ID="textBoxConfirmPassword" runat="server" class="form-control" TextMode="Password" MaxLength="50"></asp:TextBox>
                                         <small class="form-text text-muted">Minimum 8 characters
@@ -118,8 +114,7 @@
                                             ControlToValidate="textBoxConfirmPassword" ValidationExpression="^[^\s].{6,}[^\s]$"></asp:RegularExpressionValidator>
                                         <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Password fields don't match" ControlToCompare="textBoxPassword" ControlToValidate="textBoxConfirmPassword"></asp:CompareValidator>
                                     </div>--%>
-
-<%--                                    <asp:Button class="btn btn-dark text-white col-md-12" ID="buttonSubmit" runat="server" Text="Submit" CssClass="btn btn-dark text-white col-12" OnClick="buttonSubmit_Click" />
+                                    <%--                                    <asp:Button class="btn btn-dark text-white col-md-12" ID="buttonSubmit" runat="server" Text="Submit" CssClass="btn btn-dark text-white col-12" OnClick="buttonSubmit_Click" />
                                     <br />
                                     <br />
                                     <button class="btn btn-dark text-white col-md-12" name="reset" id="reset" type="reset">Limpar</button>--%>

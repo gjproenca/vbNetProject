@@ -127,9 +127,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication.manage_users._GridView1">
+<member name="F:WebApplication.manage_users._GridViewManageUsers">
 <summary>
-GridView1 control.
+GridViewManageUsers control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -139,6 +139,24 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:WebApplication.manage_users._SqlDataSource1">
 <summary>
 SqlDataSource1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.manage_users._GridView1">
+<summary>
+GridView1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.manage_users._SqlDataSource2">
+<summary>
+SqlDataSource2 control.
 </summary>
 <remarks>
 Auto-generated field.

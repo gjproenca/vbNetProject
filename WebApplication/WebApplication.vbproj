@@ -100,7 +100,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="default.aspx" />
     <Content Include="FrontEnd\default.aspx" />
-    <Content Include="FrontEnd\manage-users.aspx" />
+    <Content Include="FrontEnd\manage-permissions.aspx" />
     <Content Include="FrontEnd\sign-up.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -160,11 +160,11 @@
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="FrontEnd\manage-users.aspx.designer.vb">
-      <DependentUpon>manage-users.aspx</DependentUpon>
+    <Compile Include="FrontEnd\manage-permissions.aspx.designer.vb">
+      <DependentUpon>manage-permissions.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FrontEnd\manage-users.aspx.vb">
-      <DependentUpon>manage-users.aspx</DependentUpon>
+    <Compile Include="FrontEnd\manage-permissions.aspx.vb">
+      <DependentUpon>manage-permissions.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="FrontEnd\sign-up.aspx.designer.vb">
