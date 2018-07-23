@@ -23,11 +23,11 @@
             <div class="py-5">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-1">
                         </div>
 
                         <!-- Form -->
-                        <div class="col-md-6">
+                        <div class="col-md-10">
                             <div class="p-5 card text-white bg-primary border-secondary">
                                 <div class="card-body">
                                     <h1 class="mb-4 text-center text-white">Sign In</h1>

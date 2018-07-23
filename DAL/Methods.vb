@@ -4,7 +4,7 @@ Imports Microsoft.VisualBasic
 
 Public Class Methods
 
-    Private conn As SqlConnection = New SqlConnection("Data Source=.;Initial Catalog=DomoSys;Integrated Security=True")
+    Private conn As SqlConnection = New SqlConnection("Data Source=.\sqlexpress;Initial Catalog=DomoSys;Integrated Security=True")
 
     Public Function UserLogin(ByVal U As User) As DataTable
         Dim comando As SqlDataAdapter = New SqlDataAdapter("SELECT UserName, Password FROM Users WHERE UserName LIKE '" + U.UserName + "' AND Password LIKE '" + U.Password + "' AND Administrator = 0", conn)
@@ -15,6 +15,13 @@ Public Class Methods
 
     Public Function AdminLogin(ByVal U As User) As DataTable
         Dim comando As SqlDataAdapter = New SqlDataAdapter("SELECT UserName, Password FROM Users WHERE UserName LIKE '" + U.UserName + "' AND Password LIKE '" + U.Password + "' AND Administrator = 1", conn)
+        Dim tabela As DataTable = New DataTable()
+        comando.Fill(tabela)
+        Return tabela
+    End Function
+
+    Public Function VerifyUser(ByVal U As User) As DataTable
+        Dim comando As SqlDataAdapter = New SqlDataAdapter("SELECT UserName, Password FROM Users WHERE UserName LIKE '" + U.UserName + "'", conn)
         Dim tabela As DataTable = New DataTable()
         comando.Fill(tabela)
         Return tabela

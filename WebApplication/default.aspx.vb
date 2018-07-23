@@ -25,7 +25,7 @@ Public Class _default
             Response.Redirect("~/FrontEnd/default.aspx")
         ElseIf (userMethods.AdminLogin(userTypes).Rows.Count > 0) Then
             Session("admin") = True
-            Response.Redirect("~/FrontEnd/default.aspx")
+            Response.Redirect("~/BackEnd/default.aspx")
         Else
             Response.Write("Wrong username or password")
         End If

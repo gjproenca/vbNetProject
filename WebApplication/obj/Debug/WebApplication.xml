@@ -37,6 +37,15 @@ WebApplication
  Returns the Asp log object.
  </summary>
 </member>
+<member name="F:WebApplication.sign_out1._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:WebApplication._default._body">
 <summary>
 body control.
@@ -118,6 +127,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:WebApplication._default1._GridViewStatus">
+<summary>
+GridViewStatus control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication._default1._SqlDataSource1">
+<summary>
+SqlDataSource1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:WebApplication.manage_users._body">
 <summary>
 body control.
@@ -127,9 +154,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication.manage_users._GridViewManageUsers">
+<member name="F:WebApplication.manage_users._GridViewPermissions">
 <summary>
-GridViewManageUsers control.
+GridViewPermissions control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -145,18 +172,27 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication.manage_users._GridView1">
+<member name="F:WebApplication.manage_users1._body">
 <summary>
-GridView1 control.
+body control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication.manage_users._SqlDataSource2">
+<member name="F:WebApplication.manage_users1._GridViewUsers">
 <summary>
-SqlDataSource2 control.
+GridViewUsers control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.manage_users1._SqlDataSource1">
+<summary>
+SqlDataSource1 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -262,9 +298,54 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:WebApplication.register._checkBoxAdmin">
+<summary>
+checkBoxAdmin control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:WebApplication.register._buttonSubmit">
 <summary>
 buttonSubmit control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication._default2._body">
+<summary>
+body control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication._default2._GridViewStatus">
+<summary>
+GridViewStatus control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication._default2._SqlDataSource1">
+<summary>
+SqlDataSource1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.sign_out._form1">
+<summary>
+form1 control.
 </summary>
 <remarks>
 Auto-generated field.

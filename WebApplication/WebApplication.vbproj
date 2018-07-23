@@ -92,6 +92,7 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BackEnd\sign-out.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -99,13 +100,24 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="default.aspx" />
+    <Content Include="BackEnd\default.aspx" />
+    <Content Include="BackEnd\manage-permissions.aspx" />
+    <Content Include="BackEnd\manage-users.aspx" />
+    <Content Include="BackEnd\register-users.aspx" />
     <Content Include="FrontEnd\default.aspx" />
-    <Content Include="FrontEnd\manage-permissions.aspx" />
-    <Content Include="FrontEnd\sign-up.aspx" />
+    <Content Include="FrontEnd\sign-out.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
@@ -116,14 +128,6 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="Scripts\esm\popper-utils.js" />
-    <Content Include="Scripts\esm\popper-utils.min.js" />
-    <Content Include="Scripts\esm\popper.js" />
-    <Content Include="Scripts\esm\popper.min.js" />
-    <Content Include="Scripts\esm\popper.min.js.map" />
-    <Content Include="Scripts\esm\popper.js.map" />
-    <Content Include="Scripts\esm\popper-utils.min.js.map" />
-    <Content Include="Scripts\esm\popper-utils.js.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -137,7 +141,9 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="web.config" />
+    <Content Include="web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -146,11 +152,46 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackEnd\sign-out.aspx.designer.vb">
+      <DependentUpon>sign-out.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\sign-out.aspx.vb">
+      <DependentUpon>sign-out.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="default.aspx.designer.vb">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="default.aspx.vb">
       <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="BackEnd\default.aspx.designer.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\default.aspx.vb">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="BackEnd\manage-permissions.aspx.designer.vb">
+      <DependentUpon>manage-permissions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\manage-permissions.aspx.vb">
+      <DependentUpon>manage-permissions.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="BackEnd\manage-users.aspx.designer.vb">
+      <DependentUpon>manage-users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\manage-users.aspx.vb">
+      <DependentUpon>manage-users.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="BackEnd\register-users.aspx.designer.vb">
+      <DependentUpon>register-users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BackEnd\register-users.aspx.vb">
+      <DependentUpon>register-users.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="FrontEnd\default.aspx.designer.vb">
@@ -160,18 +201,11 @@
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="FrontEnd\manage-permissions.aspx.designer.vb">
-      <DependentUpon>manage-permissions.aspx</DependentUpon>
+    <Compile Include="FrontEnd\sign-out.aspx.designer.vb">
+      <DependentUpon>sign-out.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FrontEnd\manage-permissions.aspx.vb">
-      <DependentUpon>manage-permissions.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="FrontEnd\sign-up.aspx.designer.vb">
-      <DependentUpon>sign-up.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="FrontEnd\sign-up.aspx.vb">
-      <DependentUpon>sign-up.aspx</DependentUpon>
+    <Compile Include="FrontEnd\sign-out.aspx.vb">
+      <DependentUpon>sign-out.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -237,6 +271,7 @@
       <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -265,7 +300,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50746</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50750/</IISUrl>
+          <IISUrl>http://localhost:50752/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

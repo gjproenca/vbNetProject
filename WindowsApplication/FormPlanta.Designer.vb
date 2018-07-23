@@ -27,7 +27,7 @@ Partial Class frmplanta
         Me.pnlcamera = New System.Windows.Forms.Panel()
         Me.pbcamera = New System.Windows.Forms.PictureBox()
         Me.lbcamera = New System.Windows.Forms.Label()
-        Me.pictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.pbfire = New System.Windows.Forms.PictureBox()
         Me.pblivingon = New System.Windows.Forms.PictureBox()
         Me.pblivingoff = New System.Windows.Forms.PictureBox()
         Me.pbroom3on = New System.Windows.Forms.PictureBox()
@@ -59,9 +59,15 @@ Partial Class frmplanta
         Me.btncomport = New System.Windows.Forms.Button()
         Me.pblogo = New System.Windows.Forms.PictureBox()
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
+        Me.chbdining = New System.Windows.Forms.CheckBox()
+        Me.chbliving = New System.Windows.Forms.CheckBox()
+        Me.cbhroom2 = New System.Windows.Forms.CheckBox()
+        Me.cbhroom3 = New System.Windows.Forms.CheckBox()
+        Me.cbhroom1 = New System.Windows.Forms.CheckBox()
+        Me.chbgarage = New System.Windows.Forms.CheckBox()
         Me.pnlcamera.SuspendLayout()
         CType(Me.pbcamera, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbfire, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pblivingon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pblivingoff, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbroom3on, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,9 +89,9 @@ Partial Class frmplanta
         '
         Me.pnlcamera.Controls.Add(Me.pbcamera)
         Me.pnlcamera.Controls.Add(Me.lbcamera)
-        Me.pnlcamera.Location = New System.Drawing.Point(318, 69)
+        Me.pnlcamera.Location = New System.Drawing.Point(73, 32)
         Me.pnlcamera.Name = "pnlcamera"
-        Me.pnlcamera.Size = New System.Drawing.Size(262, 205)
+        Me.pnlcamera.Size = New System.Drawing.Size(184, 142)
         Me.pnlcamera.TabIndex = 63
         Me.pnlcamera.Visible = False
         '
@@ -93,7 +99,7 @@ Partial Class frmplanta
         '
         Me.pbcamera.Location = New System.Drawing.Point(0, 24)
         Me.pbcamera.Name = "pbcamera"
-        Me.pbcamera.Size = New System.Drawing.Size(262, 181)
+        Me.pbcamera.Size = New System.Drawing.Size(184, 118)
         Me.pbcamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbcamera.TabIndex = 1
         Me.pbcamera.TabStop = False
@@ -101,21 +107,21 @@ Partial Class frmplanta
         'lbcamera
         '
         Me.lbcamera.AutoSize = True
-        Me.lbcamera.Location = New System.Drawing.Point(111, 6)
+        Me.lbcamera.Location = New System.Drawing.Point(79, 8)
         Me.lbcamera.Name = "lbcamera"
         Me.lbcamera.Size = New System.Drawing.Size(42, 13)
         Me.lbcamera.TabIndex = 0
         Me.lbcamera.Text = "camera"
         '
-        'pictureBox1
+        'pbfire
         '
-        Me.pictureBox1.Image = CType(resources.GetObject("pictureBox1.Image"), System.Drawing.Image)
-        Me.pictureBox1.Location = New System.Drawing.Point(584, 89)
-        Me.pictureBox1.Name = "pictureBox1"
-        Me.pictureBox1.Size = New System.Drawing.Size(31, 34)
-        Me.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pictureBox1.TabIndex = 62
-        Me.pictureBox1.TabStop = False
+        Me.pbfire.Image = CType(resources.GetObject("pbfire.Image"), System.Drawing.Image)
+        Me.pbfire.Location = New System.Drawing.Point(607, 71)
+        Me.pbfire.Name = "pbfire"
+        Me.pbfire.Size = New System.Drawing.Size(31, 34)
+        Me.pbfire.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbfire.TabIndex = 62
+        Me.pbfire.TabStop = False
         '
         'pblivingon
         '
@@ -140,7 +146,7 @@ Partial Class frmplanta
         'pbroom3on
         '
         Me.pbroom3on.Image = CType(resources.GetObject("pbroom3on.Image"), System.Drawing.Image)
-        Me.pbroom3on.Location = New System.Drawing.Point(495, 236)
+        Me.pbroom3on.Location = New System.Drawing.Point(500, 227)
         Me.pbroom3on.Name = "pbroom3on"
         Me.pbroom3on.Size = New System.Drawing.Size(29, 25)
         Me.pbroom3on.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -150,7 +156,7 @@ Partial Class frmplanta
         'pbroom3off
         '
         Me.pbroom3off.Image = CType(resources.GetObject("pbroom3off.Image"), System.Drawing.Image)
-        Me.pbroom3off.Location = New System.Drawing.Point(473, 236)
+        Me.pbroom3off.Location = New System.Drawing.Point(478, 227)
         Me.pbroom3off.Name = "pbroom3off"
         Me.pbroom3off.Size = New System.Drawing.Size(29, 25)
         Me.pbroom3off.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -160,7 +166,7 @@ Partial Class frmplanta
         'pbroom2on
         '
         Me.pbroom2on.Image = CType(resources.GetObject("pbroom2on.Image"), System.Drawing.Image)
-        Me.pbroom2on.Location = New System.Drawing.Point(339, 236)
+        Me.pbroom2on.Location = New System.Drawing.Point(331, 223)
         Me.pbroom2on.Name = "pbroom2on"
         Me.pbroom2on.Size = New System.Drawing.Size(29, 25)
         Me.pbroom2on.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -170,7 +176,7 @@ Partial Class frmplanta
         'pbroom2off
         '
         Me.pbroom2off.Image = CType(resources.GetObject("pbroom2off.Image"), System.Drawing.Image)
-        Me.pbroom2off.Location = New System.Drawing.Point(317, 236)
+        Me.pbroom2off.Location = New System.Drawing.Point(309, 223)
         Me.pbroom2off.Name = "pbroom2off"
         Me.pbroom2off.Size = New System.Drawing.Size(29, 25)
         Me.pbroom2off.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -200,7 +206,7 @@ Partial Class frmplanta
         'pbroom1on
         '
         Me.pbroom1on.Image = CType(resources.GetObject("pbroom1on.Image"), System.Drawing.Image)
-        Me.pbroom1on.Location = New System.Drawing.Point(495, 107)
+        Me.pbroom1on.Location = New System.Drawing.Point(501, 88)
         Me.pbroom1on.Name = "pbroom1on"
         Me.pbroom1on.Size = New System.Drawing.Size(29, 25)
         Me.pbroom1on.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -210,7 +216,7 @@ Partial Class frmplanta
         'pbroom1off
         '
         Me.pbroom1off.Image = CType(resources.GetObject("pbroom1off.Image"), System.Drawing.Image)
-        Me.pbroom1off.Location = New System.Drawing.Point(473, 107)
+        Me.pbroom1off.Location = New System.Drawing.Point(479, 88)
         Me.pbroom1off.Name = "pbroom1off"
         Me.pbroom1off.Size = New System.Drawing.Size(29, 25)
         Me.pbroom1off.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -220,7 +226,7 @@ Partial Class frmplanta
         'pbdiningon
         '
         Me.pbdiningon.Image = CType(resources.GetObject("pbdiningon.Image"), System.Drawing.Image)
-        Me.pbdiningon.Location = New System.Drawing.Point(403, 125)
+        Me.pbdiningon.Location = New System.Drawing.Point(403, 89)
         Me.pbdiningon.Name = "pbdiningon"
         Me.pbdiningon.Size = New System.Drawing.Size(29, 25)
         Me.pbdiningon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -230,9 +236,9 @@ Partial Class frmplanta
         'pbdiningoff
         '
         Me.pbdiningoff.Image = CType(resources.GetObject("pbdiningoff.Image"), System.Drawing.Image)
-        Me.pbdiningoff.Location = New System.Drawing.Point(381, 125)
+        Me.pbdiningoff.Location = New System.Drawing.Point(379, 89)
         Me.pbdiningoff.Name = "pbdiningoff"
-        Me.pbdiningoff.Size = New System.Drawing.Size(29, 25)
+        Me.pbdiningoff.Size = New System.Drawing.Size(31, 25)
         Me.pbdiningoff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbdiningoff.TabIndex = 50
         Me.pbdiningoff.TabStop = False
@@ -240,7 +246,7 @@ Partial Class frmplanta
         'pbcamvig
         '
         Me.pbcamvig.Image = CType(resources.GetObject("pbcamvig.Image"), System.Drawing.Image)
-        Me.pbcamvig.Location = New System.Drawing.Point(586, 58)
+        Me.pbcamvig.Location = New System.Drawing.Point(607, 40)
         Me.pbcamvig.Name = "pbcamvig"
         Me.pbcamvig.Size = New System.Drawing.Size(29, 25)
         Me.pbcamvig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -425,13 +431,73 @@ Partial Class frmplanta
         '
         Me.SerialPort1.PortName = "COM3"
         '
+        'chbdining
+        '
+        Me.chbdining.AutoSize = True
+        Me.chbdining.Location = New System.Drawing.Point(411, 116)
+        Me.chbdining.Name = "chbdining"
+        Me.chbdining.Size = New System.Drawing.Size(15, 14)
+        Me.chbdining.TabIndex = 64
+        Me.chbdining.UseVisualStyleBackColor = True
+        '
+        'chbliving
+        '
+        Me.chbliving.AutoSize = True
+        Me.chbliving.Location = New System.Drawing.Point(406, 244)
+        Me.chbliving.Name = "chbliving"
+        Me.chbliving.Size = New System.Drawing.Size(15, 14)
+        Me.chbliving.TabIndex = 65
+        Me.chbliving.UseVisualStyleBackColor = True
+        '
+        'cbhroom2
+        '
+        Me.cbhroom2.AutoSize = True
+        Me.cbhroom2.Location = New System.Drawing.Point(315, 250)
+        Me.cbhroom2.Name = "cbhroom2"
+        Me.cbhroom2.Size = New System.Drawing.Size(15, 14)
+        Me.cbhroom2.TabIndex = 66
+        Me.cbhroom2.UseVisualStyleBackColor = True
+        '
+        'cbhroom3
+        '
+        Me.cbhroom3.AutoSize = True
+        Me.cbhroom3.Location = New System.Drawing.Point(484, 253)
+        Me.cbhroom3.Name = "cbhroom3"
+        Me.cbhroom3.Size = New System.Drawing.Size(15, 14)
+        Me.cbhroom3.TabIndex = 67
+        Me.cbhroom3.UseVisualStyleBackColor = True
+        '
+        'cbhroom1
+        '
+        Me.cbhroom1.AutoSize = True
+        Me.cbhroom1.Location = New System.Drawing.Point(484, 114)
+        Me.cbhroom1.Name = "cbhroom1"
+        Me.cbhroom1.Size = New System.Drawing.Size(15, 14)
+        Me.cbhroom1.TabIndex = 68
+        Me.cbhroom1.UseVisualStyleBackColor = True
+        '
+        'chbgarage
+        '
+        Me.chbgarage.AutoSize = True
+        Me.chbgarage.Location = New System.Drawing.Point(581, 205)
+        Me.chbgarage.Name = "chbgarage"
+        Me.chbgarage.Size = New System.Drawing.Size(15, 14)
+        Me.chbgarage.TabIndex = 69
+        Me.chbgarage.UseVisualStyleBackColor = True
+        '
         'frmplanta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(662, 477)
+        Me.Controls.Add(Me.chbgarage)
+        Me.Controls.Add(Me.cbhroom1)
+        Me.Controls.Add(Me.cbhroom3)
+        Me.Controls.Add(Me.cbhroom2)
+        Me.Controls.Add(Me.chbliving)
+        Me.Controls.Add(Me.chbdining)
         Me.Controls.Add(Me.pnlcamera)
-        Me.Controls.Add(Me.pictureBox1)
+        Me.Controls.Add(Me.pbfire)
         Me.Controls.Add(Me.pblivingon)
         Me.Controls.Add(Me.pblivingoff)
         Me.Controls.Add(Me.pbroom3on)
@@ -467,7 +533,7 @@ Partial Class frmplanta
         Me.pnlcamera.ResumeLayout(False)
         Me.pnlcamera.PerformLayout()
         CType(Me.pbcamera, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbfire, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pblivingon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pblivingoff, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbroom3on, System.ComponentModel.ISupportInitialize).EndInit()
@@ -491,7 +557,7 @@ Partial Class frmplanta
     Private WithEvents pnlcamera As Panel
     Private WithEvents pbcamera As PictureBox
     Private WithEvents lbcamera As Label
-    Private WithEvents pictureBox1 As PictureBox
+    Private WithEvents pbfire As PictureBox
     Private WithEvents pblivingon As PictureBox
     Private WithEvents pblivingoff As PictureBox
     Private WithEvents pbroom3on As PictureBox
@@ -523,4 +589,10 @@ Partial Class frmplanta
     Private WithEvents btncomport As Button
     Private WithEvents pblogo As PictureBox
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort
+    Friend WithEvents chbdining As CheckBox
+    Friend WithEvents chbliving As CheckBox
+    Friend WithEvents cbhroom2 As CheckBox
+    Friend WithEvents cbhroom3 As CheckBox
+    Friend WithEvents cbhroom1 As CheckBox
+    Friend WithEvents chbgarage As CheckBox
 End Class

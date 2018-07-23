@@ -13,11 +13,6 @@ Public Class frmplanta
     Dim cameras As VideoCaptureDeviceForm = New VideoCaptureDeviceForm
 
     Private Sub frmplanta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'If cameras.ShowDialog() = DialogResult.OK Then
-        '    camera = cameras.VideoDevice
-        '    AddHandler camera.NewFrame, New NewFrameEventHandler(AddressOf Captured)
-        'End If
-
         'com port
         SerialPort1.Close()
         SerialPort1.PortName = "COM3"
@@ -105,13 +100,7 @@ Public Class frmplanta
     End Sub
 
     Private Sub lbcamera_Click(sender As Object, e As EventArgs) Handles lbcamera.Click
-        'Dim cameras As VideoCaptureDeviceForm = New VideoCaptureDeviceForm
 
-        'If cameras.ShowDialog() = DialogResult.OK Then
-        '    camera = cameras.VideoDevice
-        '    AddHandler camera.NewFrame, New NewFrameEventHandler(AddressOf Captured)
-        '    camera.Start()
-        'End If
     End Sub
 
     Private Sub Captured(sender As Object, eventargs As NewFrameEventArgs)
