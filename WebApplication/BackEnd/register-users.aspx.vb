@@ -1,4 +1,5 @@
-﻿Imports DAL
+﻿Imports System.Windows.Forms
+Imports DAL
 
 Public Class register
     Inherits System.Web.UI.Page
@@ -23,19 +24,15 @@ Public Class register
 
         If (methods.VerifyUser(user).Rows.Count > 0) Then
             'Response.Write("<script>alert('Username already registered!')</script>")
-            ClientScript.RegisterClientScriptBlock(Me.GetType, "alert", "alert('User has been registered successfully')", True)
+            ClientScript.RegisterStartupScript(Me.GetType(), "myalert", "alert('Username already registered');", True)
         Else
-            methods.InsertUser(user)
-            methods.InsertPermissions(permission)
-            'FIXME: alert not showing
-            'Response.Write("<script>alert('Success!')</script>")
-
-            ' ClientScriptManager.RegisterClientScriptBlock(Me.GetType, "alert", "alert('Database updated.')", True)
-
-            ClientScript.RegisterClientScriptBlock(Me.GetType, "alert", "alert('User has been registered successfully')", True)
-
-
-            Response.Redirect("~/BackEnd/default.aspx")
+            Try
+                methods.InsertUser(user)
+                methods.InsertPermissions(permission)
+                ClientScript.RegisterStartupScript(Me.GetType(), "myalert", "alert('User has been registered successfully');window.location.href='default.aspx'", True)
+            Catch ex As Exception
+                ' MsgBox("Can't load Web page" & vbCrLf & ex.Message)
+            End Try
         End If
     End Sub
 End Class
