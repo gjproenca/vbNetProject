@@ -51,9 +51,9 @@ Partial Class frmplanta
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.chbdining = New System.Windows.Forms.CheckBox()
         Me.chbliving = New System.Windows.Forms.CheckBox()
-        Me.cbhroom2 = New System.Windows.Forms.CheckBox()
-        Me.cbhroom3 = New System.Windows.Forms.CheckBox()
-        Me.cbhroom1 = New System.Windows.Forms.CheckBox()
+        Me.chbroom2 = New System.Windows.Forms.CheckBox()
+        Me.chbroom3 = New System.Windows.Forms.CheckBox()
+        Me.chbroom1 = New System.Windows.Forms.CheckBox()
         Me.chbgarage = New System.Windows.Forms.CheckBox()
         Me.lbcomport3 = New System.Windows.Forms.Label()
         Me.pbcamera = New System.Windows.Forms.PictureBox()
@@ -220,7 +220,7 @@ Partial Class frmplanta
         '
         'btncomread
         '
-        Me.btncomread.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btncomread.BackColor = System.Drawing.SystemColors.HighlightText
         Me.btncomread.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncomread.Location = New System.Drawing.Point(79, 207)
         Me.btncomread.Name = "btncomread"
@@ -231,7 +231,7 @@ Partial Class frmplanta
         '
         'btncomwrite
         '
-        Me.btncomwrite.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btncomwrite.BackColor = System.Drawing.SystemColors.HighlightText
         Me.btncomwrite.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncomwrite.Location = New System.Drawing.Point(158, 207)
         Me.btncomwrite.Name = "btncomwrite"
@@ -259,7 +259,7 @@ Partial Class frmplanta
         'lbstatus
         '
         Me.lbstatus.AutoSize = True
-        Me.lbstatus.BackColor = System.Drawing.SystemColors.Highlight
+        Me.lbstatus.BackColor = System.Drawing.SystemColors.HighlightText
         Me.lbstatus.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbstatus.Location = New System.Drawing.Point(13, 258)
         Me.lbstatus.Name = "lbstatus"
@@ -270,7 +270,7 @@ Partial Class frmplanta
         'lbfirealarm
         '
         Me.lbfirealarm.AutoSize = True
-        Me.lbfirealarm.BackColor = System.Drawing.SystemColors.Highlight
+        Me.lbfirealarm.BackColor = System.Drawing.SystemColors.HighlightText
         Me.lbfirealarm.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbfirealarm.Location = New System.Drawing.Point(13, 281)
         Me.lbfirealarm.Name = "lbfirealarm"
@@ -289,7 +289,7 @@ Partial Class frmplanta
         'lbmessage
         '
         Me.lbmessage.AutoSize = True
-        Me.lbmessage.BackColor = System.Drawing.SystemColors.Highlight
+        Me.lbmessage.BackColor = System.Drawing.SystemColors.HighlightText
         Me.lbmessage.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbmessage.Location = New System.Drawing.Point(13, 318)
         Me.lbmessage.Name = "lbmessage"
@@ -339,32 +339,32 @@ Partial Class frmplanta
         Me.chbliving.TabIndex = 65
         Me.chbliving.UseVisualStyleBackColor = True
         '
-        'cbhroom2
+        'chbroom2
         '
-        Me.cbhroom2.AutoSize = True
-        Me.cbhroom2.Location = New System.Drawing.Point(315, 250)
-        Me.cbhroom2.Name = "cbhroom2"
-        Me.cbhroom2.Size = New System.Drawing.Size(15, 14)
-        Me.cbhroom2.TabIndex = 66
-        Me.cbhroom2.UseVisualStyleBackColor = True
+        Me.chbroom2.AutoSize = True
+        Me.chbroom2.Location = New System.Drawing.Point(315, 250)
+        Me.chbroom2.Name = "chbroom2"
+        Me.chbroom2.Size = New System.Drawing.Size(15, 14)
+        Me.chbroom2.TabIndex = 66
+        Me.chbroom2.UseVisualStyleBackColor = True
         '
-        'cbhroom3
+        'chbroom3
         '
-        Me.cbhroom3.AutoSize = True
-        Me.cbhroom3.Location = New System.Drawing.Point(484, 253)
-        Me.cbhroom3.Name = "cbhroom3"
-        Me.cbhroom3.Size = New System.Drawing.Size(15, 14)
-        Me.cbhroom3.TabIndex = 67
-        Me.cbhroom3.UseVisualStyleBackColor = True
+        Me.chbroom3.AutoSize = True
+        Me.chbroom3.Location = New System.Drawing.Point(484, 253)
+        Me.chbroom3.Name = "chbroom3"
+        Me.chbroom3.Size = New System.Drawing.Size(15, 14)
+        Me.chbroom3.TabIndex = 67
+        Me.chbroom3.UseVisualStyleBackColor = True
         '
-        'cbhroom1
+        'chbroom1
         '
-        Me.cbhroom1.AutoSize = True
-        Me.cbhroom1.Location = New System.Drawing.Point(484, 114)
-        Me.cbhroom1.Name = "cbhroom1"
-        Me.cbhroom1.Size = New System.Drawing.Size(15, 14)
-        Me.cbhroom1.TabIndex = 68
-        Me.cbhroom1.UseVisualStyleBackColor = True
+        Me.chbroom1.AutoSize = True
+        Me.chbroom1.Location = New System.Drawing.Point(484, 114)
+        Me.chbroom1.Name = "chbroom1"
+        Me.chbroom1.Size = New System.Drawing.Size(15, 14)
+        Me.chbroom1.TabIndex = 68
+        Me.chbroom1.UseVisualStyleBackColor = True
         '
         'chbgarage
         '
@@ -378,7 +378,7 @@ Partial Class frmplanta
         'lbcomport3
         '
         Me.lbcomport3.AutoSize = True
-        Me.lbcomport3.BackColor = System.Drawing.SystemColors.Highlight
+        Me.lbcomport3.BackColor = System.Drawing.SystemColors.HighlightText
         Me.lbcomport3.Location = New System.Drawing.Point(16, 213)
         Me.lbcomport3.Name = "lbcomport3"
         Me.lbcomport3.Size = New System.Drawing.Size(37, 13)
@@ -397,7 +397,7 @@ Partial Class frmplanta
         '
         'btnsubmit
         '
-        Me.btnsubmit.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btnsubmit.BackColor = System.Drawing.SystemColors.HighlightText
         Me.btnsubmit.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnsubmit.Location = New System.Drawing.Point(284, 442)
         Me.btnsubmit.Name = "btnsubmit"
@@ -415,9 +415,9 @@ Partial Class frmplanta
         Me.Controls.Add(Me.pbcamera)
         Me.Controls.Add(Me.lbcomport3)
         Me.Controls.Add(Me.chbgarage)
-        Me.Controls.Add(Me.cbhroom1)
-        Me.Controls.Add(Me.cbhroom3)
-        Me.Controls.Add(Me.cbhroom2)
+        Me.Controls.Add(Me.chbroom1)
+        Me.Controls.Add(Me.chbroom3)
+        Me.Controls.Add(Me.chbroom2)
         Me.Controls.Add(Me.chbliving)
         Me.Controls.Add(Me.chbdining)
         Me.Controls.Add(Me.pbfire)
@@ -494,9 +494,9 @@ Partial Class frmplanta
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort
     Friend WithEvents chbdining As CheckBox
     Friend WithEvents chbliving As CheckBox
-    Friend WithEvents cbhroom2 As CheckBox
-    Friend WithEvents cbhroom3 As CheckBox
-    Friend WithEvents cbhroom1 As CheckBox
+    Friend WithEvents chbroom2 As CheckBox
+    Friend WithEvents chbroom3 As CheckBox
+    Friend WithEvents chbroom1 As CheckBox
     Friend WithEvents chbgarage As CheckBox
     Friend WithEvents lbcomport3 As Label
     Private WithEvents pbcamera As PictureBox
