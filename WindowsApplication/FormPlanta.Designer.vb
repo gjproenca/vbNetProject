@@ -24,9 +24,6 @@ Partial Class frmplanta
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmplanta))
-        Me.pnlcamera = New System.Windows.Forms.Panel()
-        Me.pbcamera = New System.Windows.Forms.PictureBox()
-        Me.lbcamera = New System.Windows.Forms.Label()
         Me.pbfire = New System.Windows.Forms.PictureBox()
         Me.pblivingon = New System.Windows.Forms.PictureBox()
         Me.pblivingoff = New System.Windows.Forms.PictureBox()
@@ -43,20 +40,13 @@ Partial Class frmplanta
         Me.pbcamvig = New System.Windows.Forms.PictureBox()
         Me.btncomread = New System.Windows.Forms.Button()
         Me.btncomwrite = New System.Windows.Forms.Button()
-        Me.cbcomport = New System.Windows.Forms.ComboBox()
-        Me.lbcomport = New System.Windows.Forms.Label()
         Me.chbalarm = New System.Windows.Forms.CheckBox()
         Me.tbstatus = New System.Windows.Forms.TextBox()
         Me.lbstatus = New System.Windows.Forms.Label()
-        Me.lbalarm = New System.Windows.Forms.Label()
-        Me.btndelete = New System.Windows.Forms.Button()
-        Me.btninsert = New System.Windows.Forms.Button()
-        Me.btnupdate = New System.Windows.Forms.Button()
-        Me.btnselect = New System.Windows.Forms.Button()
+        Me.lbfirealarm = New System.Windows.Forms.Label()
         Me.tbmensagem = New System.Windows.Forms.TextBox()
         Me.lbmessage = New System.Windows.Forms.Label()
         Me.pbplanta = New System.Windows.Forms.PictureBox()
-        Me.btncomport = New System.Windows.Forms.Button()
         Me.pblogo = New System.Windows.Forms.PictureBox()
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.chbdining = New System.Windows.Forms.CheckBox()
@@ -65,8 +55,10 @@ Partial Class frmplanta
         Me.cbhroom3 = New System.Windows.Forms.CheckBox()
         Me.cbhroom1 = New System.Windows.Forms.CheckBox()
         Me.chbgarage = New System.Windows.Forms.CheckBox()
-        Me.pnlcamera.SuspendLayout()
-        CType(Me.pbcamera, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.lbcomport3 = New System.Windows.Forms.Label()
+        Me.pbcamera = New System.Windows.Forms.PictureBox()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.btnsubmit = New System.Windows.Forms.Button()
         CType(Me.pbfire, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pblivingon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pblivingoff, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,35 +75,8 @@ Partial Class frmplanta
         CType(Me.pbcamvig, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbplanta, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pblogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbcamera, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'pnlcamera
-        '
-        Me.pnlcamera.Controls.Add(Me.pbcamera)
-        Me.pnlcamera.Controls.Add(Me.lbcamera)
-        Me.pnlcamera.Location = New System.Drawing.Point(73, 32)
-        Me.pnlcamera.Name = "pnlcamera"
-        Me.pnlcamera.Size = New System.Drawing.Size(184, 142)
-        Me.pnlcamera.TabIndex = 63
-        Me.pnlcamera.Visible = False
-        '
-        'pbcamera
-        '
-        Me.pbcamera.Location = New System.Drawing.Point(0, 24)
-        Me.pbcamera.Name = "pbcamera"
-        Me.pbcamera.Size = New System.Drawing.Size(184, 118)
-        Me.pbcamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbcamera.TabIndex = 1
-        Me.pbcamera.TabStop = False
-        '
-        'lbcamera
-        '
-        Me.lbcamera.AutoSize = True
-        Me.lbcamera.Location = New System.Drawing.Point(79, 8)
-        Me.lbcamera.Name = "lbcamera"
-        Me.lbcamera.Size = New System.Drawing.Size(42, 13)
-        Me.lbcamera.TabIndex = 0
-        Me.lbcamera.Text = "camera"
         '
         'pbfire
         '
@@ -257,7 +222,7 @@ Partial Class frmplanta
         '
         Me.btncomread.BackColor = System.Drawing.SystemColors.Highlight
         Me.btncomread.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncomread.Location = New System.Drawing.Point(12, 194)
+        Me.btncomread.Location = New System.Drawing.Point(79, 207)
         Me.btncomread.Name = "btncomread"
         Me.btncomread.Size = New System.Drawing.Size(76, 23)
         Me.btncomread.TabIndex = 48
@@ -268,37 +233,17 @@ Partial Class frmplanta
         '
         Me.btncomwrite.BackColor = System.Drawing.SystemColors.Highlight
         Me.btncomwrite.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncomwrite.Location = New System.Drawing.Point(91, 194)
+        Me.btncomwrite.Location = New System.Drawing.Point(158, 207)
         Me.btncomwrite.Name = "btncomwrite"
         Me.btncomwrite.Size = New System.Drawing.Size(76, 23)
         Me.btncomwrite.TabIndex = 47
         Me.btncomwrite.Text = "Com Write"
         Me.btncomwrite.UseVisualStyleBackColor = False
         '
-        'cbcomport
-        '
-        Me.cbcomport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbcomport.FormattingEnabled = True
-        Me.cbcomport.Location = New System.Drawing.Point(78, 229)
-        Me.cbcomport.Name = "cbcomport"
-        Me.cbcomport.Size = New System.Drawing.Size(102, 21)
-        Me.cbcomport.TabIndex = 46
-        '
-        'lbcomport
-        '
-        Me.lbcomport.AutoSize = True
-        Me.lbcomport.BackColor = System.Drawing.SystemColors.Highlight
-        Me.lbcomport.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbcomport.Location = New System.Drawing.Point(13, 232)
-        Me.lbcomport.Name = "lbcomport"
-        Me.lbcomport.Size = New System.Drawing.Size(59, 16)
-        Me.lbcomport.TabIndex = 45
-        Me.lbcomport.Text = "Com_Port"
-        '
         'chbalarm
         '
         Me.chbalarm.AutoSize = True
-        Me.chbalarm.Location = New System.Drawing.Point(59, 282)
+        Me.chbalarm.Location = New System.Drawing.Point(80, 282)
         Me.chbalarm.Name = "chbalarm"
         Me.chbalarm.Size = New System.Drawing.Size(15, 14)
         Me.chbalarm.TabIndex = 44
@@ -322,60 +267,16 @@ Partial Class frmplanta
         Me.lbstatus.TabIndex = 42
         Me.lbstatus.Text = "Status"
         '
-        'lbalarm
+        'lbfirealarm
         '
-        Me.lbalarm.AutoSize = True
-        Me.lbalarm.BackColor = System.Drawing.SystemColors.Highlight
-        Me.lbalarm.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbalarm.Location = New System.Drawing.Point(13, 281)
-        Me.lbalarm.Name = "lbalarm"
-        Me.lbalarm.Size = New System.Drawing.Size(39, 16)
-        Me.lbalarm.TabIndex = 41
-        Me.lbalarm.Text = "Alarm"
-        '
-        'btndelete
-        '
-        Me.btndelete.BackColor = System.Drawing.SystemColors.Highlight
-        Me.btndelete.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btndelete.Location = New System.Drawing.Point(551, 442)
-        Me.btndelete.Name = "btndelete"
-        Me.btndelete.Size = New System.Drawing.Size(75, 23)
-        Me.btndelete.TabIndex = 40
-        Me.btndelete.Text = "Delete"
-        Me.btndelete.UseVisualStyleBackColor = False
-        '
-        'btninsert
-        '
-        Me.btninsert.BackColor = System.Drawing.SystemColors.Highlight
-        Me.btninsert.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btninsert.Location = New System.Drawing.Point(470, 442)
-        Me.btninsert.Name = "btninsert"
-        Me.btninsert.Size = New System.Drawing.Size(75, 23)
-        Me.btninsert.TabIndex = 39
-        Me.btninsert.Text = "Insert"
-        Me.btninsert.UseVisualStyleBackColor = False
-        '
-        'btnupdate
-        '
-        Me.btnupdate.BackColor = System.Drawing.SystemColors.Highlight
-        Me.btnupdate.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnupdate.Location = New System.Drawing.Point(389, 442)
-        Me.btnupdate.Name = "btnupdate"
-        Me.btnupdate.Size = New System.Drawing.Size(75, 23)
-        Me.btnupdate.TabIndex = 38
-        Me.btnupdate.Text = "Update"
-        Me.btnupdate.UseVisualStyleBackColor = False
-        '
-        'btnselect
-        '
-        Me.btnselect.BackColor = System.Drawing.SystemColors.Highlight
-        Me.btnselect.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnselect.Location = New System.Drawing.Point(308, 442)
-        Me.btnselect.Name = "btnselect"
-        Me.btnselect.Size = New System.Drawing.Size(75, 23)
-        Me.btnselect.TabIndex = 37
-        Me.btnselect.Text = "Select"
-        Me.btnselect.UseVisualStyleBackColor = False
+        Me.lbfirealarm.AutoSize = True
+        Me.lbfirealarm.BackColor = System.Drawing.SystemColors.Highlight
+        Me.lbfirealarm.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbfirealarm.Location = New System.Drawing.Point(13, 281)
+        Me.lbfirealarm.Name = "lbfirealarm"
+        Me.lbfirealarm.Size = New System.Drawing.Size(61, 16)
+        Me.lbfirealarm.TabIndex = 41
+        Me.lbfirealarm.Text = "Fire Alarm"
         '
         'tbmensagem
         '
@@ -406,17 +307,6 @@ Partial Class frmplanta
         Me.pbplanta.TabIndex = 34
         Me.pbplanta.TabStop = False
         '
-        'btncomport
-        '
-        Me.btncomport.BackColor = System.Drawing.SystemColors.Highlight
-        Me.btncomport.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncomport.Location = New System.Drawing.Point(12, 168)
-        Me.btncomport.Name = "btncomport"
-        Me.btncomport.Size = New System.Drawing.Size(99, 23)
-        Me.btncomport.TabIndex = 33
-        Me.btncomport.Text = "ComPort Scan"
-        Me.btncomport.UseVisualStyleBackColor = False
-        '
         'pblogo
         '
         Me.pblogo.Image = CType(resources.GetObject("pblogo.Image"), System.Drawing.Image)
@@ -429,7 +319,7 @@ Partial Class frmplanta
         '
         'SerialPort1
         '
-        Me.SerialPort1.PortName = "COM3"
+        Me.SerialPort1.PortName = "COM2"
         '
         'chbdining
         '
@@ -485,18 +375,51 @@ Partial Class frmplanta
         Me.chbgarage.TabIndex = 69
         Me.chbgarage.UseVisualStyleBackColor = True
         '
+        'lbcomport3
+        '
+        Me.lbcomport3.AutoSize = True
+        Me.lbcomport3.BackColor = System.Drawing.SystemColors.Highlight
+        Me.lbcomport3.Location = New System.Drawing.Point(16, 213)
+        Me.lbcomport3.Name = "lbcomport3"
+        Me.lbcomport3.Size = New System.Drawing.Size(37, 13)
+        Me.lbcomport3.TabIndex = 70
+        Me.lbcomport3.Text = "Com 3"
+        '
+        'pbcamera
+        '
+        Me.pbcamera.Location = New System.Drawing.Point(511, 347)
+        Me.pbcamera.Name = "pbcamera"
+        Me.pbcamera.Size = New System.Drawing.Size(139, 118)
+        Me.pbcamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbcamera.TabIndex = 71
+        Me.pbcamera.TabStop = False
+        Me.pbcamera.Visible = False
+        '
+        'btnsubmit
+        '
+        Me.btnsubmit.BackColor = System.Drawing.SystemColors.Highlight
+        Me.btnsubmit.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnsubmit.Location = New System.Drawing.Point(284, 442)
+        Me.btnsubmit.Name = "btnsubmit"
+        Me.btnsubmit.Size = New System.Drawing.Size(76, 23)
+        Me.btnsubmit.TabIndex = 72
+        Me.btnsubmit.Text = "Submit"
+        Me.btnsubmit.UseVisualStyleBackColor = False
+        '
         'frmplanta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(662, 477)
+        Me.Controls.Add(Me.btnsubmit)
+        Me.Controls.Add(Me.pbcamera)
+        Me.Controls.Add(Me.lbcomport3)
         Me.Controls.Add(Me.chbgarage)
         Me.Controls.Add(Me.cbhroom1)
         Me.Controls.Add(Me.cbhroom3)
         Me.Controls.Add(Me.cbhroom2)
         Me.Controls.Add(Me.chbliving)
         Me.Controls.Add(Me.chbdining)
-        Me.Controls.Add(Me.pnlcamera)
         Me.Controls.Add(Me.pbfire)
         Me.Controls.Add(Me.pblivingon)
         Me.Controls.Add(Me.pblivingoff)
@@ -513,26 +436,16 @@ Partial Class frmplanta
         Me.Controls.Add(Me.pbcamvig)
         Me.Controls.Add(Me.btncomread)
         Me.Controls.Add(Me.btncomwrite)
-        Me.Controls.Add(Me.cbcomport)
-        Me.Controls.Add(Me.lbcomport)
         Me.Controls.Add(Me.chbalarm)
         Me.Controls.Add(Me.tbstatus)
         Me.Controls.Add(Me.lbstatus)
-        Me.Controls.Add(Me.lbalarm)
-        Me.Controls.Add(Me.btndelete)
-        Me.Controls.Add(Me.btninsert)
-        Me.Controls.Add(Me.btnupdate)
-        Me.Controls.Add(Me.btnselect)
+        Me.Controls.Add(Me.lbfirealarm)
         Me.Controls.Add(Me.tbmensagem)
         Me.Controls.Add(Me.lbmessage)
         Me.Controls.Add(Me.pbplanta)
-        Me.Controls.Add(Me.btncomport)
         Me.Controls.Add(Me.pblogo)
         Me.Name = "frmplanta"
         Me.Text = "Planta"
-        Me.pnlcamera.ResumeLayout(False)
-        Me.pnlcamera.PerformLayout()
-        CType(Me.pbcamera, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbfire, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pblivingon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pblivingoff, System.ComponentModel.ISupportInitialize).EndInit()
@@ -549,14 +462,11 @@ Partial Class frmplanta
         CType(Me.pbcamvig, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbplanta, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pblogo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbcamera, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Private WithEvents pnlcamera As Panel
-    Private WithEvents pbcamera As PictureBox
-    Private WithEvents lbcamera As Label
     Private WithEvents pbfire As PictureBox
     Private WithEvents pblivingon As PictureBox
     Private WithEvents pblivingoff As PictureBox
@@ -573,20 +483,13 @@ Partial Class frmplanta
     Private WithEvents pbcamvig As PictureBox
     Private WithEvents btncomread As Button
     Private WithEvents btncomwrite As Button
-    Private WithEvents cbcomport As ComboBox
-    Private WithEvents lbcomport As Label
     Private WithEvents chbalarm As CheckBox
     Private WithEvents tbstatus As TextBox
     Private WithEvents lbstatus As Label
-    Private WithEvents lbalarm As Label
-    Private WithEvents btndelete As Button
-    Private WithEvents btninsert As Button
-    Private WithEvents btnupdate As Button
-    Private WithEvents btnselect As Button
+    Private WithEvents lbfirealarm As Label
     Private WithEvents tbmensagem As TextBox
     Private WithEvents lbmessage As Label
     Private WithEvents pbplanta As PictureBox
-    Private WithEvents btncomport As Button
     Private WithEvents pblogo As PictureBox
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort
     Friend WithEvents chbdining As CheckBox
@@ -595,4 +498,8 @@ Partial Class frmplanta
     Friend WithEvents cbhroom3 As CheckBox
     Friend WithEvents cbhroom1 As CheckBox
     Friend WithEvents chbgarage As CheckBox
+    Friend WithEvents lbcomport3 As Label
+    Private WithEvents pbcamera As PictureBox
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Private WithEvents btnsubmit As Button
 End Class

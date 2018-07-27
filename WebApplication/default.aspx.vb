@@ -9,25 +9,29 @@ Public Class _default
 
     Protected Sub buttonSubmit_Click(sender As Object, e As EventArgs) Handles buttonSubmit.Click
         Dim userMethods As New DAL.Methods
-        Dim userTypes As New DAL.Types.User
+        Dim user As New DAL.Types.User
 
-        userTypes.UserName = textBoxUsername.Text
-        userTypes.Password = textBoxPassword.Text
+        user.UserName = textBoxUsername.Text
+        user.Password = textBoxPassword.Text
 
-        Dim wrapper As New Simple3Des(userTypes.Password)
-        Dim cipherText As String = wrapper.EncryptData(userTypes.UserName)
+        Dim wrapper As New Simple3Des(user.Password)
+        Dim cipherText As String = wrapper.EncryptData(user.UserName)
 
-        userTypes.Password = cipherText
+        user.Password = cipherText
 
-        If (userMethods.UserLogin(userTypes).Rows.Count > 0) Then
-            Response.Write("Logged in user")
-            Session("user") = True
+        If (userMethods.UserLogin(user).Rows.Count > 0) Then
+            Session("userId") = userMethods.SelectID(user).Rows(0).Item(0)
             Response.Redirect("~/FrontEnd/default.aspx")
-        ElseIf (userMethods.AdminLogin(userTypes).Rows.Count > 0) Then
-            Session("admin") = True
+        ElseIf (userMethods.AdminLogin(user).Rows.Count > 0) Then
+            Session("adminId") = userMethods.SelectID(user).Rows(0).Item(0)
             Response.Redirect("~/BackEnd/default.aspx")
         Else
             Response.Write("Wrong username or password")
         End If
+
+
+
+
+
     End Sub
 End Class

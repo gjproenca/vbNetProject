@@ -22,13 +22,20 @@ Public Class register
         user.Password = cipherText
 
         If (methods.VerifyUser(user).Rows.Count > 0) Then
-            Response.Write("<script>alert('Username already registered!')</script>")
+            'Response.Write("<script>alert('Username already registered!')</script>")
+            ClientScript.RegisterClientScriptBlock(Me.GetType, "alert", "alert('User has been registered successfully')", True)
         Else
             methods.InsertUser(user)
             methods.InsertPermissions(permission)
             'FIXME: alert not showing
-            Response.Write("<script>alert('Success!')</script>")
-            Response.Redirect("~/BackEnd/register-users.aspx")
+            'Response.Write("<script>alert('Success!')</script>")
+
+            ' ClientScriptManager.RegisterClientScriptBlock(Me.GetType, "alert", "alert('Database updated.')", True)
+
+            ClientScript.RegisterClientScriptBlock(Me.GetType, "alert", "alert('User has been registered successfully')", True)
+
+
+            Response.Redirect("~/BackEnd/default.aspx")
         End If
     End Sub
 End Class

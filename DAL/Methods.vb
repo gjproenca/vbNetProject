@@ -73,6 +73,7 @@ Public Class Methods
         conn.Close()
     End Sub
 
+    '---Status---
     Public Function SelectStatus() As DataTable
         Dim comando As SqlDataAdapter = New SqlDataAdapter("SELECT IdStatus, IdUser, SoftwareStatus, Alarm, Fire, Message, LightBedR1, LightBedR2, LightBedR3, LightLiving, LightDining, LightGarage, TimeStamp FROM Status", conn)
         Dim tabela As DataTable = New DataTable()
@@ -155,5 +156,20 @@ Public Class Methods
         comm_insert.ExecuteNonQuery()
         conn.Close()
     End Sub
+
+    '---User---
+    Public Function SelectID(ByVal U As User) As DataTable
+        Dim comando As SqlDataAdapter = New SqlDataAdapter("SELECT IdUser FROM Users WHERE UserName LIKE '" + U.UserName + "' AND Password LIKE '" + U.Password + "'", conn)
+        Dim tabela As DataTable = New DataTable()
+        comando.Fill(tabela)
+        Return tabela
+    End Function
+
+    Public Function SelectPermissionsByUserId(ByVal U As User) As DataTable
+        Dim comando As SqlDataAdapter = New SqlDataAdapter("SELECT IdPermission ,IdUser, SoftwareStatus, Alarm, Fire, Message, LightBedR1, LightBedR2, LightBedR3, LightLiving, LightDining, LightGarage, TimeStamp FROM Permissions WHERE IdUser = " + U.IdUser.ToString(), conn)
+        Dim tabela As DataTable = New DataTable()
+        comando.Fill(tabela)
+        Return tabela
+    End Function
 
 End Class
