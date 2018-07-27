@@ -30,6 +30,77 @@ Public Class frmplanta
         chbdining.Checked = methods.SelectStatus.Rows(0).Item(10).ToString()
         chbgarage.Checked = methods.SelectStatus.Rows(0).Item(11).ToString()
 
+        If chbgarage.Checked = True Then
+            pbgaron.Visible = True
+        Else
+            pbgaron.Visible = False
+        End If
+
+        If chbgarage.Checked = False Then
+            pbgaroff.Visible = True
+        Else
+            pbgaroff.Visible = False
+        End If
+        '--------------------------
+        If chbdining.Checked = True Then
+            pbdiningon.Visible = True
+        Else
+            pbdiningon.Visible = False
+        End If
+
+        If chbdining.Checked = False Then
+            pbdiningoff.Visible = True
+        Else
+            pbdiningoff.Visible = False
+        End If
+        '---------------------------
+        If chbliving.Checked = True Then
+            pblivingon.Visible = True
+        Else
+            pblivingon.Visible = False
+        End If
+
+        If chbliving.Checked = False Then
+            pblivingoff.Visible = True
+        Else
+            pblivingoff.Visible = False
+        End If
+        '---------------------------
+        If chbroom1.Checked = True Then
+            pbroom1on.Visible = True
+        Else
+            pbroom1on.Visible = False
+        End If
+
+        If chbroom1.Checked = False Then
+            pbroom1off.Visible = True
+        Else
+            pbroom1off.Visible = False
+        End If
+        '---------------------------
+        If chbroom2.Checked = True Then
+            pbroom2on.Visible = True
+        Else
+            pbroom2on.Visible = False
+        End If
+
+        If chbroom2.Checked = False Then
+            pbroom2off.Visible = True
+        Else
+            pbroom2off.Visible = False
+        End If
+        '----------------------------
+        If chbroom3.Checked = True Then
+            pbroom3on.Visible = True
+        Else
+            pbroom3on.Visible = False
+        End If
+
+        If chbroom3.Checked = False Then
+            pbroom3off.Visible = True
+        Else
+            pbroom3off.Visible = False
+        End If
     End Sub
 
 
@@ -95,5 +166,10 @@ Public Class frmplanta
 
     Private Sub tbstatus_TextChanged(sender As Object, e As EventArgs) Handles tbstatus.TextChanged
 
+    End Sub
+
+    Private Sub chbgarage_CheckedChanged(sender As Object, e As EventArgs) Handles chbgarage.CheckedChanged
+
+        LoadFields()
     End Sub
 End Class
