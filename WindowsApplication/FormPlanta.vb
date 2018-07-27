@@ -12,14 +12,23 @@ Public Class frmplanta
     Dim com As IO.Ports.SerialPort = Nothing
     Dim cameras As VideoCaptureDeviceForm = New VideoCaptureDeviceForm
 
-    Dim methods As DAL.Methods
+    Dim methods As New DAL.Methods
 
     Private Sub frmplanta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadFields()
     End Sub
 
     Private Sub LoadFields()
-        'tbstatus.Text = methods.SelectStatus.Rows(0).Item(2).ToString()
+        tbstatus.Text = methods.SelectStatus.Rows(0).Item(2).ToString()
+        chbalarm.Checked = methods.SelectStatus.Rows(0).Item(3).ToString()
+        pbfire.Visible = methods.SelectStatus.Rows(0).Item(4).ToString()
+        tbmensagem.Text = methods.SelectStatus.Rows(0).Item(5).ToString()
+        chbroom1.Checked = methods.SelectStatus.Rows(0).Item(6).ToString()
+        chbroom2.Checked = methods.SelectStatus.Rows(0).Item(7).ToString()
+        chbroom3.Checked = methods.SelectStatus.Rows(0).Item(8).ToString()
+        chbliving.Checked = methods.SelectStatus.Rows(0).Item(9).ToString()
+        chbdining.Checked = methods.SelectStatus.Rows(0).Item(10).ToString()
+        chbgarage.Checked = methods.SelectStatus.Rows(0).Item(11).ToString()
 
     End Sub
 
