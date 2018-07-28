@@ -20,6 +20,13 @@ Public Class Methods
         Return tabela
     End Function
 
+    Public Function SelectMessages() As DataTable
+        Dim comando As SqlDataAdapter = New SqlDataAdapter("SELECT Message, TimeStamp FROM Status ORDER BY IdStatus DESC", conn)
+        Dim tabela As DataTable = New DataTable()
+        comando.Fill(tabela)
+        Return tabela
+    End Function
+
 #Region "User"
 
     Public Function VerifyUser(ByVal U As User) As DataTable
@@ -169,19 +176,6 @@ Public Class Methods
         comm_update.ExecuteNonQuery()
         conn.Close()
     End Sub
-
-    'Public Sub UpdateMessage(ByVal S As Status)
-    '    Dim comm_update As SqlCommand = New SqlCommand()
-    '    comm_update.Connection = conn
-    '    comm_update.CommandType = CommandType.Text
-    '    comm_update.CommandText = "UPDATE Status SET Message = @Message"
-
-    '    comm_update.Parameters.AddWithValue("@Message", S.Message)
-
-    '    conn.Open()
-    '    comm_update.ExecuteNonQuery()
-    '    conn.Close()
-    'End Sub
 
     Public Sub UpdateLightBedR1(ByVal S As Status)
         Dim comm_update As SqlCommand = New SqlCommand()

@@ -91,9 +91,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication.control_panel_iframe._TextBox1">
+<member name="F:WebApplication.control_panel_iframe._textBoxSendMessage">
 <summary>
-TextBox1 control.
+textBoxSendMessage control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -181,9 +181,9 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication.control_panel_iframe._TextBox2">
+<member name="F:WebApplication.control_panel_iframe._textBoxViewMessages">
 <summary>
-TextBox2 control.
+textBoxViewMessages control.
 </summary>
 <remarks>
 Auto-generated field.

@@ -68,13 +68,13 @@ Partial Public Class control_panel_iframe
     Protected WithEvents checkBoxAlarm As Global.System.Web.UI.WebControls.CheckBox
     
     '''<summary>
-    '''TextBox1 control.
+    '''textBoxSendMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox1 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents textBoxSendMessage As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''buttonFire control.
@@ -158,13 +158,13 @@ Partial Public Class control_panel_iframe
     Protected WithEvents checkBoxLightBedR3 As Global.System.Web.UI.WebControls.CheckBox
     
     '''<summary>
-    '''TextBox2 control.
+    '''textBoxViewMessages control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents TextBox2 As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents textBoxViewMessages As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
     '''buttonLiving control.

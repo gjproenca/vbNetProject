@@ -64,7 +64,7 @@
 
                                 <div class="card-body">
                                     <h1 class="mb-4 text-center text-white">Control Panel</h1>
-                                    <iframe class="col-12 table table-hover table-responsive table-light" src="iframe-control-panel.aspx" height="500px" frameborder="0"></iframe>
+                                    <iframe class="col-12 table table-hover table-responsive table-light" src="iframe-control-panel.aspx" height="363px" frameborder="0"></iframe>
                                 </div>
                             </div>
                         </div>

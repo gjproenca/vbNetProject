@@ -54,7 +54,7 @@
                         <asp:Button ID="buttonStatus" runat="server" />
                     </td>
                     <td class="auto-style9">
-                        <asp:CheckBox ID="checkBoxStatus" runat="server" />
+                        <asp:CheckBox ID="checkBoxStatus" runat="server" Enabled="False" />
                     </td>
                     <td>
                         <asp:Button ID="buttonMessage" runat="server" Text="Send Message" />
@@ -65,10 +65,10 @@
                         <asp:Button ID="buttonAlarm" runat="server" />
                     </td>
                     <td class="auto-style9">
-                        <asp:CheckBox ID="checkBoxAlarm" runat="server" />
+                        <asp:CheckBox ID="checkBoxAlarm" runat="server" Enabled="False" />
                     </td>
                     <td rowspan="3">
-                        <asp:TextBox ID="TextBox1" runat="server" Height="89px" TextMode="MultiLine" Width="517px"></asp:TextBox>
+                        <asp:TextBox ID="textBoxSendMessage" runat="server" Height="89px" TextMode="MultiLine" Width="517px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -76,7 +76,7 @@
                         <asp:Button ID="buttonFire" runat="server" />
                     </td>
                     <td class="auto-style9">
-                        <asp:CheckBox ID="checkBoxFire" runat="server" />
+                        <asp:CheckBox ID="checkBoxFire" runat="server" Enabled="False" />
                     </td>
                 </tr>
                 <tr>
@@ -84,7 +84,7 @@
                         <asp:Button ID="buttonLightBedR1" runat="server" CssClass="auto-style1" />
                     </td>
                     <td class="auto-style9">
-                        <asp:CheckBox ID="checkBoxLightBedR1" runat="server" />
+                        <asp:CheckBox ID="checkBoxLightBedR1" runat="server" Enabled="False" />
                     </td>
                 </tr>
                 <tr>
@@ -92,7 +92,7 @@
                         <asp:Button ID="buttonLightBedR2" runat="server" />
                     </td>
                     <td class="auto-style9">
-                        <asp:CheckBox ID="checkBoxLightBedR2" runat="server" />
+                        <asp:CheckBox ID="checkBoxLightBedR2" runat="server" Enabled="False" />
                     </td>
                     <td>
                         <asp:Label ID="Label1" runat="server" Text="Messages"></asp:Label>
@@ -103,10 +103,10 @@
                         <asp:Button ID="buttonLightBedR3" runat="server" />
                     </td>
                     <td class="auto-style10">
-                        <asp:CheckBox ID="checkBoxLightBedR3" runat="server" />
+                        <asp:CheckBox ID="checkBoxLightBedR3" runat="server" Enabled="False" />
                     </td>
                     <td rowspan="4">
-                        <asp:TextBox ID="TextBox2" runat="server" Height="123px" TextMode="MultiLine" Width="517px"></asp:TextBox>
+                        <asp:TextBox ID="textBoxViewMessages" runat="server" Height="123px" TextMode="MultiLine" Width="517px" ReadOnly="True"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -114,7 +114,7 @@
                         <asp:Button ID="buttonLiving" runat="server" />
                     </td>
                     <td class="auto-style9">
-                        <asp:CheckBox ID="checkBoxLiving" runat="server" />
+                        <asp:CheckBox ID="checkBoxLiving" runat="server" Enabled="False" />
                     </td>
                 </tr>
                 <tr>
@@ -122,7 +122,7 @@
                         <asp:Button ID="buttonDining" runat="server" />
                     </td>
                     <td class="auto-style9">
-                        <asp:CheckBox ID="checkBoxDining" runat="server" />
+                        <asp:CheckBox ID="checkBoxDining" runat="server" Enabled="False" />
                     </td>
                 </tr>
                 <tr>
@@ -130,7 +130,7 @@
                         <asp:Button ID="buttonGarage" runat="server" />
                     </td>
                     <td class="auto-style9">
-                        <asp:CheckBox ID="checkBoxGarage" runat="server" />
+                        <asp:CheckBox ID="checkBoxGarage" runat="server" Enabled="False" />
                     </td>
                 </tr>
                 </table>
