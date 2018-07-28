@@ -59,6 +59,7 @@ Partial Class frmplanta
         Me.pbcamera = New System.Windows.Forms.PictureBox()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.btnsubmit = New System.Windows.Forms.Button()
+        Me.timer = New System.Windows.Forms.Timer(Me.components)
         CType(Me.pbfire, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pblivingon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pblivingoff, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -408,6 +409,10 @@ Partial Class frmplanta
         Me.btnsubmit.Text = "Submit"
         Me.btnsubmit.UseVisualStyleBackColor = False
         '
+        'timer
+        '
+        Me.timer.Interval = 1000
+        '
         'frmplanta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -504,4 +509,5 @@ Partial Class frmplanta
     Private WithEvents pbcamera As PictureBox
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Private WithEvents btnsubmit As Button
+    Friend WithEvents timer As Timer
 End Class

@@ -15,11 +15,14 @@ Public Class frmplanta
     Dim methods As New DAL.Methods
 
     Private Sub frmplanta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        timer.Enabled = True
+        timer.Start()
+
         LoadFields()
     End Sub
 
     Private Sub LoadFields()
-        tbstatus.Text = methods.SelectStatus.Rows(0).Item(2).ToString()
+        'tbstatus.Text = methods.SelectStatus.Rows(0).Item(2).ToString()
         chbalarm.Checked = methods.SelectStatus.Rows(0).Item(3).ToString()
         pbfire.Visible = methods.SelectStatus.Rows(0).Item(4).ToString()
         tbmensagem.Text = methods.SelectStatus.Rows(0).Item(5).ToString()
@@ -101,6 +104,12 @@ Public Class frmplanta
         Else
             pbroom3off.Visible = False
         End If
+        '-----------------------------
+        If methods.SelectStatus.Rows(0).Item(2) = True Then
+            tbstatus.Text = "On"
+        Else
+            tbstatus.Text = "Off"
+        End If
     End Sub
 
 
@@ -159,17 +168,11 @@ Public Class frmplanta
         SerialPort1.Encoding = System.Text.Encoding.Default
     End Sub
 
-    Private Sub btnsubmit_Click(sender As Object, e As EventArgs) Handles btnsubmit.Click
-
-
-    End Sub
-
-    Private Sub tbstatus_TextChanged(sender As Object, e As EventArgs) Handles tbstatus.TextChanged
-
-    End Sub
-
     Private Sub chbgarage_CheckedChanged(sender As Object, e As EventArgs) Handles chbgarage.CheckedChanged
+        LoadFields()
+    End Sub
 
+    Private Sub timer_Tick(sender As Object, e As EventArgs) Handles timer.Tick
         LoadFields()
     End Sub
 End Class
