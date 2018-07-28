@@ -157,6 +157,7 @@ Partial Class frmplanta
         Me.pbgaron.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbgaron.TabIndex = 55
         Me.pbgaron.TabStop = False
+        Me.pbgaron.Visible = False
         '
         'pbgaroff
         '
@@ -167,6 +168,7 @@ Partial Class frmplanta
         Me.pbgaroff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbgaroff.TabIndex = 54
         Me.pbgaroff.TabStop = False
+        Me.pbgaroff.Visible = False
         '
         'pbroom1on
         '
