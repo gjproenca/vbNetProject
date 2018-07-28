@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="refresh" content="13">
+    <%--<meta http-equiv="refresh" content="13">--%>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,65 +13,130 @@
     <!-- Bootstrap CSS -->
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
 
-    <%--My CSS--%>
-    <%--<link href="content/font-awesome.min.css" rel="stylesheet" />--%>
+    <%--My CSS--%><%--<link href="content/font-awesome.min.css" rel="stylesheet" />--%>
 
     <title>VBNet Avaliação</title>
+    <style type="text/css">
+        .auto-style1 {
+            margin-right: 0;
+            margin-bottom: 1;
+        }
+
+        .auto-style3 {
+            width: 260px;
+        }
+
+        .auto-style7 {
+            width: 260px;
+            height: 35px;
+        }
+        .auto-style9 {
+            width: 549px;
+        }
+        .auto-style10 {
+            height: 35px;
+            width: 549px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:GridView ID="GridViewStatus" runat="server" AutoGenerateColumns="False" DataKeyNames="IdStatus" DataSourceID="SqlDataSource1" EmptyDataText="There are no data records to display." CssClass="table table-hover table-responsive table-light" AllowPaging="True" AllowSorting="True" GridLines="None" AutoGenerateEditButton="False">
-                <Columns>
-                    <asp:CommandField ShowEditButton="True" />
-                    <asp:BoundField DataField="IdStatus" HeaderText="IdStatus" InsertVisible="False" ReadOnly="True" SortExpression="IdStatus" Visible="False" />
-                    <asp:BoundField DataField="IdUser" HeaderText="IdUser" SortExpression="IdUser" Visible="False" />
-                    <asp:CheckBoxField DataField="SoftwareStatus" HeaderText="SoftwareStatus" SortExpression="SoftwareStatus" />
-                    <asp:CheckBoxField DataField="Alarm" HeaderText="Alarm" SortExpression="Alarm" />
-                    <asp:CheckBoxField DataField="Fire" HeaderText="Fire" SortExpression="Fire" />
-                    <asp:BoundField DataField="Message" HeaderText="Message" SortExpression="Message" />
-                    <asp:CheckBoxField DataField="LightBedR1" HeaderText="LightBedR1" SortExpression="LightBedR1" />
-                    <asp:CheckBoxField DataField="LightBedR2" HeaderText="LightBedR2" SortExpression="LightBedR2" />
-                    <asp:CheckBoxField DataField="LightBedR3" HeaderText="LightBedR3" SortExpression="LightBedR3" />
-                    <asp:CheckBoxField DataField="LightLiving" HeaderText="LightLiving" SortExpression="LightLiving" />
-                    <asp:CheckBoxField DataField="LightDining" HeaderText="LightDining" SortExpression="LightDining" />
-                    <asp:CheckBoxField DataField="LightGarage" HeaderText="LightGarage" SortExpression="LightGarage" />
-                    <asp:BoundField DataField="TimeStamp" HeaderText="TimeStamp" SortExpression="TimeStamp" ReadOnly="True" />
-                </Columns>
-            </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DomoSysConnectionString %>" DeleteCommand="DELETE FROM [Status] WHERE [IdStatus] = @IdStatus" InsertCommand="INSERT INTO [Status] ([IdUser], [SoftwareStatus], [Alarm], [Fire], [Message], [LightBedR1], [LightBedR2], [LightBedR3], [LightLiving], [LightDining], [LightGarage], [TimeStamp]) VALUES (@IdUser, @SoftwareStatus, @Alarm, @Fire, @Message, @LightBedR1, @LightBedR2, @LightBedR3, @LightLiving, @LightDining, @LightGarage, @TimeStamp)" SelectCommand="SELECT [IdStatus], [IdUser], [SoftwareStatus], [Alarm], [Fire], [Message], [LightBedR1], [LightBedR2], [LightBedR3], [LightLiving], [LightDining], [LightGarage], [TimeStamp] FROM [Status]" UpdateCommand="UPDATE [Status] SET [SoftwareStatus] = @SoftwareStatus, [Alarm] = @Alarm, [Fire] = @Fire, [Message] = @Message, [LightBedR1] = @LightBedR1, [LightBedR2] = @LightBedR2, [LightBedR3] = @LightBedR3, [LightLiving] = @LightLiving, [LightDining] = @LightDining, [LightGarage] = @LightGarage, [TimeStamp] = GETDATE()  WHERE [IdStatus] = @IdStatus">
-                <DeleteParameters>
-                    <asp:Parameter Name="IdStatus" Type="Int32" />
-                </DeleteParameters>
-                <InsertParameters>
-                    <asp:Parameter Name="IdUser" Type="Int32" />
-                    <asp:Parameter Name="SoftwareStatus" Type="Boolean" />
-                    <asp:Parameter Name="Alarm" Type="Boolean" />
-                    <asp:Parameter Name="Fire" Type="Boolean" />
-                    <asp:Parameter Name="Message" Type="String" />
-                    <asp:Parameter Name="LightBedR1" Type="Boolean" />
-                    <asp:Parameter Name="LightBedR2" Type="Boolean" />
-                    <asp:Parameter Name="LightBedR3" Type="Boolean" />
-                    <asp:Parameter Name="LightLiving" Type="Boolean" />
-                    <asp:Parameter Name="LightDining" Type="Boolean" />
-                    <asp:Parameter Name="LightGarage" Type="Boolean" />
-                    <asp:Parameter Name="TimeStamp" Type="DateTime" />
-                </InsertParameters>
-                <UpdateParameters>
-                    <asp:Parameter Name="IdUser" Type="Int32" />
-                    <asp:Parameter Name="SoftwareStatus" Type="Boolean" />
-                    <asp:Parameter Name="Alarm" Type="Boolean" />
-                    <asp:Parameter Name="Fire" Type="Boolean" />
-                    <asp:Parameter Name="Message" Type="String" />
-                    <asp:Parameter Name="LightBedR1" Type="Boolean" />
-                    <asp:Parameter Name="LightBedR2" Type="Boolean" />
-                    <asp:Parameter Name="LightBedR3" Type="Boolean" />
-                    <asp:Parameter Name="LightLiving" Type="Boolean" />
-                    <asp:Parameter Name="LightDining" Type="Boolean" />
-                    <asp:Parameter Name="LightGarage" Type="Boolean" />
-                    <asp:Parameter Name="IdStatus" Type="Int32" />
-                </UpdateParameters>
-            </asp:SqlDataSource>
+            <br />
+            <table class="w-100">
+                <tr>
+                    <td class="auto-style3">&nbsp;</td>
+                    <td class="auto-style9">&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">
+                        <asp:Button ID="buttonStatus" runat="server" />
+                    </td>
+                    <td class="auto-style9">
+                        <asp:CheckBox ID="checkBoxStatus" runat="server" />
+                    </td>
+                    <td>
+                        <asp:Button ID="buttonMessage" runat="server" Text="Send Message" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">
+                        <asp:Button ID="buttonAlarm" runat="server" />
+                    </td>
+                    <td class="auto-style9">
+                        <asp:CheckBox ID="checkBoxAlarm" runat="server" />
+                    </td>
+                    <td rowspan="3">
+                        <asp:TextBox ID="TextBox1" runat="server" Height="89px" TextMode="MultiLine" Width="517px"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">
+                        <asp:Button ID="buttonFire" runat="server" />
+                    </td>
+                    <td class="auto-style9">
+                        <asp:CheckBox ID="checkBoxFire" runat="server" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">
+                        <asp:Button ID="buttonLightBedR1" runat="server" CssClass="auto-style1" />
+                    </td>
+                    <td class="auto-style9">
+                        <asp:CheckBox ID="checkBoxLightBedR1" runat="server" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">
+                        <asp:Button ID="buttonLightBedR2" runat="server" />
+                    </td>
+                    <td class="auto-style9">
+                        <asp:CheckBox ID="checkBoxLightBedR2" runat="server" />
+                    </td>
+                    <td>
+                        <asp:Label ID="Label1" runat="server" Text="Messages"></asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style7">
+                        <asp:Button ID="buttonLightBedR3" runat="server" />
+                    </td>
+                    <td class="auto-style10">
+                        <asp:CheckBox ID="checkBoxLightBedR3" runat="server" />
+                    </td>
+                    <td rowspan="4">
+                        <asp:TextBox ID="TextBox2" runat="server" Height="123px" TextMode="MultiLine" Width="517px"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">
+                        <asp:Button ID="buttonLiving" runat="server" />
+                    </td>
+                    <td class="auto-style9">
+                        <asp:CheckBox ID="checkBoxLiving" runat="server" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">
+                        <asp:Button ID="buttonDining" runat="server" />
+                    </td>
+                    <td class="auto-style9">
+                        <asp:CheckBox ID="checkBoxDining" runat="server" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">
+                        <asp:Button ID="buttonGarage" runat="server" />
+                    </td>
+                    <td class="auto-style9">
+                        <asp:CheckBox ID="checkBoxGarage" runat="server" />
+                    </td>
+                </tr>
+                </table>
+
+
+
         </div>
     </form>
 
