@@ -250,6 +250,8 @@ Public Class frmplanta
 
         methods.InsertStatus(status)
 
+        tbsendmessage.Text = ""
+
         LoadFields()
     End Sub
 End Class
