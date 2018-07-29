@@ -23,16 +23,8 @@ Public Class frmplanta
     End Sub
 
     Private Sub LoadFields()
-        'tbstatus.Text = methods.SelectStatus.Rows(0).Item(2).ToString()
-        chbalarm.Checked = methods.SelectStatus.Rows(0).Item(3).ToString()
+        'chbalarm.Checked = methods.SelectStatus.Rows(0).Item(3).ToString()
         pbfire.Visible = methods.SelectStatus.Rows(0).Item(4).ToString()
-        tbmensagem.Text = methods.SelectStatus.Rows(0).Item(5).ToString()
-        'chbroom1.Checked = methods.SelectStatus.Rows(0).Item(6).ToString()
-        'chbroom2.Checked = methods.SelectStatus.Rows(0).Item(7).ToString()
-        'chbroom3.Checked = methods.SelectStatus.Rows(0).Item(8).ToString()
-        'chbliving.Checked = methods.SelectStatus.Rows(0).Item(9).ToString()
-        'chbdining.Checked = methods.SelectStatus.Rows(0).Item(10).ToString()
-        'chbgarage.Checked = methods.SelectStatus.Rows(0).Item(11).ToString()
 
         If methods.SelectStatus.Rows(0).Item(11) = True Then
             pbgaron.Visible = True
@@ -81,12 +73,24 @@ Public Class frmplanta
             pbroom3on.Visible = False
             pbroom3off.Visible = True
         End If
-        '-----------------------------
+        '---------------------------
         If methods.SelectStatus.Rows(0).Item(2) = True Then
-            tbstatus.Text = "On"
+            btstatus.Text = "Status OFF"
         Else
-            tbstatus.Text = "Off"
+            btstatus.Text = "Status ON"
         End If
+        '----------------------------
+        If methods.SelectStatus.Rows(0).Item(4) = True Then
+            btfire.Text = "Fire OFF"
+        Else
+            btfire.Text = "Fire ON"
+        End If
+        '---View Messages
+        tbmensagem.Text = ""
+        For Each row As DataRow In methods.SelectMessages().Rows
+            tbmensagem.Text &= row.Item("TimeStamp") & " - " & row.Item("Message") & "" & Environment.NewLine
+        Next row
+
     End Sub
 
     Private Sub btninsert_Click(sender As Object, e As EventArgs)
@@ -125,11 +129,6 @@ Public Class frmplanta
     Private Sub pbcamera_MouseLeave(sender As Object, e As EventArgs)
         pbcamera.SizeMode = PictureBoxSizeMode.StretchImage
 
-    End Sub
-
-    Private Sub cbcomport_SelectedIndexChanged(sender As Object, e As EventArgs)
-        btncomread.Enabled = True
-        btncomwrite.Enabled = True
     End Sub
 
     Private Sub btnconnect_Click(sender As Object, e As EventArgs)
@@ -221,6 +220,36 @@ Public Class frmplanta
     Private Sub pbgaroff_Click(sender As Object, e As EventArgs) Handles pbgaroff.Click
         status.LightGarage = Not methods.SelectStatus.Rows(0).Item(11)
         methods.UpdateLightGarage(status)
+        LoadFields()
+    End Sub
+
+    Private Sub btstatus_Click(sender As Object, e As EventArgs) Handles btstatus.Click
+        status.SoftwareStatus = Not methods.SelectStatus.Rows(0).Item(2)
+        methods.UpdateSoftwareStatus(status)
+        LoadFields()
+    End Sub
+
+    Private Sub btfire_Click(sender As Object, e As EventArgs) Handles btfire.Click
+        status.Fire = Not methods.SelectStatus.Rows(0).Item(4)
+        methods.UpdateStatusFire(status)
+        LoadFields()
+    End Sub
+
+    Private Sub btsendmessage_Click(sender As Object, e As EventArgs) Handles btsendmessage.Click
+        status.IdUser = 1
+        status.SoftwareStatus = methods.SelectStatus.Rows(0).Item(2)
+        status.Alarm = methods.SelectStatus.Rows(0).Item(3)
+        status.Fire = methods.SelectStatus.Rows(0).Item(4)
+        status.Message = tbsendmessage.Text
+        status.LightBedR1 = methods.SelectStatus.Rows(0).Item(6)
+        status.LightBedR2 = methods.SelectStatus.Rows(0).Item(7)
+        status.LightBedR3 = methods.SelectStatus.Rows(0).Item(8)
+        status.LightLiving = methods.SelectStatus.Rows(0).Item(9)
+        status.LightDining = methods.SelectStatus.Rows(0).Item(10)
+        status.LightGarage = methods.SelectStatus.Rows(0).Item(11)
+
+        methods.InsertStatus(status)
+
         LoadFields()
     End Sub
 End Class

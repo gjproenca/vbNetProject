@@ -38,22 +38,17 @@ Partial Class frmplanta
         Me.pbdiningon = New System.Windows.Forms.PictureBox()
         Me.pbdiningoff = New System.Windows.Forms.PictureBox()
         Me.pbcamvig = New System.Windows.Forms.PictureBox()
-        Me.btncomread = New System.Windows.Forms.Button()
-        Me.btncomwrite = New System.Windows.Forms.Button()
-        Me.chbalarm = New System.Windows.Forms.CheckBox()
-        Me.tbstatus = New System.Windows.Forms.TextBox()
-        Me.lbstatus = New System.Windows.Forms.Label()
-        Me.lbfirealarm = New System.Windows.Forms.Label()
         Me.tbmensagem = New System.Windows.Forms.TextBox()
         Me.lbmessage = New System.Windows.Forms.Label()
         Me.pbplanta = New System.Windows.Forms.PictureBox()
-        Me.pblogo = New System.Windows.Forms.PictureBox()
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
-        Me.lbcomport3 = New System.Windows.Forms.Label()
         Me.pbcamera = New System.Windows.Forms.PictureBox()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.btnsubmit = New System.Windows.Forms.Button()
         Me.timer = New System.Windows.Forms.Timer(Me.components)
+        Me.tbsendmessage = New System.Windows.Forms.TextBox()
+        Me.btsendmessage = New System.Windows.Forms.Button()
+        Me.btfire = New System.Windows.Forms.Button()
+        Me.btstatus = New System.Windows.Forms.Button()
         CType(Me.pbfire, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pblivingon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pblivingoff, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,7 +64,6 @@ Partial Class frmplanta
         CType(Me.pbdiningoff, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbcamvig, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbplanta, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pblogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbcamera, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -215,72 +209,13 @@ Partial Class frmplanta
         Me.pbcamvig.TabIndex = 49
         Me.pbcamvig.TabStop = False
         '
-        'btncomread
-        '
-        Me.btncomread.BackColor = System.Drawing.SystemColors.HighlightText
-        Me.btncomread.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncomread.Location = New System.Drawing.Point(79, 207)
-        Me.btncomread.Name = "btncomread"
-        Me.btncomread.Size = New System.Drawing.Size(76, 23)
-        Me.btncomread.TabIndex = 48
-        Me.btncomread.Text = "Com Read"
-        Me.btncomread.UseVisualStyleBackColor = False
-        '
-        'btncomwrite
-        '
-        Me.btncomwrite.BackColor = System.Drawing.SystemColors.HighlightText
-        Me.btncomwrite.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btncomwrite.Location = New System.Drawing.Point(158, 207)
-        Me.btncomwrite.Name = "btncomwrite"
-        Me.btncomwrite.Size = New System.Drawing.Size(76, 23)
-        Me.btncomwrite.TabIndex = 47
-        Me.btncomwrite.Text = "Com Write"
-        Me.btncomwrite.UseVisualStyleBackColor = False
-        '
-        'chbalarm
-        '
-        Me.chbalarm.AutoSize = True
-        Me.chbalarm.Location = New System.Drawing.Point(80, 282)
-        Me.chbalarm.Name = "chbalarm"
-        Me.chbalarm.Size = New System.Drawing.Size(15, 14)
-        Me.chbalarm.TabIndex = 44
-        Me.chbalarm.UseVisualStyleBackColor = True
-        '
-        'tbstatus
-        '
-        Me.tbstatus.Location = New System.Drawing.Point(59, 256)
-        Me.tbstatus.Name = "tbstatus"
-        Me.tbstatus.Size = New System.Drawing.Size(121, 20)
-        Me.tbstatus.TabIndex = 43
-        '
-        'lbstatus
-        '
-        Me.lbstatus.AutoSize = True
-        Me.lbstatus.BackColor = System.Drawing.SystemColors.HighlightText
-        Me.lbstatus.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbstatus.Location = New System.Drawing.Point(13, 258)
-        Me.lbstatus.Name = "lbstatus"
-        Me.lbstatus.Size = New System.Drawing.Size(40, 16)
-        Me.lbstatus.TabIndex = 42
-        Me.lbstatus.Text = "Status"
-        '
-        'lbfirealarm
-        '
-        Me.lbfirealarm.AutoSize = True
-        Me.lbfirealarm.BackColor = System.Drawing.SystemColors.HighlightText
-        Me.lbfirealarm.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbfirealarm.Location = New System.Drawing.Point(13, 281)
-        Me.lbfirealarm.Name = "lbfirealarm"
-        Me.lbfirealarm.Size = New System.Drawing.Size(61, 16)
-        Me.lbfirealarm.TabIndex = 41
-        Me.lbfirealarm.Text = "Fire Alarm"
-        '
         'tbmensagem
         '
-        Me.tbmensagem.Location = New System.Drawing.Point(12, 340)
+        Me.tbmensagem.Location = New System.Drawing.Point(12, 199)
         Me.tbmensagem.Multiline = True
         Me.tbmensagem.Name = "tbmensagem"
-        Me.tbmensagem.Size = New System.Drawing.Size(249, 125)
+        Me.tbmensagem.ReadOnly = True
+        Me.tbmensagem.Size = New System.Drawing.Size(245, 125)
         Me.tbmensagem.TabIndex = 36
         '
         'lbmessage
@@ -288,7 +223,7 @@ Partial Class frmplanta
         Me.lbmessage.AutoSize = True
         Me.lbmessage.BackColor = System.Drawing.SystemColors.HighlightText
         Me.lbmessage.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbmessage.Location = New System.Drawing.Point(13, 318)
+        Me.lbmessage.Location = New System.Drawing.Point(13, 177)
         Me.lbmessage.Name = "lbmessage"
         Me.lbmessage.Size = New System.Drawing.Size(53, 16)
         Me.lbmessage.TabIndex = 35
@@ -304,33 +239,13 @@ Partial Class frmplanta
         Me.pbplanta.TabIndex = 34
         Me.pbplanta.TabStop = False
         '
-        'pblogo
-        '
-        Me.pblogo.Image = CType(resources.GetObject("pblogo.Image"), System.Drawing.Image)
-        Me.pblogo.Location = New System.Drawing.Point(12, 12)
-        Me.pblogo.Name = "pblogo"
-        Me.pblogo.Size = New System.Drawing.Size(127, 139)
-        Me.pblogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pblogo.TabIndex = 32
-        Me.pblogo.TabStop = False
-        '
         'SerialPort1
         '
         Me.SerialPort1.PortName = "COM2"
         '
-        'lbcomport3
-        '
-        Me.lbcomport3.AutoSize = True
-        Me.lbcomport3.BackColor = System.Drawing.SystemColors.HighlightText
-        Me.lbcomport3.Location = New System.Drawing.Point(16, 213)
-        Me.lbcomport3.Name = "lbcomport3"
-        Me.lbcomport3.Size = New System.Drawing.Size(37, 13)
-        Me.lbcomport3.TabIndex = 70
-        Me.lbcomport3.Text = "Com 3"
-        '
         'pbcamera
         '
-        Me.pbcamera.Location = New System.Drawing.Point(511, 347)
+        Me.pbcamera.Location = New System.Drawing.Point(387, 109)
         Me.pbcamera.Name = "pbcamera"
         Me.pbcamera.Size = New System.Drawing.Size(139, 118)
         Me.pbcamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -338,29 +253,56 @@ Partial Class frmplanta
         Me.pbcamera.TabStop = False
         Me.pbcamera.Visible = False
         '
-        'btnsubmit
-        '
-        Me.btnsubmit.BackColor = System.Drawing.SystemColors.HighlightText
-        Me.btnsubmit.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnsubmit.Location = New System.Drawing.Point(284, 442)
-        Me.btnsubmit.Name = "btnsubmit"
-        Me.btnsubmit.Size = New System.Drawing.Size(76, 23)
-        Me.btnsubmit.TabIndex = 72
-        Me.btnsubmit.Text = "Submit"
-        Me.btnsubmit.UseVisualStyleBackColor = False
-        '
         'timer
         '
         Me.timer.Interval = 1000
+        '
+        'tbsendmessage
+        '
+        Me.tbsendmessage.Location = New System.Drawing.Point(12, 41)
+        Me.tbsendmessage.Multiline = True
+        Me.tbsendmessage.Name = "tbsendmessage"
+        Me.tbsendmessage.Size = New System.Drawing.Size(245, 101)
+        Me.tbsendmessage.TabIndex = 74
+        '
+        'btsendmessage
+        '
+        Me.btsendmessage.BackColor = System.Drawing.Color.White
+        Me.btsendmessage.Location = New System.Drawing.Point(141, 148)
+        Me.btsendmessage.Name = "btsendmessage"
+        Me.btsendmessage.Size = New System.Drawing.Size(116, 23)
+        Me.btsendmessage.TabIndex = 75
+        Me.btsendmessage.Text = "Send"
+        Me.btsendmessage.UseVisualStyleBackColor = False
+        '
+        'btfire
+        '
+        Me.btfire.BackColor = System.Drawing.Color.White
+        Me.btfire.Location = New System.Drawing.Point(141, 12)
+        Me.btfire.Name = "btfire"
+        Me.btfire.Size = New System.Drawing.Size(116, 23)
+        Me.btfire.TabIndex = 76
+        Me.btfire.UseVisualStyleBackColor = False
+        '
+        'btstatus
+        '
+        Me.btstatus.BackColor = System.Drawing.Color.White
+        Me.btstatus.Location = New System.Drawing.Point(12, 12)
+        Me.btstatus.Name = "btstatus"
+        Me.btstatus.Size = New System.Drawing.Size(116, 23)
+        Me.btstatus.TabIndex = 77
+        Me.btstatus.UseVisualStyleBackColor = False
         '
         'frmplanta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(662, 477)
-        Me.Controls.Add(Me.btnsubmit)
+        Me.ClientSize = New System.Drawing.Size(662, 334)
+        Me.Controls.Add(Me.btstatus)
+        Me.Controls.Add(Me.btfire)
+        Me.Controls.Add(Me.btsendmessage)
+        Me.Controls.Add(Me.tbsendmessage)
         Me.Controls.Add(Me.pbcamera)
-        Me.Controls.Add(Me.lbcomport3)
         Me.Controls.Add(Me.pbfire)
         Me.Controls.Add(Me.pblivingon)
         Me.Controls.Add(Me.pblivingoff)
@@ -375,18 +317,12 @@ Partial Class frmplanta
         Me.Controls.Add(Me.pbdiningon)
         Me.Controls.Add(Me.pbdiningoff)
         Me.Controls.Add(Me.pbcamvig)
-        Me.Controls.Add(Me.btncomread)
-        Me.Controls.Add(Me.btncomwrite)
-        Me.Controls.Add(Me.chbalarm)
-        Me.Controls.Add(Me.tbstatus)
-        Me.Controls.Add(Me.lbstatus)
-        Me.Controls.Add(Me.lbfirealarm)
         Me.Controls.Add(Me.tbmensagem)
         Me.Controls.Add(Me.lbmessage)
         Me.Controls.Add(Me.pbplanta)
-        Me.Controls.Add(Me.pblogo)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmplanta"
-        Me.Text = "Planta"
+        Me.Text = "Planta (Com Port 3)"
         CType(Me.pbfire, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pblivingon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pblivingoff, System.ComponentModel.ISupportInitialize).EndInit()
@@ -402,7 +338,6 @@ Partial Class frmplanta
         CType(Me.pbdiningoff, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbcamvig, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbplanta, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pblogo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbcamera, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -422,20 +357,15 @@ Partial Class frmplanta
     Private WithEvents pbdiningon As PictureBox
     Private WithEvents pbdiningoff As PictureBox
     Private WithEvents pbcamvig As PictureBox
-    Private WithEvents btncomread As Button
-    Private WithEvents btncomwrite As Button
-    Private WithEvents chbalarm As CheckBox
-    Private WithEvents tbstatus As TextBox
-    Private WithEvents lbstatus As Label
-    Private WithEvents lbfirealarm As Label
     Private WithEvents tbmensagem As TextBox
     Private WithEvents lbmessage As Label
     Private WithEvents pbplanta As PictureBox
-    Private WithEvents pblogo As PictureBox
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort
-    Friend WithEvents lbcomport3 As Label
     Private WithEvents pbcamera As PictureBox
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
-    Private WithEvents btnsubmit As Button
     Friend WithEvents timer As Timer
+    Friend WithEvents tbsendmessage As TextBox
+    Friend WithEvents btsendmessage As Button
+    Friend WithEvents btfire As Button
+    Friend WithEvents btstatus As Button
 End Class
