@@ -23,7 +23,6 @@ Public Class register
         user.Password = cipherText
 
         If (methods.VerifyUser(user).Rows.Count > 0) Then
-            'Response.Write("<script>alert('Username already registered!')</script>")
             ClientScript.RegisterStartupScript(Me.GetType(), "myalert", "alert('Username already registered');", True)
         Else
             Try

@@ -11,8 +11,7 @@
     <!-- Bootstrap CSS -->
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
 
-    <%--My CSS--%>
-    <%--<link href="content/font-awesome.min.css" rel="stylesheet" />--%>
+    <%--My CSS--%>    <%--<link href="content/font-awesome.min.css" rel="stylesheet" />--%>
 
     <title>VBNet Avaliação</title>
 </head>
@@ -62,11 +61,10 @@
                         <!-- Form -->
                         <div class="col-md-12">
                             <div class="p-5 card bg-primary border-secondary">
+
                                 <div class="card-body">
                                     <h1 class="mb-4 text-center text-white">Control Panel</h1>
-
-                                    <iframe class="col-12 table table-hover table-responsive table-light" src="iframe-control-panel.aspx" height="230px" frameborder="0"></iframe>
-
+                                    <iframe class="col-12 table table-hover table-responsive table-light" src="iframe-control-panel.aspx" height="363px" frameborder="0"></iframe>
                                 </div>
                             </div>
                         </div>
