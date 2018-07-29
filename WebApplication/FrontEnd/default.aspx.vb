@@ -1,25 +1,44 @@
-﻿Public Class _default2
+﻿Imports System.Data.SqlClient
+Imports System.IO
+Imports System.IO.Ports
+Imports System.Drawing
+Imports System.Windows.Forms.VisualStyles
+
+Public Class _Default2
     Inherits System.Web.UI.Page
 
+    Dim methods As New DAL.Methods
+    Dim status As New DAL.Types.Status
+    Dim user As New DAL.Types.User
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        'Sessions
+        'If (Session("admin") IsNot Nothing) Then
+        '    Response.Write("Admin")
+        'ElseIf (Session("user") IsNot Nothing) Then
+        '    Response.Write("User")
+        'Else
+        '    Response.Redirect("~/default.aspx")
+        'End If
+    End Sub
 
-        Dim methods As New DAL.Methods
-        Dim user As New DAL.Types.User
+    Protected Sub buttonMessage_Click(sender As Object, e As EventArgs) Handles buttonMessage.Click
 
-        user.IdUser = Session("userId")
+        status.IdUser = 1
+        status.SoftwareStatus = methods.SelectStatus().Rows(0).Item(2)
+        status.Alarm = methods.SelectStatus().Rows(0).Item(3)
+        status.Fire = methods.SelectStatus().Rows(0).Item(4)
+        status.Message = textBoxSendMessage.Text
+        status.LightBedR1 = methods.SelectStatus().Rows(0).Item(6)
+        status.LightBedR2 = methods.SelectStatus().Rows(0).Item(7)
+        status.LightBedR3 = methods.SelectStatus().Rows(0).Item(8)
+        status.LightLiving = methods.SelectStatus().Rows(0).Item(9)
+        status.LightDining = methods.SelectStatus().Rows(0).Item(10)
+        status.LightGarage = methods.SelectStatus().Rows(0).Item(11)
 
-        GridViewStatus.Columns.Item(3).Visible = methods.SelectPermissionsByUserId(user).Rows(0).Item(2)
-        GridViewStatus.Columns.Item(4).Visible = methods.SelectPermissionsByUserId(user).Rows(0).Item(3)
-        GridViewStatus.Columns.Item(5).Visible = methods.SelectPermissionsByUserId(user).Rows(0).Item(4)
-        GridViewStatus.Columns.Item(6).Visible = methods.SelectPermissionsByUserId(user).Rows(0).Item(5)
-        GridViewStatus.Columns.Item(7).Visible = methods.SelectPermissionsByUserId(user).Rows(0).Item(6)
-        GridViewStatus.Columns.Item(8).Visible = methods.SelectPermissionsByUserId(user).Rows(0).Item(7)
-        GridViewStatus.Columns.Item(9).Visible = methods.SelectPermissionsByUserId(user).Rows(0).Item(8)
-        GridViewStatus.Columns.Item(10).Visible = methods.SelectPermissionsByUserId(user).Rows(0).Item(9)
-        GridViewStatus.Columns.Item(11).Visible = methods.SelectPermissionsByUserId(user).Rows(0).Item(10)
-        GridViewStatus.Columns.Item(12).Visible = methods.SelectPermissionsByUserId(user).Rows(0).Item(11)
+        methods.InsertStatus(status)
 
-
+        Response.Redirect("~/FrontEnd/default.aspx")
     End Sub
 
 End Class

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="iframe-control-panel.aspx.vb" Inherits="WebApplication.control_panel_iframe" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="iframe-control-panel.aspx.vb" Inherits="WebApplication.iframe_control_panel" %>
 
 <!DOCTYPE html>
 
@@ -16,7 +16,7 @@
     <%--My CSS--%><%--<link href="content/font-awesome.min.css" rel="stylesheet" />--%>
 
     <title>VBNet Avaliação</title>
-    <style type="text/css">
+        <style type="text/css">
         .auto-style1 {
             margin-right: 0;
             margin-bottom: 1;
@@ -42,7 +42,7 @@
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+        <form id="form1" runat="server">
         <div>
             <br />
             <table class="w-100">
@@ -108,7 +108,7 @@
                         <asp:CheckBox ID="checkBoxLightBedR3" runat="server" Enabled="False" />
                     </td>
                     <td rowspan="4">
-                        <asp:TextBox ID="textBoxViewMessages" runat="server" Height="123px" TextMode="MultiLine" Width="517px" ReadOnly="True"  style="resize:none;" ></asp:TextBox>
+                        <asp:TextBox ID="textBoxViewMessages" runat="server" Height="123px" TextMode="MultiLine" Width="517px" ReadOnly="True" style="resize:none;"  ></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -143,5 +143,6 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="../Scripts/jquery-3.3.1.min.js"></script>
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

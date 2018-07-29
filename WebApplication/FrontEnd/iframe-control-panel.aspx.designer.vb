@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class control_panel_iframe
+Partial Public Class iframe_control_panel
     
     '''<summary>
     '''form1 control.

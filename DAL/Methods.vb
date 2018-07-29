@@ -7,14 +7,14 @@ Public Class Methods
     Private conn As SqlConnection = New SqlConnection("Data Source=.\sqlexpress;Initial Catalog=DomoSys;Integrated Security=True")
 
     Public Function UserLogin(ByVal U As User) As DataTable
-        Dim comando As SqlDataAdapter = New SqlDataAdapter("SELECT UserName, Password FROM Users WHERE UserName LIKE '" + U.UserName + "' AND Password LIKE '" + U.Password + "' AND Administrator = 0", conn)
+        Dim comando As SqlDataAdapter = New SqlDataAdapter("SELECT UserName, Password, Active FROM Users WHERE UserName LIKE '" + U.UserName + "' AND Password LIKE '" + U.Password + "' AND Administrator = 0", conn)
         Dim tabela As DataTable = New DataTable()
         comando.Fill(tabela)
         Return tabela
     End Function
 
     Public Function AdminLogin(ByVal U As User) As DataTable
-        Dim comando As SqlDataAdapter = New SqlDataAdapter("SELECT UserName, Password FROM Users WHERE UserName LIKE '" + U.UserName + "' AND Password LIKE '" + U.Password + "' AND Administrator = 1", conn)
+        Dim comando As SqlDataAdapter = New SqlDataAdapter("SELECT UserName, Password, Active FROM Users WHERE UserName LIKE '" + U.UserName + "' AND Password LIKE '" + U.Password + "' AND Administrator = 1", conn)
         Dim tabela As DataTable = New DataTable()
         comando.Fill(tabela)
         Return tabela
@@ -37,7 +37,7 @@ Public Class Methods
     End Function
 
     Public Function SelectUsers() As DataTable
-        Dim comando As SqlDataAdapter = New SqlDataAdapter("SELECT IdUser, UserName, Password, Administrator FROM Users", conn)
+        Dim comando As SqlDataAdapter = New SqlDataAdapter("SELECT IdUser, UserName, Password, Administrator, Active FROM Users", conn)
         Dim tabela As DataTable = New DataTable()
         comando.Fill(tabela)
         Return tabela

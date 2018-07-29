@@ -1,4 +1,4 @@
-﻿Public Class control_panel_iframe
+﻿Public Class iframe_control_panel
     Inherits System.Web.UI.Page
 
     Dim methods As New DAL.Methods
@@ -202,4 +202,5 @@
     '    'meter 7 mensagens a mostrar
 
     'End Sub
+
 End Class

@@ -64,15 +64,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication.control_panel_iframe._buttonMessage">
-<summary>
-buttonMessage control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:WebApplication.control_panel_iframe._buttonAlarm">
 <summary>
 buttonAlarm control.
@@ -85,15 +76,6 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:WebApplication.control_panel_iframe._checkBoxAlarm">
 <summary>
 checkBoxAlarm control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication.control_panel_iframe._textBoxSendMessage">
-<summary>
-textBoxSendMessage control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -334,6 +316,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:WebApplication._default1._buttonMessage">
+<summary>
+buttonMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication._default1._textBoxSendMessage">
+<summary>
+textBoxSendMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:WebApplication.manage_users._body">
 <summary>
 body control.
@@ -370,18 +370,18 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication.manage_users1._GridViewUsers">
+<member name="F:WebApplication.manage_users1._GridView1">
 <summary>
-GridViewUsers control.
+GridView1 control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication.manage_users1._SqlDataSource1">
+<member name="F:WebApplication.manage_users1._SqlDataSource2">
 <summary>
-SqlDataSource1 control.
+SqlDataSource2 control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -505,7 +505,7 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication._default2._body">
+<member name="F:WebApplication._Default2._body">
 <summary>
 body control.
 </summary>
@@ -514,18 +514,207 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication._default2._GridViewStatus">
+<member name="F:WebApplication._Default2._buttonMessage">
 <summary>
-GridViewStatus control.
+buttonMessage control.
 </summary>
 <remarks>
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:WebApplication._default2._SqlDataSource1">
+<member name="F:WebApplication._Default2._textBoxSendMessage">
 <summary>
-SqlDataSource1 control.
+textBoxSendMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._buttonStatus">
+<summary>
+buttonStatus control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._checkBoxStatus">
+<summary>
+checkBoxStatus control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._buttonAlarm">
+<summary>
+buttonAlarm control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._checkBoxAlarm">
+<summary>
+checkBoxAlarm control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._buttonFire">
+<summary>
+buttonFire control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._checkBoxFire">
+<summary>
+checkBoxFire control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._buttonLightBedR1">
+<summary>
+buttonLightBedR1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._checkBoxLightBedR1">
+<summary>
+checkBoxLightBedR1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._buttonLightBedR2">
+<summary>
+buttonLightBedR2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._checkBoxLightBedR2">
+<summary>
+checkBoxLightBedR2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._Label1">
+<summary>
+Label1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._buttonLightBedR3">
+<summary>
+buttonLightBedR3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._checkBoxLightBedR3">
+<summary>
+checkBoxLightBedR3 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._textBoxViewMessages">
+<summary>
+textBoxViewMessages control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._buttonLiving">
+<summary>
+buttonLiving control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._checkBoxLiving">
+<summary>
+checkBoxLiving control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._buttonDining">
+<summary>
+buttonDining control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._checkBoxDining">
+<summary>
+checkBoxDining control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._buttonGarage">
+<summary>
+buttonGarage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._checkBoxGarage">
+<summary>
+checkBoxGarage control.
 </summary>
 <remarks>
 Auto-generated field.

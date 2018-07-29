@@ -65,16 +65,25 @@
                                     <h1 class="mb-4 text-center text-white">Manage Permissions</h1>
 
                                     <%-- Grid view users --%>
-                                    <asp:GridView ID="GridViewUsers" runat="server" AutoGenerateColumns="False" DataKeyNames="IdUser" DataSourceID="SqlDataSource1" EmptyDataText="There are no data records to display." AllowPaging="True" AllowSorting="True" CssClass="table table-hover table-responsive table-light" GridLines="None" HorizontalAlign="Center">
+                                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="IdUser" DataSourceID="SqlDataSource2" EmptyDataText="There are no data records to display." AllowPaging="True" AllowSorting="True" CssClass="table table-hover table-responsive table-light" GridLines="None">
                                         <Columns>
                                             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                                             <asp:BoundField DataField="IdUser" HeaderText="IdUser" ReadOnly="True" SortExpression="IdUser" />
                                             <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="UserName" />
                                             <asp:BoundField DataField="Password" HeaderText="Password" SortExpression="Password" />
                                             <asp:CheckBoxField DataField="Administrator" HeaderText="Administrator" SortExpression="Administrator" />
+                                            <asp:CheckBoxField DataField="Active" HeaderText="Active" SortExpression="Active" />
+                                            <asp:BoundField DataField="TimeStamp" HeaderText="TimeStamp" SortExpression="TimeStamp" />
                                         </Columns>
                                     </asp:GridView>
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DomoSysConnectionString %>" DeleteCommand="DELETE FROM [Users] WHERE [IdUser] = @IdUser" InsertCommand="INSERT INTO [Users] ([UserName], [Password], [Administrator]) VALUES (@UserName, @Password, @Administrator)" ProviderName="<%$ ConnectionStrings:DomoSysConnectionString.ProviderName %>" SelectCommand="SELECT [IdUser], [UserName], [Password], [Administrator] FROM [Users]" UpdateCommand="UPDATE [Users] SET [UserName] = @UserName, [Password] = @Password, [Administrator] = @Administrator WHERE [IdUser] = @IdUser">
+                                    <%--<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DomoSysConnectionString %>" DeleteCommand="DELETE FROM [Users] WHERE [IdUser] = @IdUser" InsertCommand="INSERT INTO [Users] ([UserName], [Password], [Administrator], [Active], [TimeStamp]) VALUES (@UserName, @Password, @Administrator, @Active, @TimeStamp)" ProviderName="<%$ ConnectionStrings:DomoSysConnectionString.ProviderName %>" SelectCommand="SELECT [IdUser], [UserName], [Password], [Administrator], [Active], [TimeStamp] FROM [Users]" UpdateCommand="UPDATE [Users] SET [UserName] = @UserName, [Password] = @Password, [Administrator] = @Administrator, [Active] = @Active, [TimeStamp] = @TimeStamp WHERE [IdUser] = @IdUser">
+                                    --%>    
+                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:DomoSysConnectionString %>" DeleteCommand="UPDATE [Users] SET [Active] = 0, [TimeStamp] = GETDATE() WHERE [IdUser] = @IdUser" InsertCommand="INSERT INTO [Users] ([UserName], [Password], [Administrator], [Active], [TimeStamp]) VALUES (@UserName, @Password, @Administrator, @Active, @TimeStamp)" ProviderName="<%$ ConnectionStrings:DomoSysConnectionString.ProviderName %>" SelectCommand="SELECT [IdUser], [UserName], [Password], [Administrator], [Active], [TimeStamp] FROM [Users]" UpdateCommand="UPDATE [Users] SET [UserName] = @UserName, [Password] = @Password, [Administrator] = @Administrator, [Active] = @Active, [TimeStamp] = GETDATE() WHERE [IdUser] = @IdUser">
+                                    
+                                        
+                                        
+                                        
+                                        
                                         <DeleteParameters>
                                             <asp:Parameter Name="IdUser" Type="Int32" />
                                         </DeleteParameters>
@@ -82,11 +91,15 @@
                                             <asp:Parameter Name="UserName" Type="String" />
                                             <asp:Parameter Name="Password" Type="String" />
                                             <asp:Parameter Name="Administrator" Type="Boolean" />
+                                            <asp:Parameter Name="Active" Type="Boolean" />
+                                            <asp:Parameter Name="TimeStamp" Type="DateTime" />
                                         </InsertParameters>
                                         <UpdateParameters>
                                             <asp:Parameter Name="UserName" Type="String" />
                                             <asp:Parameter Name="Password" Type="String" />
                                             <asp:Parameter Name="Administrator" Type="Boolean" />
+                                            <asp:Parameter Name="Active" Type="Boolean" />
+                                            <asp:Parameter Name="TimeStamp" Type="DateTime" />
                                             <asp:Parameter Name="IdUser" Type="Int32" />
                                         </UpdateParameters>
                                     </asp:SqlDataSource>

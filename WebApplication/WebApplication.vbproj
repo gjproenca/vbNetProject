@@ -107,6 +107,7 @@
     <Content Include="BackEnd\manage-users.aspx" />
     <Content Include="BackEnd\register-users.aspx" />
     <Content Include="FrontEnd\default.aspx" />
+    <Content Include="FrontEnd\iframe-control-panel.aspx" />
     <Content Include="FrontEnd\sign-out.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -210,6 +211,13 @@
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="FrontEnd\iframe-control-panel.aspx.designer.vb">
+      <DependentUpon>iframe-control-panel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontEnd\iframe-control-panel.aspx.vb">
+      <DependentUpon>iframe-control-panel.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="FrontEnd\sign-out.aspx.designer.vb">
       <DependentUpon>sign-out.aspx</DependentUpon>
     </Compile>
@@ -309,7 +317,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50746</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50752/</IISUrl>
+          <IISUrl>http://localhost:50753/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

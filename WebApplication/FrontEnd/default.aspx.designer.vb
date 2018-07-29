@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class _default2
+Partial Public Class _Default2
     
     '''<summary>
     '''body control.
@@ -23,20 +23,20 @@ Partial Public Class _default2
     Protected WithEvents body As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
-    '''GridViewStatus control.
+    '''buttonMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents GridViewStatus As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents buttonMessage As Global.System.Web.UI.WebControls.Button
     
     '''<summary>
-    '''SqlDataSource1 control.
+    '''textBoxSendMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents textBoxSendMessage As Global.System.Web.UI.WebControls.TextBox
 End Class

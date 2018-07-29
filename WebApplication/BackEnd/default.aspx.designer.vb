@@ -21,4 +21,22 @@ Partial Public Class _default1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents body As Global.System.Web.UI.HtmlControls.HtmlForm
+    
+    '''<summary>
+    '''buttonMessage control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents buttonMessage As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''textBoxSendMessage control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents textBoxSendMessage As Global.System.Web.UI.WebControls.TextBox
 End Class

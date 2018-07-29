@@ -1,19 +1,14 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="default.aspx.vb" Inherits="WebApplication._default2" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="default.aspx.vb" Inherits="WebApplication._Default2" %>
 
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-
-    <%--My CSS--%>
-    <%--<link href="content/font-awesome.min.css" rel="stylesheet" />--%>
-
+        <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <title>VBNet Avaliação</title>
 </head>
 <body>
@@ -47,62 +42,17 @@
                         <!-- Form -->
                         <div class="col-md-12">
                             <div class="p-5 card bg-primary border-secondary">
+
                                 <div class="card-body">
-                                    <h1 class="mb-4 text-center text-white">Control Panel</h1>
+                                    <h1 class="mb-4 text-center text-white">Control Panel
+                                    </h1>
 
-                                    <asp:GridView ID="GridViewStatus" runat="server" AutoGenerateColumns="False" DataKeyNames="IdStatus" DataSourceID="SqlDataSource1" EmptyDataText="There are no data records to display." CssClass="table table-hover table-responsive table-light" AllowPaging="True" AllowSorting="True" GridLines="None">
-                                        <Columns>
+                                     <asp:Button ID="buttonMessage" runat="server" Text="Send Message" />
+                                    <br /><br />
+                                     <asp:TextBox ID="textBoxSendMessage" runat="server" Height="89px" TextMode="MultiLine" Width="517px" style="resize:none;" ></asp:TextBox>
+                                    <br /><br />
 
-                                            <asp:CommandField ShowEditButton="True" />
-                                            <asp:BoundField DataField="IdStatus" HeaderText="IdStatus" InsertVisible="False" ReadOnly="True" SortExpression="IdStatus" Visible="False" />
-                                            <asp:BoundField DataField="IdUser" HeaderText="IdUser" SortExpression="IdUser" Visible="False" />
-                                            <asp:CheckBoxField DataField="SoftwareStatus" HeaderText="SoftwareStatus" SortExpression="SoftwareStatus" />
-                                            <asp:CheckBoxField DataField="Alarm" HeaderText="Alarm" SortExpression="Alarm" />
-                                            <asp:CheckBoxField DataField="Fire" HeaderText="Fire" SortExpression="Fire" />
-                                            <asp:BoundField DataField="Message" HeaderText="Message" SortExpression="Message" />
-                                            <asp:CheckBoxField DataField="LightBedR1" HeaderText="LightBedR1" SortExpression="LightBedR1" />
-                                            <asp:CheckBoxField DataField="LightBedR2" HeaderText="LightBedR2" SortExpression="LightBedR2" />
-                                            <asp:CheckBoxField DataField="LightBedR3" HeaderText="LightBedR3" SortExpression="LightBedR3" />
-                                            <asp:CheckBoxField DataField="LightLiving" HeaderText="LightLiving" SortExpression="LightLiving" />
-                                            <asp:CheckBoxField DataField="LightDining" HeaderText="LightDining" SortExpression="LightDining" />
-                                            <asp:CheckBoxField DataField="LightGarage" HeaderText="LightGarage" SortExpression="LightGarage" />
-                                            <asp:BoundField DataField="TimeStamp" HeaderText="TimeStamp" SortExpression="TimeStamp" ReadOnly="True" />
-                                        </Columns>
-                                    </asp:GridView>
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DomoSysConnectionString %>" DeleteCommand="DELETE FROM [Status] WHERE [IdStatus] = @IdStatus" InsertCommand="INSERT INTO [Status] ([IdUser], [SoftwareStatus], [Alarm], [Fire], [Message], [LightBedR1], [LightBedR2], [LightBedR3], [LightLiving], [LightDining], [LightGarage], [TimeStamp]) VALUES (@IdUser, @SoftwareStatus, @Alarm, @Fire, @Message, @LightBedR1, @LightBedR2, @LightBedR3, @LightLiving, @LightDining, @LightGarage, @TimeStamp)" SelectCommand="SELECT [IdStatus], [IdUser], [SoftwareStatus], [Alarm], [Fire], [Message], [LightBedR1], [LightBedR2], [LightBedR3], [LightLiving], [LightDining], [LightGarage], [TimeStamp] FROM [Status]" UpdateCommand="UPDATE [Status] SET [SoftwareStatus] = @SoftwareStatus, [Alarm] = @Alarm, [Fire] = @Fire, [Message] = @Message, [LightBedR1] = @LightBedR1, [LightBedR2] = @LightBedR2, [LightBedR3] = @LightBedR3, [LightLiving] = @LightLiving, [LightDining] = @LightDining, [LightGarage] = @LightGarage, [TimeStamp] = GETDATE()  WHERE [IdStatus] = @IdStatus">
-                                        <DeleteParameters>
-                                            <asp:Parameter Name="IdStatus" Type="Int32" />
-                                        </DeleteParameters>
-                                        <InsertParameters>
-                                            <asp:Parameter Name="IdUser" Type="Int32" />
-                                            <asp:Parameter Name="SoftwareStatus" Type="Boolean" />
-                                            <asp:Parameter Name="Alarm" Type="Boolean" />
-                                            <asp:Parameter Name="Fire" Type="Boolean" />
-                                            <asp:Parameter Name="Message" Type="String" />
-                                            <asp:Parameter Name="LightBedR1" Type="Boolean" />
-                                            <asp:Parameter Name="LightBedR2" Type="Boolean" />
-                                            <asp:Parameter Name="LightBedR3" Type="Boolean" />
-                                            <asp:Parameter Name="LightLiving" Type="Boolean" />
-                                            <asp:Parameter Name="LightDining" Type="Boolean" />
-                                            <asp:Parameter Name="LightGarage" Type="Boolean" />
-                                            <asp:Parameter Name="TimeStamp" Type="DateTime" />
-                                        </InsertParameters>
-                                        <UpdateParameters>
-                                            <asp:Parameter Name="IdUser" Type="Int32" />
-                                            <asp:Parameter Name="SoftwareStatus" Type="Boolean" />
-                                            <asp:Parameter Name="Alarm" Type="Boolean" />
-                                            <asp:Parameter Name="Fire" Type="Boolean" />
-                                            <asp:Parameter Name="Message" Type="String" />
-                                            <asp:Parameter Name="LightBedR1" Type="Boolean" />
-                                            <asp:Parameter Name="LightBedR2" Type="Boolean" />
-                                            <asp:Parameter Name="LightBedR3" Type="Boolean" />
-                                            <asp:Parameter Name="LightLiving" Type="Boolean" />
-                                            <asp:Parameter Name="LightDining" Type="Boolean" />
-                                            <asp:Parameter Name="LightGarage" Type="Boolean" />
-                                            <asp:Parameter Name="IdStatus" Type="Int32" />
-                                        </UpdateParameters>
-                                    </asp:SqlDataSource>
-
+                                    <iframe class="col-12 table table-hover table-responsive table-light" src="iframe-control-panel.aspx" height="363px" frameborder="0"></iframe>
                                 </div>
                             </div>
                         </div>
@@ -119,4 +69,3 @@
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
