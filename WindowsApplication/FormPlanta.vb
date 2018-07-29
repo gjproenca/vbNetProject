@@ -13,6 +13,7 @@ Public Class frmplanta
     Dim cameras As VideoCaptureDeviceForm = New VideoCaptureDeviceForm
 
     Dim methods As New DAL.Methods
+    Dim status As New DAL.Types.Status
 
     Private Sub frmplanta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         timer.Enabled = True
@@ -26,83 +27,59 @@ Public Class frmplanta
         chbalarm.Checked = methods.SelectStatus.Rows(0).Item(3).ToString()
         pbfire.Visible = methods.SelectStatus.Rows(0).Item(4).ToString()
         tbmensagem.Text = methods.SelectStatus.Rows(0).Item(5).ToString()
-        chbroom1.Checked = methods.SelectStatus.Rows(0).Item(6).ToString()
-        chbroom2.Checked = methods.SelectStatus.Rows(0).Item(7).ToString()
-        chbroom3.Checked = methods.SelectStatus.Rows(0).Item(8).ToString()
-        chbliving.Checked = methods.SelectStatus.Rows(0).Item(9).ToString()
-        chbdining.Checked = methods.SelectStatus.Rows(0).Item(10).ToString()
-        chbgarage.Checked = methods.SelectStatus.Rows(0).Item(11).ToString()
+        'chbroom1.Checked = methods.SelectStatus.Rows(0).Item(6).ToString()
+        'chbroom2.Checked = methods.SelectStatus.Rows(0).Item(7).ToString()
+        'chbroom3.Checked = methods.SelectStatus.Rows(0).Item(8).ToString()
+        'chbliving.Checked = methods.SelectStatus.Rows(0).Item(9).ToString()
+        'chbdining.Checked = methods.SelectStatus.Rows(0).Item(10).ToString()
+        'chbgarage.Checked = methods.SelectStatus.Rows(0).Item(11).ToString()
 
-        If chbgarage.Checked = True Then
+        If methods.SelectStatus.Rows(0).Item(11) = True Then
             pbgaron.Visible = True
+            pbgaroff.Visible = False
         Else
             pbgaron.Visible = False
-        End If
-
-        If chbgarage.Checked = False Then
             pbgaroff.Visible = True
-        Else
-            pbgaroff.Visible = False
         End If
         '--------------------------
-        If chbdining.Checked = True Then
+        If methods.SelectStatus.Rows(0).Item(10) = True Then
             pbdiningon.Visible = True
+            pbdiningoff.Visible = False
         Else
             pbdiningon.Visible = False
-        End If
-
-        If chbdining.Checked = False Then
             pbdiningoff.Visible = True
-        Else
-            pbdiningoff.Visible = False
         End If
         '---------------------------
-        If chbliving.Checked = True Then
+        If methods.SelectStatus.Rows(0).Item(9) = True Then
             pblivingon.Visible = True
+            pblivingoff.Visible = False
         Else
             pblivingon.Visible = False
-        End If
-
-        If chbliving.Checked = False Then
             pblivingoff.Visible = True
-        Else
-            pblivingoff.Visible = False
         End If
         '---------------------------
-        If chbroom1.Checked = True Then
+        If methods.SelectStatus.Rows(0).Item(6) = True Then
             pbroom1on.Visible = True
+            pbroom1off.Visible = False
         Else
             pbroom1on.Visible = False
-        End If
-
-        If chbroom1.Checked = False Then
             pbroom1off.Visible = True
-        Else
-            pbroom1off.Visible = False
         End If
         '---------------------------
-        If chbroom2.Checked = True Then
+        If methods.SelectStatus.Rows(0).Item(7) = True Then
             pbroom2on.Visible = True
+            pbroom2off.Visible = False
         Else
             pbroom2on.Visible = False
-        End If
-
-        If chbroom2.Checked = False Then
             pbroom2off.Visible = True
-        Else
-            pbroom2off.Visible = False
         End If
         '----------------------------
-        If chbroom3.Checked = True Then
+        If methods.SelectStatus.Rows(0).Item(8) = True Then
             pbroom3on.Visible = True
+            pbroom3off.Visible = False
         Else
             pbroom3on.Visible = False
-        End If
-
-        If chbroom3.Checked = False Then
             pbroom3off.Visible = True
-        Else
-            pbroom3off.Visible = False
         End If
         '-----------------------------
         If methods.SelectStatus.Rows(0).Item(2) = True Then
@@ -111,7 +88,6 @@ Public Class frmplanta
             tbstatus.Text = "Off"
         End If
     End Sub
-
 
     Private Sub btninsert_Click(sender As Object, e As EventArgs)
         SerialPort1.Open()
@@ -168,11 +144,83 @@ Public Class frmplanta
         SerialPort1.Encoding = System.Text.Encoding.Default
     End Sub
 
-    Private Sub chbgarage_CheckedChanged(sender As Object, e As EventArgs) Handles chbgarage.CheckedChanged
+    Private Sub chbgarage_CheckedChanged(sender As Object, e As EventArgs)
         LoadFields()
     End Sub
 
     Private Sub timer_Tick(sender As Object, e As EventArgs) Handles timer.Tick
+        LoadFields()
+    End Sub
+
+    Private Sub pbroom2on_Click(sender As Object, e As EventArgs) Handles pbroom2on.Click
+        status.LightBedR2 = Not methods.SelectStatus.Rows(0).Item(7)
+        methods.UpdateLightBedR2(status)
+        LoadFields()
+    End Sub
+
+    Private Sub pbroom2off_Click(sender As Object, e As EventArgs) Handles pbroom2off.Click
+        status.LightBedR2 = Not methods.SelectStatus.Rows(0).Item(7)
+        methods.UpdateLightBedR2(status)
+        LoadFields()
+    End Sub
+
+    Private Sub pblivingoff_Click(sender As Object, e As EventArgs) Handles pblivingoff.Click
+        status.LightLiving = Not methods.SelectStatus.Rows(0).Item(9)
+        methods.UpdateLightLiving(status)
+        LoadFields()
+    End Sub
+
+    Private Sub pblivingon_Click(sender As Object, e As EventArgs) Handles pblivingon.Click
+        status.LightLiving = Not methods.SelectStatus.Rows(0).Item(9)
+        methods.UpdateLightLiving(status)
+        LoadFields()
+    End Sub
+
+    Private Sub pbroom3off_Click(sender As Object, e As EventArgs) Handles pbroom3off.Click
+        status.LightBedR3 = Not methods.SelectStatus.Rows(0).Item(8)
+        methods.UpdateLightBedR3(status)
+        LoadFields()
+    End Sub
+
+    Private Sub pbroom3on_Click(sender As Object, e As EventArgs) Handles pbroom3on.Click
+        status.LightBedR3 = Not methods.SelectStatus.Rows(0).Item(8)
+        methods.UpdateLightBedR3(status)
+        LoadFields()
+    End Sub
+
+    Private Sub pbdiningoff_Click(sender As Object, e As EventArgs) Handles pbdiningoff.Click
+        status.LightDining = Not methods.SelectStatus.Rows(0).Item(10)
+        methods.UpdateLightDining(status)
+        LoadFields()
+    End Sub
+
+    Private Sub pbdiningon_Click(sender As Object, e As EventArgs) Handles pbdiningon.Click
+        status.LightDining = Not methods.SelectStatus.Rows(0).Item(10)
+        methods.UpdateLightDining(status)
+        LoadFields()
+    End Sub
+
+    Private Sub pbroom1on_Click(sender As Object, e As EventArgs) Handles pbroom1on.Click
+        status.LightBedR1 = Not methods.SelectStatus.Rows(0).Item(6)
+        methods.UpdateLightBedR1(status)
+        LoadFields()
+    End Sub
+
+    Private Sub pbroom1off_Click(sender As Object, e As EventArgs) Handles pbroom1off.Click
+        status.LightBedR1 = Not methods.SelectStatus.Rows(0).Item(6)
+        methods.UpdateLightBedR1(status)
+        LoadFields()
+    End Sub
+
+    Private Sub pbgaron_Click(sender As Object, e As EventArgs) Handles pbgaron.Click
+        status.LightGarage = Not methods.SelectStatus.Rows(0).Item(11)
+        methods.UpdateLightGarage(status)
+        LoadFields()
+    End Sub
+
+    Private Sub pbgaroff_Click(sender As Object, e As EventArgs) Handles pbgaroff.Click
+        status.LightGarage = Not methods.SelectStatus.Rows(0).Item(11)
+        methods.UpdateLightGarage(status)
         LoadFields()
     End Sub
 End Class
