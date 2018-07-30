@@ -49,6 +49,7 @@ Partial Class frmplanta
         Me.btsendmessage = New System.Windows.Forms.Button()
         Me.btfire = New System.Windows.Forms.Button()
         Me.btstatus = New System.Windows.Forms.Button()
+        Me.tbmsgtest = New System.Windows.Forms.TextBox()
         CType(Me.pbfire, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pblivingon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pblivingoff, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -293,11 +294,19 @@ Partial Class frmplanta
         Me.btstatus.TabIndex = 77
         Me.btstatus.UseVisualStyleBackColor = False
         '
+        'tbmsgtest
+        '
+        Me.tbmsgtest.Location = New System.Drawing.Point(35, 150)
+        Me.tbmsgtest.Name = "tbmsgtest"
+        Me.tbmsgtest.Size = New System.Drawing.Size(100, 20)
+        Me.tbmsgtest.TabIndex = 78
+        '
         'frmplanta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(662, 334)
+        Me.Controls.Add(Me.tbmsgtest)
         Me.Controls.Add(Me.btstatus)
         Me.Controls.Add(Me.btfire)
         Me.Controls.Add(Me.btsendmessage)
@@ -320,8 +329,11 @@ Partial Class frmplanta
         Me.Controls.Add(Me.tbmensagem)
         Me.Controls.Add(Me.lbmessage)
         Me.Controls.Add(Me.pbplanta)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "frmplanta"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Planta (Com Port 3)"
         CType(Me.pbfire, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pblivingon, System.ComponentModel.ISupportInitialize).EndInit()
@@ -368,4 +380,5 @@ Partial Class frmplanta
     Friend WithEvents btsendmessage As Button
     Friend WithEvents btfire As Button
     Friend WithEvents btstatus As Button
+    Friend WithEvents tbmsgtest As TextBox
 End Class
