@@ -70,6 +70,7 @@ Partial Class frmplanta
         '
         'pbfire
         '
+        Me.pbfire.BackColor = System.Drawing.Color.White
         Me.pbfire.Image = CType(resources.GetObject("pbfire.Image"), System.Drawing.Image)
         Me.pbfire.Location = New System.Drawing.Point(607, 71)
         Me.pbfire.Name = "pbfire"
@@ -80,6 +81,7 @@ Partial Class frmplanta
         '
         'pblivingon
         '
+        Me.pblivingon.BackColor = System.Drawing.Color.White
         Me.pblivingon.Image = CType(resources.GetObject("pblivingon.Image"), System.Drawing.Image)
         Me.pblivingon.Location = New System.Drawing.Point(407, 205)
         Me.pblivingon.Name = "pblivingon"
@@ -90,6 +92,7 @@ Partial Class frmplanta
         '
         'pblivingoff
         '
+        Me.pblivingoff.BackColor = System.Drawing.Color.White
         Me.pblivingoff.Image = CType(resources.GetObject("pblivingoff.Image"), System.Drawing.Image)
         Me.pblivingoff.Location = New System.Drawing.Point(407, 205)
         Me.pblivingoff.Name = "pblivingoff"
@@ -100,6 +103,7 @@ Partial Class frmplanta
         '
         'pbroom3on
         '
+        Me.pbroom3on.BackColor = System.Drawing.Color.White
         Me.pbroom3on.Image = CType(resources.GetObject("pbroom3on.Image"), System.Drawing.Image)
         Me.pbroom3on.Location = New System.Drawing.Point(494, 227)
         Me.pbroom3on.Name = "pbroom3on"
@@ -110,6 +114,7 @@ Partial Class frmplanta
         '
         'pbroom3off
         '
+        Me.pbroom3off.BackColor = System.Drawing.Color.White
         Me.pbroom3off.Image = CType(resources.GetObject("pbroom3off.Image"), System.Drawing.Image)
         Me.pbroom3off.Location = New System.Drawing.Point(494, 227)
         Me.pbroom3off.Name = "pbroom3off"
@@ -120,6 +125,7 @@ Partial Class frmplanta
         '
         'pbroom2on
         '
+        Me.pbroom2on.BackColor = System.Drawing.Color.White
         Me.pbroom2on.Image = CType(resources.GetObject("pbroom2on.Image"), System.Drawing.Image)
         Me.pbroom2on.Location = New System.Drawing.Point(319, 227)
         Me.pbroom2on.Name = "pbroom2on"
@@ -130,6 +136,7 @@ Partial Class frmplanta
         '
         'pbroom2off
         '
+        Me.pbroom2off.BackColor = System.Drawing.Color.White
         Me.pbroom2off.Image = CType(resources.GetObject("pbroom2off.Image"), System.Drawing.Image)
         Me.pbroom2off.Location = New System.Drawing.Point(319, 227)
         Me.pbroom2off.Name = "pbroom2off"
@@ -140,6 +147,7 @@ Partial Class frmplanta
         '
         'pbgaron
         '
+        Me.pbgaron.BackColor = System.Drawing.Color.White
         Me.pbgaron.Image = CType(resources.GetObject("pbgaron.Image"), System.Drawing.Image)
         Me.pbgaron.Location = New System.Drawing.Point(577, 179)
         Me.pbgaron.Name = "pbgaron"
@@ -151,6 +159,7 @@ Partial Class frmplanta
         '
         'pbgaroff
         '
+        Me.pbgaroff.BackColor = System.Drawing.Color.White
         Me.pbgaroff.Image = CType(resources.GetObject("pbgaroff.Image"), System.Drawing.Image)
         Me.pbgaroff.Location = New System.Drawing.Point(577, 179)
         Me.pbgaroff.Name = "pbgaroff"
@@ -162,8 +171,9 @@ Partial Class frmplanta
         '
         'pbroom1on
         '
+        Me.pbroom1on.BackColor = System.Drawing.Color.White
         Me.pbroom1on.Image = CType(resources.GetObject("pbroom1on.Image"), System.Drawing.Image)
-        Me.pbroom1on.Location = New System.Drawing.Point(494, 82)
+        Me.pbroom1on.Location = New System.Drawing.Point(496, 82)
         Me.pbroom1on.Name = "pbroom1on"
         Me.pbroom1on.Size = New System.Drawing.Size(25, 35)
         Me.pbroom1on.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -172,8 +182,9 @@ Partial Class frmplanta
         '
         'pbroom1off
         '
+        Me.pbroom1off.BackColor = System.Drawing.Color.White
         Me.pbroom1off.Image = CType(resources.GetObject("pbroom1off.Image"), System.Drawing.Image)
-        Me.pbroom1off.Location = New System.Drawing.Point(494, 82)
+        Me.pbroom1off.Location = New System.Drawing.Point(496, 82)
         Me.pbroom1off.Name = "pbroom1off"
         Me.pbroom1off.Size = New System.Drawing.Size(25, 35)
         Me.pbroom1off.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -182,6 +193,7 @@ Partial Class frmplanta
         '
         'pbdiningon
         '
+        Me.pbdiningon.BackColor = System.Drawing.Color.White
         Me.pbdiningon.Image = CType(resources.GetObject("pbdiningon.Image"), System.Drawing.Image)
         Me.pbdiningon.Location = New System.Drawing.Point(379, 89)
         Me.pbdiningon.Name = "pbdiningon"
@@ -192,6 +204,7 @@ Partial Class frmplanta
         '
         'pbdiningoff
         '
+        Me.pbdiningoff.BackColor = System.Drawing.Color.White
         Me.pbdiningoff.Image = CType(resources.GetObject("pbdiningoff.Image"), System.Drawing.Image)
         Me.pbdiningoff.Location = New System.Drawing.Point(379, 89)
         Me.pbdiningoff.Name = "pbdiningoff"
@@ -203,9 +216,9 @@ Partial Class frmplanta
         'pbcamvig
         '
         Me.pbcamvig.Image = CType(resources.GetObject("pbcamvig.Image"), System.Drawing.Image)
-        Me.pbcamvig.Location = New System.Drawing.Point(607, 40)
+        Me.pbcamvig.Location = New System.Drawing.Point(607, 27)
         Me.pbcamvig.Name = "pbcamvig"
-        Me.pbcamvig.Size = New System.Drawing.Size(29, 25)
+        Me.pbcamvig.Size = New System.Drawing.Size(31, 34)
         Me.pbcamvig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbcamvig.TabIndex = 49
         Me.pbcamvig.TabStop = False
