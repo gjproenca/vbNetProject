@@ -28,7 +28,6 @@ Public Class Methods
     End Function
 
 #Region "User"
-
     Public Function VerifyUser(ByVal U As User) As DataTable
         Dim comando As SqlDataAdapter = New SqlDataAdapter("SELECT UserName, Password FROM Users WHERE UserName LIKE '" + U.UserName + "'", conn)
         Dim tabela As DataTable = New DataTable()
@@ -81,7 +80,6 @@ Public Class Methods
         comm_delete.ExecuteNonQuery()
         conn.Close()
     End Sub
-
 #End Region
 
 #Region "Status"
@@ -113,39 +111,13 @@ Public Class Methods
         conn.Close()
     End Sub
 
-    'Public Sub UpdateStatus(ByVal S As Status)
-    '    Dim comm_update As SqlCommand = New SqlCommand()
-    '    comm_update.Connection = conn
-    '    comm_update.CommandType = CommandType.Text
-    '    comm_update.CommandText = "UPDATE Status SET IdUser = @IdUser, SoftwareStatus = @SoftwareStatus, Alarm = @Alarm, Fire = @Fire, Message = @Message, LightBedR1 = @LightBedR1, LightBedR2 = @LightBedR2, LightBedR3 = @LightBedR3, LightLiving = @LightLiving, LightDining = @LightDining, LightGarage = @LightGarage, TimeStamp = @getdate"
-    '    comm_update.Parameters.AddWithValue("@IdUser", S.IdUser)
-    '    comm_update.Parameters.AddWithValue("@SoftwareStatus", S.SoftwareStatus)
-    '    comm_update.Parameters.AddWithValue("@Alarm", S.Alarm)
-    '    comm_update.Parameters.AddWithValue("@Fire", S.Fire)
-    '    comm_update.Parameters.AddWithValue("@Message", S.Message)
-    '    comm_update.Parameters.AddWithValue("@LightBedR1", S.LightBedR1)
-    '    comm_update.Parameters.AddWithValue("@LightBedR2", S.LightBedR2)
-    '    comm_update.Parameters.AddWithValue("@LightBedR3", S.LightBedR3)
-    '    comm_update.Parameters.AddWithValue("@LightLiving", S.LightLiving)
-    '    comm_update.Parameters.AddWithValue("@LightDining", S.LightDining)
-    '    comm_update.Parameters.AddWithValue("@LightGarage", S.LightGarage)
-    '    comm_update.Parameters.AddWithValue("@getdate", S.TimeStamp)
-    '    comm_update.Parameters.AddWithValue("@IdStatus", S.IdStatus)
-    '    conn.Open()
-    '    comm_update.ExecuteNonQuery()
-    '    conn.Close()
-    'End Sub
-
 #Region "Update Status"
-
     Public Sub UpdateSoftwareStatus(ByVal S As Status)
         Dim comm_update As SqlCommand = New SqlCommand()
         comm_update.Connection = conn
         comm_update.CommandType = CommandType.Text
         comm_update.CommandText = "UPDATE Status SET SoftwareStatus = @SoftwareStatus"
-
         comm_update.Parameters.AddWithValue("@SoftwareStatus", S.SoftwareStatus)
-
         conn.Open()
         comm_update.ExecuteNonQuery()
         conn.Close()
@@ -156,9 +128,7 @@ Public Class Methods
         comm_update.Connection = conn
         comm_update.CommandType = CommandType.Text
         comm_update.CommandText = "UPDATE Status SET Alarm = @Alarm"
-
         comm_update.Parameters.AddWithValue("@Alarm", S.Alarm)
-
         conn.Open()
         comm_update.ExecuteNonQuery()
         conn.Close()
@@ -169,9 +139,7 @@ Public Class Methods
         comm_update.Connection = conn
         comm_update.CommandType = CommandType.Text
         comm_update.CommandText = "UPDATE Status SET Fire = @Fire"
-
         comm_update.Parameters.AddWithValue("@Fire", S.Fire)
-
         conn.Open()
         comm_update.ExecuteNonQuery()
         conn.Close()
@@ -182,9 +150,7 @@ Public Class Methods
         comm_update.Connection = conn
         comm_update.CommandType = CommandType.Text
         comm_update.CommandText = "UPDATE Status SET LightBedR1 = @LightBedR1"
-
         comm_update.Parameters.AddWithValue("@LightBedR1", S.LightBedR1)
-
         conn.Open()
         comm_update.ExecuteNonQuery()
         conn.Close()
@@ -195,9 +161,7 @@ Public Class Methods
         comm_update.Connection = conn
         comm_update.CommandType = CommandType.Text
         comm_update.CommandText = "UPDATE Status SET LightBedR2 = @LightBedR2"
-
         comm_update.Parameters.AddWithValue("@LightBedR2", S.LightBedR2)
-
         conn.Open()
         comm_update.ExecuteNonQuery()
         conn.Close()
@@ -208,9 +172,7 @@ Public Class Methods
         comm_update.Connection = conn
         comm_update.CommandType = CommandType.Text
         comm_update.CommandText = "UPDATE Status SET LightBedR3 = @LightBedR3"
-
         comm_update.Parameters.AddWithValue("@LightBedR3", S.LightBedR3)
-
         conn.Open()
         comm_update.ExecuteNonQuery()
         conn.Close()
@@ -221,9 +183,7 @@ Public Class Methods
         comm_update.Connection = conn
         comm_update.CommandType = CommandType.Text
         comm_update.CommandText = "UPDATE Status SET LightLiving = @LightLiving"
-
         comm_update.Parameters.AddWithValue("@LightLiving", S.LightLiving)
-
         conn.Open()
         comm_update.ExecuteNonQuery()
         conn.Close()
@@ -234,9 +194,7 @@ Public Class Methods
         comm_update.Connection = conn
         comm_update.CommandType = CommandType.Text
         comm_update.CommandText = "UPDATE Status SET LightDining = @LightDining"
-
         comm_update.Parameters.AddWithValue("@LightDining", S.LightDining)
-
         conn.Open()
         comm_update.ExecuteNonQuery()
         conn.Close()
@@ -247,9 +205,7 @@ Public Class Methods
         comm_update.Connection = conn
         comm_update.CommandType = CommandType.Text
         comm_update.CommandText = "UPDATE Status SET LightGarage = @LightGarage"
-
         comm_update.Parameters.AddWithValue("@LightGarage", S.LightGarage)
-
         conn.Open()
         comm_update.ExecuteNonQuery()
         conn.Close()
@@ -265,14 +221,10 @@ Public Class Methods
         comm_delete.ExecuteNonQuery()
         conn.Close()
     End Sub
-
 #End Region
-
 #End Region
 
 #Region "Premissions"
-
-
     Public Sub InsertPermissions(ByVal P As Permission)
         Dim comm_insert As SqlCommand = New SqlCommand()
         comm_insert.Connection = conn
@@ -308,5 +260,4 @@ Public Class Methods
     End Function
 
 End Class
-
 #End Region

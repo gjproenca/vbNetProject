@@ -16,7 +16,7 @@
     <%--My CSS--%><%--<link href="content/font-awesome.min.css" rel="stylesheet" />--%>
 
     <title>VBNet Avaliação</title>
-        <style type="text/css">
+    <style type="text/css">
         .auto-style1 {
             margin-right: 0;
             margin-bottom: 1;
@@ -42,14 +42,16 @@
     </style>
 </head>
 <body>
-        <form id="form1" runat="server">
+    <form id="form1" runat="server">
         <div>
             <br />
             <table class="w-100">
                 <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style9">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style3">Actions</td>
+                    <td class="auto-style9">Status On/Off</td>
+                    <td>
+                        <asp:Label ID="Label1" runat="server" Text="Messages"></asp:Label>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
@@ -58,8 +60,8 @@
                     <td class="auto-style9">
                         <asp:CheckBox ID="checkBoxStatus" runat="server" Enabled="False" />
                     </td>
-                    <td>
-                        <%--<asp:Button ID="buttonMessage" runat="server" Text="Send Message" />--%>
+                    <td rowspan="9">
+                        <asp:TextBox ID="textBoxViewMessages" runat="server" Height="305px" TextMode="MultiLine" Width="517px" ReadOnly="True" Style="resize: none;" BorderStyle="Solid" CssClass="modal-open"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -68,9 +70,6 @@
                     </td>
                     <td class="auto-style9">
                         <asp:CheckBox ID="checkBoxAlarm" runat="server" Enabled="False" />
-                    </td>
-                    <td rowspan="3">
-                       <%-- <asp:TextBox ID="textBoxSendMessage" runat="server" Height="89px" TextMode="MultiLine" Width="517px"></asp:TextBox>--%>
                     </td>
                 </tr>
                 <tr>
@@ -96,9 +95,6 @@
                     <td class="auto-style9">
                         <asp:CheckBox ID="checkBoxLightBedR2" runat="server" Enabled="False" />
                     </td>
-                    <td>
-                        <asp:Label ID="Label1" runat="server" Text="Messages"></asp:Label>
-                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style7">
@@ -106,9 +102,6 @@
                     </td>
                     <td class="auto-style10">
                         <asp:CheckBox ID="checkBoxLightBedR3" runat="server" Enabled="False" />
-                    </td>
-                    <td rowspan="4">
-                        <asp:TextBox ID="textBoxViewMessages" runat="server" Height="123px" TextMode="MultiLine" Width="517px" ReadOnly="True" style="resize:none;"  ></asp:TextBox>
                     </td>
                 </tr>
                 <tr>

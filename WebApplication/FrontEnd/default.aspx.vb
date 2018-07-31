@@ -12,19 +12,15 @@ Public Class _Default2
     Dim user As New DAL.Types.User
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'Sessions
-        'If (Session("admin") IsNot Nothing) Then
-        '    Response.Write("Admin")
-        'ElseIf (Session("user") IsNot Nothing) Then
-        '    Response.Write("User")
-        'Else
-        '    Response.Redirect("~/default.aspx")
-        'End If
+        If Session("userId") Is Nothing Then
+            Session("restricted") = True
+            Response.Redirect("~/default.aspx")
+        End If
     End Sub
 
     Protected Sub buttonMessage_Click(sender As Object, e As EventArgs) Handles buttonMessage.Click
 
-        status.IdUser = 1
+        status.IdUser = Session("userId")
         status.SoftwareStatus = methods.SelectStatus().Rows(0).Item(2)
         status.Alarm = methods.SelectStatus().Rows(0).Item(3)
         status.Fire = methods.SelectStatus().Rows(0).Item(4)
