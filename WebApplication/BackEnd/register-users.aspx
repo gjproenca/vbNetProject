@@ -44,7 +44,7 @@
                                 <a class="nav-link">|</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="./default.aspx">Control Panel</a>
+                                <a class="nav-link" href="./default.aspx">Control Panel</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link">|</a>
@@ -120,7 +120,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </form>
 

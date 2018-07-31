@@ -38,4 +38,5 @@
         Public Property LightGarage As Integer
         Public Property TimeStamp As Date
     End Class
+
 End Class

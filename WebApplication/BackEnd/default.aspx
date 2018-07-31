@@ -66,12 +66,15 @@
                                     <h1 class="mb-4 text-center text-white">Control Panel
                                     </h1>
 
-                                     <asp:Button ID="buttonMessage" runat="server" Text="Send Message" />
-                                    <br /><br />
-                                     <asp:TextBox ID="textBoxSendMessage" runat="server" Height="89px" TextMode="MultiLine" Width="517px" style="resize:none;" ></asp:TextBox>
-                                    <br /><br />
+                                    <asp:Button ID="buttonMessage" runat="server" Text="Send Message" />
+                                    <br />
+                                    <br />
+                                    <asp:TextBox ID="textBoxSendMessage" runat="server" Height="89px" TextMode="MultiLine" Width="517px" Style="resize: none;" BorderStyle="Solid"></asp:TextBox>
+                                    <br />
+                                    <br />
 
                                     <iframe class="col-12 table table-hover table-responsive table-light" src="iframe-control-panel.aspx" height="363px" frameborder="0"></iframe>
+                                
                                 </div>
                             </div>
                         </div>

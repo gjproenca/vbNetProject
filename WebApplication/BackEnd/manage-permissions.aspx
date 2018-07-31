@@ -18,7 +18,7 @@
 <body>
     <form id="body" runat="server">
         <div>
-             <%-- nav --%>
+            <%-- nav --%>
             <nav class="navbar navbar-expand-md bg-primary navbar-dark">
                 <div class="container">
                     <a class="navbar-brand">DomoSys</a>
@@ -65,12 +65,12 @@
                                     <h1 class="mb-4 text-center text-white">Manage Permissions</h1>
 
                                     <%-- Grid view permissions --%>
-                                    <asp:GridView ID="GridViewPermissions" runat="server" AutoGenerateColumns="False" DataKeyNames="IdPermission" DataSourceID="SqlDataSource1" EmptyDataText="There are no data records to display." AllowSorting="True" CssClass="table table-hover table-responsive table-light" GridLines="None" AllowPaging="True" HorizontalAlign="Center">
+                                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="IdPermission" DataSourceID="SqlDataSource1" EmptyDataText="There are no data records to display." AllowPaging="True" AllowSorting="True" CssClass="table table-hover table-responsive table-light" GridLines="None" HorizontalAlign="Center">
                                         <Columns>
                                             <asp:CommandField ShowEditButton="True" />
                                             <asp:BoundField DataField="IdPermission" HeaderText="IdPermission" ReadOnly="True" SortExpression="IdPermission" InsertVisible="False" Visible="False" />
                                             <asp:BoundField DataField="IdUser" HeaderText="IdUser" SortExpression="IdUser" Visible="False" />
-                                            <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="UserName" ReadOnly="True" />
+                                            <asp:BoundField DataField="UserName" HeaderText="UserName" ReadOnly="True" SortExpression="UserName" />
                                             <asp:CheckBoxField DataField="SoftwareStatus" HeaderText="SoftwareStatus" SortExpression="SoftwareStatus" />
                                             <asp:CheckBoxField DataField="Alarm" HeaderText="Alarm" SortExpression="Alarm" />
                                             <asp:CheckBoxField DataField="Fire" HeaderText="Fire" SortExpression="Fire" />
@@ -81,10 +81,10 @@
                                             <asp:CheckBoxField DataField="LightLiving" HeaderText="LightLiving" SortExpression="LightLiving" />
                                             <asp:CheckBoxField DataField="LightDining" HeaderText="LightDining" SortExpression="LightDining" />
                                             <asp:CheckBoxField DataField="LightGarage" HeaderText="LightGarage" SortExpression="LightGarage" />
-                                            <asp:BoundField DataField="TimeStamp" HeaderText="TimeStamp" SortExpression="TimeStamp" ReadOnly="True" />
+                                            <asp:CheckBoxField DataField="TimeStamp" HeaderText="TimeStamp" SortExpression="TimeStamp" />
                                         </Columns>
                                     </asp:GridView>
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DomoSysConnectionString %>" DeleteCommand="DELETE FROM [Permissions] WHERE [IdPermission] = @IdPermission" InsertCommand="INSERT INTO [Permissions] ([IdUser], [SoftwareStatus], [Alarm], [Fire], [Message], [LightBedR1], [LightBedR2], [LightBedR3], [LightLiving], [LightDining], [LightGarage], [TimeStamp]) VALUES (@IdUser, @SoftwareStatus, @Alarm, @Fire, @Message, @LightBedR1, @LightBedR2, @LightBedR3, @LightLiving, @LightDining, @LightGarage, @TimeStamp)" SelectCommand="SELECT Permissions.IdPermission, Permissions.IdUser, Users.UserName, Permissions.SoftwareStatus, Permissions.Alarm, Permissions.Fire, Permissions.Message, Permissions.LightBedR1, Permissions.LightBedR2, Permissions.LightBedR3, Permissions.LightLiving, Permissions.LightDining, Permissions.LightGarage, Permissions.TimeStamp FROM Permissions INNER JOIN Users ON Permissions.IdUser = Users.IdUser" UpdateCommand="UPDATE [Permissions] SET [SoftwareStatus] = @SoftwareStatus, [Alarm] = @Alarm, [Fire] = @Fire, [Message] = @Message, [LightBedR1] = @LightBedR1, [LightBedR2] = @LightBedR2, [LightBedR3] = @LightBedR3, [LightLiving] = @LightLiving, [LightDining] = @LightDining, [LightGarage] = @LightGarage, [TimeStamp] = GETDATE() WHERE [IdPermission] = @IdPermission">
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DomoSysConnectionString %>" DeleteCommand="DELETE FROM [Permissions] WHERE [IdPermission] = @IdPermission" InsertCommand="INSERT INTO [Permissions] ([IdUser], [SoftwareStatus], [Alarm], [Fire], [Message], [LightBedR1], [LightBedR2], [LightBedR3], [LightLiving], [LightDining], [LightGarage], [TimeStamp]) VALUES (@IdUser, @SoftwareStatus, @Alarm, @Fire, @Message, @LightBedR1, @LightBedR2, @LightBedR3, @LightLiving, @LightDining, @LightGarage, @TimeStamp)" SelectCommand="SELECT Permissions.IdPermission, Permissions.IdUser, Users.UserName, Permissions.SoftwareStatus, Permissions.Alarm, Permissions.Fire, Permissions.Message, Permissions.LightBedR1, Permissions.LightBedR2, Permissions.LightBedR3, Permissions.LightLiving, Permissions.LightDining, Permissions.LightGarage, Permissions.TimeStamp FROM Permissions INNER JOIN Users ON Permissions.IdUser = Users.IdUser" UpdateCommand="UPDATE [Permissions] SET [SoftwareStatus] = @SoftwareStatus, [Alarm] = @Alarm, [Fire] = @Fire, [Message] = @Message, [LightBedR1] = @LightBedR1, [LightBedR2] = @LightBedR2, [LightBedR3] = @LightBedR3, [LightLiving] = @LightLiving, [LightDining] = @LightDining, [LightGarage] = @LightGarage, [TimeStamp] = @TimeStamp WHERE [IdPermission] = @IdPermission">
                                         <DeleteParameters>
                                             <asp:Parameter Name="IdPermission" Type="Int32" />
                                         </DeleteParameters>
@@ -100,7 +100,7 @@
                                             <asp:Parameter Name="LightLiving" Type="Boolean" />
                                             <asp:Parameter Name="LightDining" Type="Boolean" />
                                             <asp:Parameter Name="LightGarage" Type="Boolean" />
-                                            <asp:Parameter Name="TimeStamp" Type="DateTime" />
+                                            <asp:Parameter Name="TimeStamp" Type="Boolean" />
                                         </InsertParameters>
                                         <UpdateParameters>
                                             <asp:Parameter Name="SoftwareStatus" Type="Boolean" />
@@ -113,10 +113,12 @@
                                             <asp:Parameter Name="LightLiving" Type="Boolean" />
                                             <asp:Parameter Name="LightDining" Type="Boolean" />
                                             <asp:Parameter Name="LightGarage" Type="Boolean" />
-                                            <asp:Parameter Name="TimeStamp" Type="DateTime" />
+                                            <asp:Parameter Name="TimeStamp" Type="Boolean" />
                                             <asp:Parameter Name="IdPermission" Type="Int32" />
                                         </UpdateParameters>
                                     </asp:SqlDataSource>
+
+
                                 </div>
                             </div>
                         </div>
