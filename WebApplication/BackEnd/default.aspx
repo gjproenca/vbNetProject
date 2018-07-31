@@ -75,6 +75,17 @@
 
                                     <iframe class="col-12 table table-hover table-responsive table-light" src="iframe-control-panel.aspx" height="363px" frameborder="0"></iframe>
                                 
+                                                                        <table class="w-100">
+                                        <tr>
+                                            <td>
+                                    
+                                    <asp:Image ID="Image1" runat="server" width="100%" imageAlign="Middle" ImageUrl="~/images/color-floor-plan-renderings.jpg" />
+                                
+                                            </td>
+                                        </tr>
+                                    </table>
+                                
+                                    <br />
                                 </div>
                             </div>
                         </div>

@@ -334,6 +334,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:WebApplication._default1._Image1">
+<summary>
+Image1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:WebApplication.manage_users._body">
 <summary>
 body control.
@@ -526,6 +535,15 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:WebApplication._Default2._textBoxSendMessage">
 <summary>
 textBoxSendMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication._Default2._Image1">
+<summary>
+Image1 control.
 </summary>
 <remarks>
 Auto-generated field.

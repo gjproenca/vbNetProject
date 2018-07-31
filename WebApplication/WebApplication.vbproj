@@ -109,6 +109,12 @@
     <Content Include="FrontEnd\default.aspx" />
     <Content Include="FrontEnd\iframe-control-panel.aspx" />
     <Content Include="FrontEnd\sign-out.aspx" />
+    <Content Include="images\camera.png" />
+    <Content Include="images\color-floor-plan-renderings.jpg" />
+    <Content Include="images\fire-icon.png" />
+    <Content Include="images\lampada-off.png" />
+    <Content Include="images\lampada-on.png" />
+    <Content Include="images\security.ico" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
