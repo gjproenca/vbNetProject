@@ -59,7 +59,6 @@ Public Class frmplanta
     End Sub
 
     Private Sub LoadFields()
-        'chbalarm.Checked = methods.SelectStatus.Rows(0).Item(3).ToString()
         pbfire.Visible = methods.SelectStatus.Rows(0).Item(4).ToString()
 
         If methods.SelectStatus.Rows(0).Item(2) = True Then
@@ -127,7 +126,6 @@ Public Class frmplanta
             pbgaron.Visible = False
             pbgaroff.Visible = True
         End If
-
     End Sub
 
     Private Sub timer_Tick(sender As Object, e As EventArgs) Handles timer.Tick
@@ -190,21 +188,19 @@ Public Class frmplanta
         End If
 
         If sendmessage = True Then
-            SerialPort1.Open()
-            SerialPort1.Write("1")
-            SerialPort1.Write("2")
-            Threading.Thread.Sleep(100)
-            SerialPort1.Write("0")
-            SerialPort1.Close()
+            Try
+                SerialPort1.Open()
+                SerialPort1.Write("1")
+                SerialPort1.Write("2")
+                Threading.Thread.Sleep(100)
+                SerialPort1.Write("0")
+                SerialPort1.Close()
 
-            Console.WriteLine("led")
+                Console.WriteLine("led")
+            Catch ex As Exception
+                MessageBox.Show("Couldn't send the information to arduino, please pair the ports, COM3 for this aplication and another COM Port for the arduino!", "Error!", MessageBoxButtons.OK)
+            End Try
         End If
-    End Sub
-
-    Private Sub btninsert_Click(sender As Object, e As EventArgs)
-        SerialPort1.Open()
-        SerialPort1.Write("1")
-        SerialPort1.Close()
     End Sub
 
     Private Sub Captured(sender As Object, eventargs As NewFrameEventArgs)
@@ -240,109 +236,88 @@ Public Class frmplanta
         status.LightBedR2 = Not methods.SelectStatus.Rows(0).Item(7)
         methods.UpdateLightBedR2(status)
         LoadFields()
-
     End Sub
 
     Private Sub pbroom2off_Click(sender As Object, e As EventArgs) Handles pbroom2off.Click
         status.LightBedR2 = Not methods.SelectStatus.Rows(0).Item(7)
         methods.UpdateLightBedR2(status)
         LoadFields()
-
     End Sub
 
     Private Sub pblivingoff_Click(sender As Object, e As EventArgs) Handles pblivingoff.Click
         status.LightLiving = Not methods.SelectStatus.Rows(0).Item(9)
         methods.UpdateLightLiving(status)
         LoadFields()
-
     End Sub
 
     Private Sub pblivingon_Click(sender As Object, e As EventArgs) Handles pblivingon.Click
         status.LightLiving = Not methods.SelectStatus.Rows(0).Item(9)
         methods.UpdateLightLiving(status)
         LoadFields()
-
     End Sub
 
     Private Sub pbroom3off_Click(sender As Object, e As EventArgs) Handles pbroom3off.Click
         status.LightBedR3 = Not methods.SelectStatus.Rows(0).Item(8)
         methods.UpdateLightBedR3(status)
         LoadFields()
-
     End Sub
 
     Private Sub pbroom3on_Click(sender As Object, e As EventArgs) Handles pbroom3on.Click
         status.LightBedR3 = Not methods.SelectStatus.Rows(0).Item(8)
         methods.UpdateLightBedR3(status)
         LoadFields()
-
     End Sub
 
     Private Sub pbdiningoff_Click(sender As Object, e As EventArgs) Handles pbdiningoff.Click
         status.LightDining = Not methods.SelectStatus.Rows(0).Item(10)
         methods.UpdateLightDining(status)
         LoadFields()
-
     End Sub
 
     Private Sub pbdiningon_Click(sender As Object, e As EventArgs) Handles pbdiningon.Click
         status.LightDining = Not methods.SelectStatus.Rows(0).Item(10)
         methods.UpdateLightDining(status)
         LoadFields()
-
     End Sub
 
     Private Sub pbroom1on_Click(sender As Object, e As EventArgs) Handles pbroom1on.Click
         status.LightBedR1 = Not methods.SelectStatus.Rows(0).Item(6)
         methods.UpdateLightBedR1(status)
         LoadFields()
-
     End Sub
 
     Private Sub pbroom1off_Click(sender As Object, e As EventArgs) Handles pbroom1off.Click
         status.LightBedR1 = Not methods.SelectStatus.Rows(0).Item(6)
         methods.UpdateLightBedR1(status)
         LoadFields()
-
     End Sub
 
     Private Sub pbgaron_Click(sender As Object, e As EventArgs) Handles pbgaron.Click
         status.LightGarage = Not methods.SelectStatus.Rows(0).Item(11)
         methods.UpdateLightGarage(status)
         LoadFields()
-
     End Sub
 
     Private Sub pbgaroff_Click(sender As Object, e As EventArgs) Handles pbgaroff.Click
         status.LightGarage = Not methods.SelectStatus.Rows(0).Item(11)
         methods.UpdateLightGarage(status)
         LoadFields()
-
     End Sub
 
     Private Sub btstatus_Click(sender As Object, e As EventArgs) Handles btstatus.Click
         status.SoftwareStatus = Not methods.SelectStatus.Rows(0).Item(2)
         methods.UpdateSoftwareStatus(status)
         LoadFields()
-
-
     End Sub
 
     Private Sub btfire_Click(sender As Object, e As EventArgs) Handles btfire.Click
         status.Fire = Not methods.SelectStatus.Rows(0).Item(4)
         methods.UpdateStatusFire(status)
         LoadFields()
-
-        SerialPort1.Open()
-        SerialPort1.Write("0")
-        'SerialPort1.Write("2")
-        SerialPort1.Close()
-
-
     End Sub
 
     Private Sub btsendmessage_Click(sender As Object, e As EventArgs) Handles btsendmessage.Click
-        status.IdUser = 1
+        status.IdUser = 2
         status.SoftwareStatus = methods.SelectStatus.Rows(0).Item(2)
         status.Alarm = methods.SelectStatus.Rows(0).Item(3)
         status.Fire = methods.SelectStatus.Rows(0).Item(4)
@@ -357,7 +332,6 @@ Public Class frmplanta
         methods.InsertStatus(status)
 
         tbsendmessage.Text = ""
-
 
         LoadFields()
     End Sub
