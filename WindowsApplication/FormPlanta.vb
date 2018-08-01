@@ -42,6 +42,17 @@ Public Class frmplanta
         templightdining = methods.SelectStatus.Rows(0).Item(10)
         templightgarage = methods.SelectStatus.Rows(0).Item(11)
 
+        'Dim con As New SqlConnection("Data Source=.\sqlexpress;Initial Catalog=DomoSys;Integrated Security=True")
+        'Dim cmd As New SqlCommand
+        'cmd.Connection = con
+        ''cmd.CommandText = "UPDATE Camera SET Image = @image"
+        'cmd.CommandText = "INSERT  INTO Camera (Image) values (@image)"
+        'cmd.Parameters.AddWithValue("image", SqlDbType.VarBinary).Value = IO.File.ReadAllBytes("camera.jpg")
+        'con.Open()
+        'cmd.ExecuteNonQuery()
+        'con.Close()
+        'cmd.Parameters.Clear()
+
         'com port
         SerialPort1.Close()
         SerialPort1.PortName = "COM3"
@@ -137,6 +148,34 @@ Public Class frmplanta
         '    Me.tbmsgtest.Text += Chr(SerialPort1.ReadByte)
 
         'End If
+
+        If pbcamera.Visible = True Then
+            Try
+                pbcamera.Image.Save("camera.jpg", Imaging.ImageFormat.Jpeg)
+                Console.WriteLine("Saved image to Folder")
+            Catch ex As Exception
+
+            End Try
+
+            Try
+                Dim con As New SqlConnection("Data Source=.\sqlexpress;Initial Catalog=DomoSys;Integrated Security=True")
+                Dim cmd As New SqlCommand
+                cmd.Connection = con
+                cmd.CommandText = "UPDATE Camera SET Image = @image"
+                'cmd.CommandText = "INSERT  INTO Camera (Image) values (@image)"
+                cmd.Parameters.AddWithValue("image", SqlDbType.VarBinary).Value = IO.File.ReadAllBytes("camera.jpg")
+                con.Open()
+                cmd.ExecuteNonQuery()
+                con.Close()
+                cmd.Parameters.Clear()
+
+                Console.WriteLine("Saved image to DB")
+                'MsgBox("Done")
+                'txt_staffid.Clear()
+            Catch ex As Exception
+
+            End Try
+        End If
     End Sub
 
     Private Sub sendInformationArduino()
