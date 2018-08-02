@@ -45,6 +45,10 @@
     <form id="form1" runat="server">
         <div>
             <br />
+
+            <%--Camera feed--%>
+            <asp:Image ID="Image2" runat="server" ImageUrl="~/camera.aspx" Height="300px" Width="300px" />
+
             <table class="w-100">
                 <tr>
                     <td class="auto-style3">Actions</td>

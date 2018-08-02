@@ -70,25 +70,21 @@
                                     <br />
                                     <br />
                                     <asp:TextBox ID="textBoxSendMessage" runat="server" Height="89px" TextMode="MultiLine" Width="517px" Style="resize: none;" BorderStyle="Solid"></asp:TextBox>
-                                    <asp:SqlDataSource ID="SqlDataSourceCamera" runat="server" ConnectionString="<%$ ConnectionStrings:DomoSysConnectionString %>" SelectCommand="SELECT * FROM [Camera]"></asp:SqlDataSource>
-                                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceCamera" EmptyDataText="There are no data records to display.">
-                                    </asp:GridView>
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DomoSysConnectionString %>" ProviderName="<%$ ConnectionStrings:DomoSysConnectionString.ProviderName %>" SelectCommand="SELECT [Image] FROM [Camera]"></asp:SqlDataSource>
                                     <br />
                                     <br />
 
                                     <iframe class="col-12 table table-hover table-responsive table-light" src="iframe-control-panel.aspx" height="363px" frameborder="0"></iframe>
-                                
-                                                                        <table class="w-100">
+
+                                    <table class="w-100">
                                         <tr>
                                             <td>
-                                    
-                                    <asp:Image ID="Image1" runat="server" width="100%" imageAlign="Middle" ImageUrl="~/images/color-floor-plan-renderings.jpg" />
-                                
+
+                                                <asp:Image ID="Image1" runat="server" Width="100%" ImageAlign="Middle" ImageUrl="~/images/color-floor-plan-renderings.jpg" />
+
                                             </td>
                                         </tr>
                                     </table>
-                                
+
                                     <br />
                                 </div>
                             </div>

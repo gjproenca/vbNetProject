@@ -13,10 +13,10 @@ Public Class _default1
     Dim user As New DAL.Types.User
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'If Session("adminId") Is Nothing Then
-        '    Session("restricted") = True
-        '    Response.Redirect("~/default.aspx")
-        'End If
+        If Session("adminId") Is Nothing Then
+            Session("restricted") = True
+            Response.Redirect("~/default.aspx")
+        End If
     End Sub
 
     Protected Sub buttonMessage_Click(sender As Object, e As EventArgs) Handles buttonMessage.Click

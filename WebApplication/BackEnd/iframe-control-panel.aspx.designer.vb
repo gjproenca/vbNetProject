@@ -23,6 +23,15 @@ Partial Public Class control_panel_iframe
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
+    '''Image2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Image2 As Global.System.Web.UI.WebControls.Image
+    
+    '''<summary>
     '''Label1 control.
     '''</summary>
     '''<remarks>

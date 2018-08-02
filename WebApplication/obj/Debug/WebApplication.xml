@@ -46,6 +46,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:WebApplication.control_panel_iframe._Image2">
+<summary>
+Image2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:WebApplication.control_panel_iframe._Label1">
 <summary>
 Label1 control.
@@ -235,6 +244,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:WebApplication.camera._form1">
+<summary>
+form1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:WebApplication._default._body">
 <summary>
 body control.
@@ -328,33 +346,6 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:WebApplication._default1._textBoxSendMessage">
 <summary>
 textBoxSendMessage control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication._default1._SqlDataSourceCamera">
-<summary>
-SqlDataSourceCamera control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication._default1._GridView1">
-<summary>
-GridView1 control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:WebApplication._default1._SqlDataSource1">
-<summary>
-SqlDataSource1 control.
 </summary>
 <remarks>
 Auto-generated field.

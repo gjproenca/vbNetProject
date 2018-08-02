@@ -4,11 +4,11 @@
 
 <html>
 <head runat="server">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-        <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
     <title>VBNet Avaliação</title>
 </head>
 <body>
@@ -47,25 +47,27 @@
                                     <h1 class="mb-4 text-center text-white">Control Panel
                                     </h1>
 
-                                     <asp:Button ID="buttonMessage" runat="server" Text="Send Message" />
-                                    <br /><br />
-                                     <asp:TextBox ID="textBoxSendMessage" runat="server" Height="89px" TextMode="MultiLine" Width="517px" style="resize:none;" BorderStyle="Solid"></asp:TextBox>
-                                    <br /><br />
+                                    <asp:Button ID="buttonMessage" runat="server" Text="Send Message" />
+                                    <br />
+                                    <br />
+                                    <asp:TextBox ID="textBoxSendMessage" runat="server" Height="89px" TextMode="MultiLine" Width="517px" Style="resize: none;" BorderStyle="Solid"></asp:TextBox>
+                                    <br />
+                                    <br />
 
                                     <iframe class="col-12 table table-hover table-responsive table-light" src="iframe-control-panel.aspx" height="363px" frameborder="0"></iframe>
-                                
+
                                     <table class="w-100">
                                         <tr>
                                             <td>
-                                    
-                                    <asp:Image ID="Image1" runat="server" width="100%" imageAlign="Middle" ImageUrl="~/images/color-floor-plan-renderings.jpg" />
-                                
+
+                                                <asp:Image ID="Image1" runat="server" Width="100%" ImageAlign="Middle" ImageUrl="~/images/color-floor-plan-renderings.jpg" />
+
                                             </td>
                                         </tr>
                                     </table>
-                                
+
                                     <br />
-                                    
+
                                 </div>
                             </div>
                         </div>

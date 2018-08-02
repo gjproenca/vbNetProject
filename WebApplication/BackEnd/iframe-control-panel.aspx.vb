@@ -128,7 +128,6 @@
         methods.UpdateStatusFire(status)
 
         loadFields()
-
     End Sub
 
     Protected Sub buttonLightBedR1_Click(sender As Object, e As EventArgs) Handles buttonLightBedR1.Click

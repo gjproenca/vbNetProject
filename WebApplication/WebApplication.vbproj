@@ -95,6 +95,7 @@
   <ItemGroup>
     <Content Include="BackEnd\iframe-control-panel.aspx" />
     <Content Include="BackEnd\sign-out.aspx" />
+    <Content Include="camera.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -173,6 +174,13 @@
     </Compile>
     <Compile Include="BackEnd\sign-out.aspx.vb">
       <DependentUpon>sign-out.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="camera.aspx.designer.vb">
+      <DependentUpon>camera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="camera.aspx.vb">
+      <DependentUpon>camera.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="default.aspx.designer.vb">
