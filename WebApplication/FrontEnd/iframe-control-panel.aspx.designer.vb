@@ -23,15 +23,6 @@ Partial Public Class iframe_control_panel
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
-    '''Image2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Image2 As Global.System.Web.UI.WebControls.Image
-    
-    '''<summary>
     '''Label1 control.
     '''</summary>
     '''<remarks>
@@ -210,4 +201,13 @@ Partial Public Class iframe_control_panel
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents checkBoxGarage As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Image2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Image2 As Global.System.Web.UI.WebControls.Image
 End Class

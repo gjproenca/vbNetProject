@@ -54,7 +54,7 @@
                                     <br />
                                     <br />
 
-                                    <iframe class="col-12 table table-hover table-responsive table-light" src="iframe-control-panel.aspx" height="363px" frameborder="0"></iframe>
+                                    <iframe class="col-12 table table-hover table-responsive table-light" src="iframe-control-panel.aspx" height="700px" frameborder="0"></iframe>
 
                                     <table class="w-100">
                                         <tr>

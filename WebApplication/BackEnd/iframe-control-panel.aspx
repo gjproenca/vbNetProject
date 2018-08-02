@@ -47,7 +47,6 @@
             <br />
 
             <%--Camera feed--%>
-            <asp:Image ID="Image2" runat="server" ImageUrl="~/camera.aspx" Height="300px" Width="300px" />
 
             <table class="w-100">
                 <tr>
@@ -134,11 +133,17 @@
                 </tr>
             </table>
         </div>
-    </form>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="../Scripts/jquery-3.3.1.min.js"></script>
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
-</body>
+        <p class="text-center">
+            <br />
+            <asp:Image ID="Image2" runat="server" ImageUrl="~/camera.aspx" Height="300px" Width="300px" />
+
+            </p>
+    </form>
+
+    </body>
 </html>

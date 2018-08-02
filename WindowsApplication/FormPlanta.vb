@@ -31,6 +31,12 @@ Public Class frmplanta
     Dim templightgarage As Boolean
 
     Private Sub frmplanta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If cameras.ShowDialog() = DialogResult.OK Then
+            camera = cameras.VideoDevice
+            AddHandler camera.NewFrame, New NewFrameEventHandler(AddressOf Captured)
+            camera.Start()
+        End If
+
         'Initialize temp variables
         tempsoftwarestatus = methods.SelectStatus.Rows(0).Item(2)
         tempalarm = methods.SelectStatus.Rows(0).Item(3)
