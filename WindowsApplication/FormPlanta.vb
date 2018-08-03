@@ -31,11 +31,11 @@ Public Class frmplanta
     Dim templightgarage As Boolean
 
     Private Sub frmplanta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If cameras.ShowDialog() = DialogResult.OK Then
+        While cameras.ShowDialog() <> DialogResult.OK
             camera = cameras.VideoDevice
             AddHandler camera.NewFrame, New NewFrameEventHandler(AddressOf Captured)
             camera.Start()
-        End If
+        End While
 
         'Initialize temp variables
         tempsoftwarestatus = methods.SelectStatus.Rows(0).Item(2)
@@ -68,6 +68,7 @@ Public Class frmplanta
         SerialPort1.StopBits = StopBits.One
         SerialPort1.Handshake = Handshake.None
         SerialPort1.Encoding = System.Text.Encoding.Default
+        SerialPort1.Open()
 
         timer.Enabled = True
         timer.Start()
@@ -149,11 +150,11 @@ Public Class frmplanta
         LoadFields()
         sendInformationArduino()
 
-        'If SerialPort1.ReadBufferSize > 0 And Me.SerialPort1.IsOpen = True Then
+        If SerialPort1.ReadBufferSize > 0 And Me.SerialPort1.IsOpen = True And SerialPort1.BytesToRead > 0 Then
 
-        '    Me.tbmsgtest.Text += Chr(SerialPort1.ReadByte)
+            tbmsgtest.Text = SerialPort1.ReadExisting()
 
-        'End If
+        End If
 
         If pbcamera.Visible = True Then
             Try
@@ -234,12 +235,10 @@ Public Class frmplanta
 
         If sendmessage = True Then
             Try
-                SerialPort1.Open()
                 SerialPort1.Write("1")
                 SerialPort1.Write("2")
                 Threading.Thread.Sleep(100)
                 SerialPort1.Write("0")
-                SerialPort1.Close()
 
                 Console.WriteLine("led")
             Catch ex As Exception
