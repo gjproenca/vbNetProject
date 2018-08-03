@@ -1,13 +1,8 @@
 ﻿Imports System.Data.SqlClient
-Imports AForge
+Imports System.IO.Ports
+Imports System.Threading
 Imports AForge.Video
 Imports AForge.Video.DirectShow
-Imports System.IO
-Imports System.IO.Ports
-Imports System.Windows
-Imports System.Net.Sockets
-Imports System.Threading
-Imports TouchlessLib
 
 
 Public Class frmplanta
@@ -31,12 +26,28 @@ Public Class frmplanta
     Dim templightgarage As Boolean
 
     Dim isOpen As Boolean = False
+    Dim isShowing As Boolean = False
 
     Private Sub frmplanta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Dialog camera
         While cameras.ShowDialog() <> DialogResult.OK
-            camera = cameras.VideoDevice
-            AddHandler camera.NewFrame, New NewFrameEventHandler(AddressOf Captured)
-            camera.Start()
+            MessageBox.Show("Please choose your camera!", "Error!", MessageBoxButtons.OK)
+        End While
+
+        'Load camera
+        While isShowing = False
+            Try
+                pbcamera.Visible = Not pbcamera.Visible
+
+                If camera Is Nothing Then
+                    camera = cameras.VideoDevice
+                    AddHandler camera.NewFrame, New NewFrameEventHandler(AddressOf Captured)
+                    camera.Start()
+                End If
+                isShowing = True
+            Catch ex As Exception
+
+            End Try
         End While
 
         'Initialize temp variables
@@ -248,23 +259,10 @@ Public Class frmplanta
         End If
     End Sub
 
+    'Camera---
     Private Sub Captured(sender As Object, eventargs As NewFrameEventArgs)
         bmp = DirectCast(eventargs.Frame.Clone, Bitmap)
         pbcamera.Image = DirectCast(eventargs.Frame.Clone(), Bitmap)
-    End Sub
-
-    Private Sub pbcamvig_Click(sender As Object, e As EventArgs) Handles pbcamvig.Click
-        pbcamera.Visible = Not pbcamera.Visible
-
-        If camera Is Nothing Then
-            camera = cameras.VideoDevice
-            AddHandler camera.NewFrame, New NewFrameEventHandler(AddressOf Captured)
-            camera.Start()
-        ElseIf pbcamera.Visible = False Then
-            camera.Stop()
-        Else
-            camera.Start()
-        End If
     End Sub
 
     Private Sub pbcamera_MouseHover(sender As Object, e As EventArgs)

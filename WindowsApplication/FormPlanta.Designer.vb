@@ -37,7 +37,6 @@ Partial Class frmplanta
         Me.pbroom1off = New System.Windows.Forms.PictureBox()
         Me.pbdiningon = New System.Windows.Forms.PictureBox()
         Me.pbdiningoff = New System.Windows.Forms.PictureBox()
-        Me.pbcamvig = New System.Windows.Forms.PictureBox()
         Me.tbmensagem = New System.Windows.Forms.TextBox()
         Me.lbmessage = New System.Windows.Forms.Label()
         Me.pbplanta = New System.Windows.Forms.PictureBox()
@@ -64,7 +63,6 @@ Partial Class frmplanta
         CType(Me.pbroom1off, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbdiningon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbdiningoff, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbcamvig, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbplanta, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbcamera, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -73,7 +71,7 @@ Partial Class frmplanta
         '
         Me.pbfire.BackColor = System.Drawing.Color.White
         Me.pbfire.Image = CType(resources.GetObject("pbfire.Image"), System.Drawing.Image)
-        Me.pbfire.Location = New System.Drawing.Point(607, 71)
+        Me.pbfire.Location = New System.Drawing.Point(610, 21)
         Me.pbfire.Name = "pbfire"
         Me.pbfire.Size = New System.Drawing.Size(31, 34)
         Me.pbfire.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -150,7 +148,7 @@ Partial Class frmplanta
         '
         Me.pbgaron.BackColor = System.Drawing.Color.White
         Me.pbgaron.Image = CType(resources.GetObject("pbgaron.Image"), System.Drawing.Image)
-        Me.pbgaron.Location = New System.Drawing.Point(577, 179)
+        Me.pbgaron.Location = New System.Drawing.Point(577, 155)
         Me.pbgaron.Name = "pbgaron"
         Me.pbgaron.Size = New System.Drawing.Size(25, 35)
         Me.pbgaron.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -162,7 +160,7 @@ Partial Class frmplanta
         '
         Me.pbgaroff.BackColor = System.Drawing.Color.White
         Me.pbgaroff.Image = CType(resources.GetObject("pbgaroff.Image"), System.Drawing.Image)
-        Me.pbgaroff.Location = New System.Drawing.Point(577, 179)
+        Me.pbgaroff.Location = New System.Drawing.Point(577, 155)
         Me.pbgaroff.Name = "pbgaroff"
         Me.pbgaroff.Size = New System.Drawing.Size(25, 35)
         Me.pbgaroff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -214,16 +212,6 @@ Partial Class frmplanta
         Me.pbdiningoff.TabIndex = 50
         Me.pbdiningoff.TabStop = False
         '
-        'pbcamvig
-        '
-        Me.pbcamvig.Image = CType(resources.GetObject("pbcamvig.Image"), System.Drawing.Image)
-        Me.pbcamvig.Location = New System.Drawing.Point(607, 27)
-        Me.pbcamvig.Name = "pbcamvig"
-        Me.pbcamvig.Size = New System.Drawing.Size(31, 34)
-        Me.pbcamvig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbcamvig.TabIndex = 49
-        Me.pbcamvig.TabStop = False
-        '
         'tbmensagem
         '
         Me.tbmensagem.Location = New System.Drawing.Point(12, 199)
@@ -260,9 +248,10 @@ Partial Class frmplanta
         '
         'pbcamera
         '
-        Me.pbcamera.Location = New System.Drawing.Point(387, 109)
+        Me.pbcamera.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.pbcamera.Location = New System.Drawing.Point(525, 227)
         Me.pbcamera.Name = "pbcamera"
-        Me.pbcamera.Size = New System.Drawing.Size(139, 118)
+        Me.pbcamera.Size = New System.Drawing.Size(125, 97)
         Me.pbcamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbcamera.TabIndex = 71
         Me.pbcamera.TabStop = False
@@ -349,7 +338,6 @@ Partial Class frmplanta
         Me.Controls.Add(Me.pbroom1off)
         Me.Controls.Add(Me.pbdiningon)
         Me.Controls.Add(Me.pbdiningoff)
-        Me.Controls.Add(Me.pbcamvig)
         Me.Controls.Add(Me.tbmensagem)
         Me.Controls.Add(Me.lbmessage)
         Me.Controls.Add(Me.pbplanta)
@@ -372,7 +360,6 @@ Partial Class frmplanta
         CType(Me.pbroom1off, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbdiningon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbdiningoff, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbcamvig, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbplanta, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbcamera, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -392,7 +379,6 @@ Partial Class frmplanta
     Private WithEvents pbroom1off As PictureBox
     Private WithEvents pbdiningon As PictureBox
     Private WithEvents pbdiningoff As PictureBox
-    Private WithEvents pbcamvig As PictureBox
     Private WithEvents tbmensagem As TextBox
     Private WithEvents lbmessage As Label
     Private WithEvents pbplanta As PictureBox
