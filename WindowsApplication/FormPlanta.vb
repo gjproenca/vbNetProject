@@ -144,10 +144,14 @@ Public Class frmplanta
             pbgaroff.Visible = True
         End If
 
-        'Serial Port
-        If SerialPort1.ReadBufferSize > 0 And Me.SerialPort1.IsOpen = True And SerialPort1.BytesToRead > 0 Then
-            tbmsgtest.Text = SerialPort1.ReadExisting()
-        End If
+        'Load arduino information
+        Try
+            If SerialPort1.ReadBufferSize > 0 And Me.SerialPort1.IsOpen = True And SerialPort1.BytesToRead > 0 Then
+                tbmsgtest.Text = SerialPort1.ReadExisting()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Couldn't send the information to arduino, please pair the ports, COM3 for this aplication and another COM Port for the arduino!", "Error!", MessageBoxButtons.OK)
+        End Try
     End Sub
 
     Private Sub timer_Tick(sender As Object, e As EventArgs) Handles timer.Tick
@@ -167,7 +171,6 @@ Public Class frmplanta
             Dim cmd As New SqlCommand
             cmd.Connection = con
             cmd.CommandText = "UPDATE Camera SET Image = @image"
-            'cmd.CommandText = "INSERT  INTO Camera (Image) values (@image)"
             cmd.Parameters.AddWithValue("image", SqlDbType.VarBinary).Value = IO.File.ReadAllBytes("camera.jpg")
             con.Open()
             cmd.ExecuteNonQuery()
