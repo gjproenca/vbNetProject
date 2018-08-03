@@ -63,7 +63,7 @@
                     <td class="auto-style9">
                         <asp:CheckBox ID="checkBoxStatus" runat="server" Enabled="False" />
                     </td>
-                    <td rowspan="9">
+                    <td rowspan="10">
                         <asp:TextBox ID="textBoxViewMessages" runat="server" Height="305px" TextMode="MultiLine" Width="517px" ReadOnly="True" Style="resize: none;" BorderStyle="Solid" CssClass="modal-open"></asp:TextBox>
                     </td>
                 </tr>
@@ -129,6 +129,14 @@
                     </td>
                     <td class="auto-style9">
                         <asp:CheckBox ID="checkBoxGarage" runat="server" Enabled="False" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">
+                        <asp:Label ID="Label2" runat="server" Text="Arduino Output"></asp:Label>
+                    </td>
+                    <td class="auto-style9">
+                        <asp:TextBox ID="textBoxArduino" runat="server" ReadOnly="True"></asp:TextBox>
                     </td>
                 </tr>
             </table>

@@ -25,15 +25,6 @@ C:\Users\gjspr\OneDrive\vbnet-avaliacao\vbnet-avaliacao\DAL\obj\Debug\DAL.vbproj
 C:\Users\gjspr\OneDrive\vbnet-avaliacao\vbnet-avaliacao\DAL\obj\Debug\DAL.dll
 C:\Users\gjspr\OneDrive\vbnet-avaliacao\vbnet-avaliacao\DAL\obj\Debug\DAL.xml
 C:\Users\gjspr\OneDrive\vbnet-avaliacao\vbnet-avaliacao\DAL\obj\Debug\DAL.pdb
-C:\Users\Admin\Desktop\VB\vbnet-avaliacao\DAL\bin\Debug\DAL.dll
-C:\Users\Admin\Desktop\VB\vbnet-avaliacao\DAL\bin\Debug\DAL.pdb
-C:\Users\Admin\Desktop\VB\vbnet-avaliacao\DAL\bin\Debug\DAL.xml
-C:\Users\Admin\Desktop\VB\vbnet-avaliacao\DAL\obj\Debug\DAL.vbprojResolveAssemblyReference.cache
-C:\Users\Admin\Desktop\VB\vbnet-avaliacao\DAL\obj\Debug\DAL.Resources.resources
-C:\Users\Admin\Desktop\VB\vbnet-avaliacao\DAL\obj\Debug\DAL.vbproj.GenerateResource.Cache
-C:\Users\Admin\Desktop\VB\vbnet-avaliacao\DAL\obj\Debug\DAL.dll
-C:\Users\Admin\Desktop\VB\vbnet-avaliacao\DAL\obj\Debug\DAL.xml
-C:\Users\Admin\Desktop\VB\vbnet-avaliacao\DAL\obj\Debug\DAL.pdb
 C:\Users\Admin\Desktop\vbnet-avaliacao\DAL\bin\Debug\DAL.dll
 C:\Users\Admin\Desktop\vbnet-avaliacao\DAL\bin\Debug\DAL.pdb
 C:\Users\Admin\Desktop\vbnet-avaliacao\DAL\bin\Debug\DAL.xml
@@ -43,3 +34,11 @@ C:\Users\Admin\Desktop\vbnet-avaliacao\DAL\obj\Debug\DAL.vbproj.GenerateResource
 C:\Users\Admin\Desktop\vbnet-avaliacao\DAL\obj\Debug\DAL.dll
 C:\Users\Admin\Desktop\vbnet-avaliacao\DAL\obj\Debug\DAL.xml
 C:\Users\Admin\Desktop\vbnet-avaliacao\DAL\obj\Debug\DAL.pdb
+C:\Users\Admin\Desktop\VB\vbnet-avaliacao\DAL\bin\Debug\DAL.dll
+C:\Users\Admin\Desktop\VB\vbnet-avaliacao\DAL\bin\Debug\DAL.pdb
+C:\Users\Admin\Desktop\VB\vbnet-avaliacao\DAL\bin\Debug\DAL.xml
+C:\Users\Admin\Desktop\VB\vbnet-avaliacao\DAL\obj\Debug\DAL.Resources.resources
+C:\Users\Admin\Desktop\VB\vbnet-avaliacao\DAL\obj\Debug\DAL.vbproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\VB\vbnet-avaliacao\DAL\obj\Debug\DAL.dll
+C:\Users\Admin\Desktop\VB\vbnet-avaliacao\DAL\obj\Debug\DAL.xml
+C:\Users\Admin\Desktop\VB\vbnet-avaliacao\DAL\obj\Debug\DAL.pdb

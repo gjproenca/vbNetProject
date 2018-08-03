@@ -34,7 +34,7 @@ Public Class _default1
 
         methods.InsertStatus(status)
 
-        Response.Redirect("~/BackEnd/default.aspx")
+        textBoxSendMessage.Text = ""
     End Sub
 
 End Class

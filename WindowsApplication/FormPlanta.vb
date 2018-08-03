@@ -30,6 +30,8 @@ Public Class frmplanta
     Dim templightdining As Boolean
     Dim templightgarage As Boolean
 
+    Dim isOpen As Boolean = False
+
     Private Sub frmplanta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         While cameras.ShowDialog() <> DialogResult.OK
             camera = cameras.VideoDevice
@@ -48,17 +50,6 @@ Public Class frmplanta
         templightdining = methods.SelectStatus.Rows(0).Item(10)
         templightgarage = methods.SelectStatus.Rows(0).Item(11)
 
-        'Dim con As New SqlConnection("Data Source=.\sqlexpress;Initial Catalog=DomoSys;Integrated Security=True")
-        'Dim cmd As New SqlCommand
-        'cmd.Connection = con
-        ''cmd.CommandText = "UPDATE Camera SET Image = @image"
-        'cmd.CommandText = "INSERT  INTO Camera (Image) values (@image)"
-        'cmd.Parameters.AddWithValue("image", SqlDbType.VarBinary).Value = IO.File.ReadAllBytes("camera.jpg")
-        'con.Open()
-        'cmd.ExecuteNonQuery()
-        'con.Close()
-        'cmd.Parameters.Clear()
-
         'com port
         SerialPort1.Close()
         SerialPort1.PortName = "COM3"
@@ -68,7 +59,15 @@ Public Class frmplanta
         SerialPort1.StopBits = StopBits.One
         SerialPort1.Handshake = Handshake.None
         SerialPort1.Encoding = System.Text.Encoding.Default
-        SerialPort1.Open()
+
+        While isOpen = False
+            Try
+                SerialPort1.Open()
+                isOpen = True
+            Catch ex As Exception
+                MessageBox.Show("Couldn't send the information to arduino, please pair the ports, COM3 for this aplication and another COM Port for the arduino!", "Error!", MessageBoxButtons.OK)
+            End Try
+        End While
 
         timer.Enabled = True
         timer.Start()
@@ -155,7 +154,7 @@ Public Class frmplanta
         LoadFields()
         sendInformationArduino()
 
-        'If pbcamera.Visible = True Then
+        'Camera
         Try
             pbcamera.Image.Save("camera.jpg", Imaging.ImageFormat.Jpeg)
             Console.WriteLine("Saved image to Folder")
@@ -179,7 +178,9 @@ Public Class frmplanta
         Catch ex As Exception
             Console.WriteLine("Couldn't save image to DB")
         End Try
-        'End If
+
+        'Insert arduino information
+        methods.UpdateArduino(tbmsgtest.Text)
     End Sub
 
     Private Sub sendInformationArduino()
@@ -253,11 +254,9 @@ Public Class frmplanta
         pbcamera.Visible = Not pbcamera.Visible
 
         If camera Is Nothing Then
-            'If cameras.ShowDialog() = DialogResult.OK Then
             camera = cameras.VideoDevice
             AddHandler camera.NewFrame, New NewFrameEventHandler(AddressOf Captured)
             camera.Start()
-            'End If
         ElseIf pbcamera.Visible = False Then
             camera.Stop()
         Else

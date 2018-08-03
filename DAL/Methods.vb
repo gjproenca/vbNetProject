@@ -259,5 +259,23 @@ Public Class Methods
         Return tabela
     End Function
 
+    Public Sub UpdateArduino(ByVal A As String)
+        Dim comm_update As SqlCommand = New SqlCommand()
+        comm_update.Connection = conn
+        comm_update.CommandType = CommandType.Text
+        comm_update.CommandText = "UPDATE Arduino SET ArduinoOutput = @ArduinoOutput"
+        comm_update.Parameters.AddWithValue("@ArduinoOutput", A)
+        conn.Open()
+        comm_update.ExecuteNonQuery()
+        conn.Close()
+    End Sub
+
+    Public Function SelectArduino() As DataTable
+        Dim comando As SqlDataAdapter = New SqlDataAdapter("SELECT ArduinoOutput FROM Arduino", conn)
+        Dim tabela As DataTable = New DataTable()
+        comando.Fill(tabela)
+        Return tabela
+    End Function
+
 End Class
 #End Region

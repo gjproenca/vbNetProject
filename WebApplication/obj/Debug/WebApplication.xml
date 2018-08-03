@@ -226,6 +226,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:WebApplication.control_panel_iframe._Label2">
+<summary>
+Label2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.control_panel_iframe._textBoxArduino">
+<summary>
+textBoxArduino control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:WebApplication.control_panel_iframe._Image2">
 <summary>
 Image2 control.
@@ -751,6 +769,24 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:WebApplication.iframe_control_panel._checkBoxGarage">
 <summary>
 checkBoxGarage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._Label2">
+<summary>
+Label2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:WebApplication.iframe_control_panel._textBoxArduino">
+<summary>
+textBoxArduino control.
 </summary>
 <remarks>
 Auto-generated field.

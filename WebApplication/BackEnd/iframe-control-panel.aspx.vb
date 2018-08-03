@@ -104,6 +104,8 @@
         For Each row As DataRow In methods.SelectMessages().Rows
             textBoxViewMessages.Text &= row.Item("TimeStamp") & " - " & row.Item("Message") & "" & Environment.NewLine
         Next row
+
+        textBoxArduino.Text = methods.SelectArduino().Rows(0).Item(0).ToString()
     End Sub
 
     Protected Sub buttonStatus_Click(sender As Object, e As EventArgs) Handles buttonStatus.Click
@@ -177,5 +179,4 @@
 
         loadFields()
     End Sub
-
 End Class

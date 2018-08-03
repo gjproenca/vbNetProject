@@ -19,7 +19,6 @@ Public Class _Default2
     End Sub
 
     Protected Sub buttonMessage_Click(sender As Object, e As EventArgs) Handles buttonMessage.Click
-
         status.IdUser = Session("userId")
         status.SoftwareStatus = methods.SelectStatus().Rows(0).Item(2)
         status.Alarm = methods.SelectStatus().Rows(0).Item(3)
@@ -34,7 +33,7 @@ Public Class _Default2
 
         methods.InsertStatus(status)
 
-        Response.Redirect("~/FrontEnd/default.aspx")
+        textBoxSendMessage.Text = ""
     End Sub
 
 End Class

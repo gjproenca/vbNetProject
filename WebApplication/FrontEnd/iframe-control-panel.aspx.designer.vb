@@ -203,6 +203,24 @@ Partial Public Class iframe_control_panel
     Protected WithEvents checkBoxGarage As Global.System.Web.UI.WebControls.CheckBox
     
     '''<summary>
+    '''Label2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''textBoxArduino control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents textBoxArduino As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''Image2 control.
     '''</summary>
     '''<remarks>
