@@ -71,7 +71,7 @@ Partial Class frmplanta
         '
         Me.pbfire.BackColor = System.Drawing.Color.White
         Me.pbfire.Image = CType(resources.GetObject("pbfire.Image"), System.Drawing.Image)
-        Me.pbfire.Location = New System.Drawing.Point(610, 21)
+        Me.pbfire.Location = New System.Drawing.Point(600, 35)
         Me.pbfire.Name = "pbfire"
         Me.pbfire.Size = New System.Drawing.Size(31, 34)
         Me.pbfire.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -249,7 +249,7 @@ Partial Class frmplanta
         'pbcamera
         '
         Me.pbcamera.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.pbcamera.Location = New System.Drawing.Point(525, 227)
+        Me.pbcamera.Location = New System.Drawing.Point(523, 223)
         Me.pbcamera.Name = "pbcamera"
         Me.pbcamera.Size = New System.Drawing.Size(125, 97)
         Me.pbcamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
