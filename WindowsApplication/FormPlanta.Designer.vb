@@ -50,6 +50,7 @@ Partial Class frmplanta
         Me.btfire = New System.Windows.Forms.Button()
         Me.btstatus = New System.Windows.Forms.Button()
         Me.tbmsgtest = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.pbfire, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pblivingon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pblivingoff, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -239,9 +240,9 @@ Partial Class frmplanta
         Me.lbmessage.Font = New System.Drawing.Font("Palatino Linotype", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbmessage.Location = New System.Drawing.Point(13, 177)
         Me.lbmessage.Name = "lbmessage"
-        Me.lbmessage.Size = New System.Drawing.Size(53, 16)
+        Me.lbmessage.Size = New System.Drawing.Size(61, 16)
         Me.lbmessage.TabIndex = 35
-        Me.lbmessage.Text = "Message"
+        Me.lbmessage.Text = "Messages:"
         '
         'pbplanta
         '
@@ -269,20 +270,20 @@ Partial Class frmplanta
         '
         'timer
         '
-        Me.timer.Interval = 1000
+        Me.timer.Interval = 300
         '
         'tbsendmessage
         '
-        Me.tbsendmessage.Location = New System.Drawing.Point(12, 41)
+        Me.tbsendmessage.Location = New System.Drawing.Point(12, 68)
         Me.tbsendmessage.Multiline = True
         Me.tbsendmessage.Name = "tbsendmessage"
-        Me.tbsendmessage.Size = New System.Drawing.Size(245, 101)
+        Me.tbsendmessage.Size = New System.Drawing.Size(245, 76)
         Me.tbsendmessage.TabIndex = 74
         '
         'btsendmessage
         '
         Me.btsendmessage.BackColor = System.Drawing.Color.White
-        Me.btsendmessage.Location = New System.Drawing.Point(141, 148)
+        Me.btsendmessage.Location = New System.Drawing.Point(12, 41)
         Me.btsendmessage.Name = "btsendmessage"
         Me.btsendmessage.Size = New System.Drawing.Size(116, 23)
         Me.btsendmessage.TabIndex = 75
@@ -309,16 +310,26 @@ Partial Class frmplanta
         '
         'tbmsgtest
         '
-        Me.tbmsgtest.Location = New System.Drawing.Point(35, 150)
+        Me.tbmsgtest.Location = New System.Drawing.Point(96, 151)
         Me.tbmsgtest.Name = "tbmsgtest"
-        Me.tbmsgtest.Size = New System.Drawing.Size(100, 20)
+        Me.tbmsgtest.Size = New System.Drawing.Size(161, 20)
         Me.tbmsgtest.TabIndex = 78
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(9, 154)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(81, 13)
+        Me.Label1.TabIndex = 79
+        Me.Label1.Text = "Arduino Output:"
         '
         'frmplanta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(662, 334)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.tbmsgtest)
         Me.Controls.Add(Me.btstatus)
         Me.Controls.Add(Me.btfire)
@@ -394,4 +405,5 @@ Partial Class frmplanta
     Friend WithEvents btfire As Button
     Friend WithEvents btstatus As Button
     Friend WithEvents tbmsgtest As TextBox
+    Friend WithEvents Label1 As Label
 End Class

@@ -144,45 +144,42 @@ Public Class frmplanta
             pbgaron.Visible = False
             pbgaroff.Visible = True
         End If
+
+        'Serial Port
+        If SerialPort1.ReadBufferSize > 0 And Me.SerialPort1.IsOpen = True And SerialPort1.BytesToRead > 0 Then
+            tbmsgtest.Text = SerialPort1.ReadExisting()
+        End If
     End Sub
 
     Private Sub timer_Tick(sender As Object, e As EventArgs) Handles timer.Tick
         LoadFields()
         sendInformationArduino()
 
-        If SerialPort1.ReadBufferSize > 0 And Me.SerialPort1.IsOpen = True And SerialPort1.BytesToRead > 0 Then
+        'If pbcamera.Visible = True Then
+        Try
+            pbcamera.Image.Save("camera.jpg", Imaging.ImageFormat.Jpeg)
+            Console.WriteLine("Saved image to Folder")
+        Catch ex As Exception
 
-            tbmsgtest.Text = SerialPort1.ReadExisting()
+        End Try
 
-        End If
+        Try
+            Dim con As New SqlConnection("Data Source=.\sqlexpress;Initial Catalog=DomoSys;Integrated Security=True")
+            Dim cmd As New SqlCommand
+            cmd.Connection = con
+            cmd.CommandText = "UPDATE Camera SET Image = @image"
+            'cmd.CommandText = "INSERT  INTO Camera (Image) values (@image)"
+            cmd.Parameters.AddWithValue("image", SqlDbType.VarBinary).Value = IO.File.ReadAllBytes("camera.jpg")
+            con.Open()
+            cmd.ExecuteNonQuery()
+            con.Close()
+            cmd.Parameters.Clear()
 
-        If pbcamera.Visible = True Then
-            Try
-                pbcamera.Image.Save("camera.jpg", Imaging.ImageFormat.Jpeg)
-                Console.WriteLine("Saved image to Folder")
-            Catch ex As Exception
-
-            End Try
-
-            Try
-                Dim con As New SqlConnection("Data Source=.\sqlexpress;Initial Catalog=DomoSys;Integrated Security=True")
-                Dim cmd As New SqlCommand
-                cmd.Connection = con
-                cmd.CommandText = "UPDATE Camera SET Image = @image"
-                'cmd.CommandText = "INSERT  INTO Camera (Image) values (@image)"
-                cmd.Parameters.AddWithValue("image", SqlDbType.VarBinary).Value = IO.File.ReadAllBytes("camera.jpg")
-                con.Open()
-                cmd.ExecuteNonQuery()
-                con.Close()
-                cmd.Parameters.Clear()
-
-                Console.WriteLine("Saved image to DB")
-                'MsgBox("Done")
-                'txt_staffid.Clear()
-            Catch ex As Exception
-
-            End Try
-        End If
+            Console.WriteLine("Saved image to DB")
+        Catch ex As Exception
+            Console.WriteLine("Couldn't save image to DB")
+        End Try
+        'End If
     End Sub
 
     Private Sub sendInformationArduino()
@@ -256,11 +253,11 @@ Public Class frmplanta
         pbcamera.Visible = Not pbcamera.Visible
 
         If camera Is Nothing Then
-            If cameras.ShowDialog() = DialogResult.OK Then
-                camera = cameras.VideoDevice
-                AddHandler camera.NewFrame, New NewFrameEventHandler(AddressOf Captured)
-                camera.Start()
-            End If
+            'If cameras.ShowDialog() = DialogResult.OK Then
+            camera = cameras.VideoDevice
+            AddHandler camera.NewFrame, New NewFrameEventHandler(AddressOf Captured)
+            camera.Start()
+            'End If
         ElseIf pbcamera.Visible = False Then
             camera.Stop()
         Else
@@ -380,11 +377,8 @@ Public Class frmplanta
         LoadFields()
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles tbmsgtest.TextChanged
-        'If SerialPort1.ReadBufferSize > 0 And Me.SerialPort1.IsOpen = True Then
-
-        '    Me.tbmsgtest.Text += Chr(SerialPort1.ReadByte)
-
-        'End If
+    Private Sub frmplanta_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        camera = cameras.VideoDevice
+        camera.Stop()
     End Sub
 End Class
